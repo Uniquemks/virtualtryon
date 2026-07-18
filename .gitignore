@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+replicate_error.log
+backend/replicate_error.log
+backend/temp_*.png
+
+# Node & Expo
+node_modules/
+.expo/
+dist/
+
+# Native Mobile
+android/
+ios/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+
+# Temp and Upload Folders
+uploads/
+temp/
+logs/
