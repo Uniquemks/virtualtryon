@@ -103,7 +103,17 @@ def color_shift_patch(patch, target_bgr):
         return patch
     bgr = patch[:, :, :3]
     patch_bgr_pixels = bgr[mask]
-    patch_median_bgr = np.median(patch_bgr_pixels, axis=0)
+    
+    # Calculate brightness of each pixel (simple average of B, G, R)
+    brightness = np.mean(patch_bgr_pixels, axis=1)
+    
+    # Filter to only keep the top 50% brightest pixels (avoids shadows, creases, fingernails)
+    threshold = np.median(brightness)
+    bright_pixels = patch_bgr_pixels[brightness >= threshold]
+    
+    # Calculate the median BGR of these bright skin pixels
+    patch_median_bgr = np.median(bright_pixels, axis=0)
+    
     target_lab = cv2.cvtColor(np.uint8([[target_bgr]]), cv2.COLOR_BGR2LAB)[0][0]
     source_lab = cv2.cvtColor(np.uint8([[patch_median_bgr]]), cv2.COLOR_BGR2LAB)[0][0]
     l_diff = int(target_lab[0]) - int(source_lab[0])
