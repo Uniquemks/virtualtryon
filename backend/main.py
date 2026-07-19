@@ -516,15 +516,44 @@ def process_image(
                     f_avatar.close()
                 
                 if output_url:
-                    print(f"Face Swap successful! Downloading: {output_url}")
+                    print(f"Face Swap successful! Output type: {type(output_url)}")
                     if isinstance(output_url, list) and len(output_url) > 0:
                         output_url = output_url[0]
                     
-                    response = requests.get(str(output_url))
-                    if response.status_code == 200:
-                        print("Successfully downloaded face-swapped avatar.")
-                        
-                        nparr = np.frombuffer(response.content, np.uint8)
+                    content_bytes = None
+                    if hasattr(output_url, "read"):
+                        try:
+                            content_bytes = output_url.read()
+                            print("Read bytes directly from Replicate output stream.")
+                        except Exception as read_err:
+                            print("Failed to read from output stream:", read_err)
+                            
+                    if content_bytes is None and hasattr(output_url, "url"):
+                        try:
+                            url_str = str(output_url.url)
+                            print(f"Downloading from output_url.url: {url_str}")
+                            response = requests.get(url_str)
+                            if response.status_code == 200:
+                                content_bytes = response.content
+                        except Exception as url_err:
+                            print("Failed to download from output_url.url:", url_err)
+                            
+                    if content_bytes is None:
+                        try:
+                            url_str = str(output_url)
+                            if url_str.startswith("http"):
+                                print(f"Downloading from URL string: {url_str}")
+                                response = requests.get(url_str)
+                                if response.status_code == 200:
+                                    content_bytes = response.content
+                            else:
+                                print(f"Output string is not a valid URL: {url_str}")
+                        except Exception as dl_err:
+                            print("Failed to download from string URL:", dl_err)
+                            
+                    if content_bytes is not None:
+                        print("Successfully retrieved face-swapped avatar bytes.")
+                        nparr = np.frombuffer(content_bytes, np.uint8)
                         swapped_img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
                         
                         if swapped_img is not None:
@@ -608,7 +637,13 @@ def virtual_tryon(model_image: UploadFile = File(...), garment_url: str = Form(.
             if isinstance(output, list) and len(output) > 0:
                 output = output[0]
 
-            return {"image_url": str(output)}
+            url_val = None
+            if hasattr(output, "url"):
+                url_val = str(output.url)
+            else:
+                url_val = str(output)
+
+            return {"image_url": url_val}
 
         except Exception as e:
             print("VTON Error:", e)
