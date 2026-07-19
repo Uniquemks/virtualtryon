@@ -423,9 +423,9 @@ def process_image(
             shoulder_name,
             neck_name,
             'A/FACE.webp',
+            'H/H1.webp', # Draw hands behind arms to overlay wrists correctly
             left_arm,
-            right_arm,
-            'H/H1.webp'
+            right_arm
         ]
         
         metadata = {
@@ -494,8 +494,15 @@ def process_image(
                 user_img_path = os.path.join(temp_dir, 'user_img.png')
                 avatar_path = os.path.join(temp_dir, 'avatar.png')
                 
+                # Convert 4-channel BGRA template to 3-channel BGR by blending onto solid background
+                # This ensures the face swap model receives a standard 3-channel image without alpha crashes
+                alpha = visible_avatar[:, :, 3:4] / 255.0
+                bgr = visible_avatar[:, :, :3]
+                bg_color = np.array([217, 216, 214]) # BGR light gray background
+                bgr_avatar = (bgr * alpha + bg_color * (1 - alpha)).astype(np.uint8)
+                
                 cv2.imwrite(user_img_path, selfie_img) 
-                cv2.imwrite(avatar_path, visible_avatar) 
+                cv2.imwrite(avatar_path, bgr_avatar) 
                 
                 print("Uploading to Replicate (codeplugtech/face-swap)...")
                 
@@ -582,12 +589,10 @@ def process_image(
                     else:
                         print(f"Failed to download swapped image. Status code: {response.status_code}")
         except Exception as e:
-            print("Face Swap failed! Falling back to standard avatar. Error:", e)
-            try:
-                with open("replicate_error.log", "w") as f:
-                    f.write(traceback.format_exc())
-            except:
-                pass
+            print("Face Swap failed! Error:", e)
+            import traceback
+            traceback.print_exc()
+            raise HTTPException(status_code=500, detail=f"Face Swap failed: {str(e)}")
         
         is_success, buffer = cv2.imencode(".png", visible_avatar)
         if is_success:
