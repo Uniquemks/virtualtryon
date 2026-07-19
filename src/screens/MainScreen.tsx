@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { AvatarProvider, useAvatar } from '../store/avatarStore';
 import AvatarCanvas from '../components/Avatar/AvatarCanvas';
 import WardrobeMenu from '../components/UI/WardrobeMenu';
+import SizeDropdown from '../components/UI/SizeDropdown';
 import { LegacyTryOnFlow } from '../components/UI/LegacyTryOnFlow';
 
 const MainScreenContent = () => {
@@ -71,6 +72,9 @@ const MainScreenContent = () => {
               <WardrobeMenu onClose={() => setActivePanel('none')} />
             </View>
           )}
+
+          {/* Persistent Size Picker - Hidden after custom avatar is generated */}
+          {!avatarUri && <SizeDropdown isWardrobeOpen={activePanel === 'wardrobe'} />}
         </View>
 
         {/* Legacy Custom Avatar Onboarding/Upload Workflow */}
