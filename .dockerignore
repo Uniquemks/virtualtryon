@@ -1,0 +1,30 @@
+# Ignore local Python environments and caches
+backend/venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Ignore Node.js / Frontend dependencies and builds
+node_modules/
+app/node_modules/
+app/dist/
+dist/
+
+# Ignore Expo and mobile native folders
+.expo/
+android/
+ios/
+
+# Ignore local configuration and log files
+.git/
+.gitignore
+.idea/
+.gemini/
+.agents/
+.artifacts/
+replicate_error.log
+backend/replicate_error.log
+temp_*.png
+backend/temp_*.png
+*.log

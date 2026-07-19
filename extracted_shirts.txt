@@ -1,0 +1,4315 @@
+"blue-linen-shirt": {
+        buttoned_tucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh1.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck torso/t1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck tummy/tmy1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh2.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck torso/t2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck tummy/tmy2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck torso/t4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck tummy/tmy4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck torso/t3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck tummy/tmy3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck torso/t5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck tummy/tmy5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        },
+        untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh1.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/aa1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh2.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        },
+        unbuttoned_untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh1.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/aa1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh2.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        }
+      },
+"olive-linen-shirt": {
+        buttoned_tucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck torso/t1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck tummy/tmy1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck torso/t2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck tummy/tmy2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck torso/t4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck tummy/tmy4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck torso/t3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck tummy/tmy3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck torso/t5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck tummy/tmy5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        },
+        untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        },
+        unbuttoned_untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        }
+      },
+"black-linen-shirt": {
+        buttoned_tucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck torso/t1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck tummy/tmy1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck torso/t2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck tummy/tmy2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck torso/t4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck tummy/tmy4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck torso/t3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck tummy/tmy3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck torso/t5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck tummy/tmy5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        },
+        untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        },
+        unbuttoned_untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        }
+      },
+"dawn-blue-linen-shirt": {
+        buttoned_tucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck torso/t1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck tummy/tmy1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck torso/t2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck tummy/tmy2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck torso/t4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck tummy/tmy4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck torso/t3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck tummy/tmy3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck torso/t5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck tummy/tmy5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        },
+        untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        },
+        unbuttoned_untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        }
+      },
+"white-linen-shirt": {
+        buttoned_tucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/tuck torso/t1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic white shirt/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/tuck torso/t2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic white shirt/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/tuck torso/t4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic white shirt/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/tuck torso/t3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic white shirt/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/tuck torso/t5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              },
+              maskBottom: 10
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/classic white shirt/button/buttontu.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        },
+        untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        },
+        unbuttoned_untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/s1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f2.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/m1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/a1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a4.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/classic white shirt/normal full slv/h1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a5.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                scaleX: 1.03
+              }
+            },
+            back: {
+              source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+              transform: {
+                x: 0,
+                y: 0,
+                scale: 1
+              }
+            }
+          }
+        }
+      },

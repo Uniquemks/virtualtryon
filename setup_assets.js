@@ -4,12 +4,12 @@ const path = require('path');
 const srcDir = 'C:\\Users\\HP\\.gemini\\antigravity-ide\\brain\\91007dde-8f38-4594-8749-91e29464bab6';
 const destDir = path.join(__dirname, 'assets');
 
-const mappings = {
-  'app_icon_1784354952196.png': 'icon.png',
-  'adaptive_icon_1784354967713.png': 'adaptive-icon.png',
-  'splash_screen_1784354979894.png': 'splash.png',
-  'app_icon_1784354952196.png': 'favicon.png', // copy app icon as fallback favicon
-};
+const mappings = [
+  { src: 'app_icon_1784354952196.png', dest: 'icon.png' },
+  { src: 'app_icon_1784354952196.png', dest: 'favicon.png' },
+  { src: 'adaptive_icon_1784354967713.png', dest: 'adaptive-icon.png' },
+  { src: 'splash_screen_1784354979894.png', dest: 'splash.png' }
+];
 
 // Create target directory if it doesn't exist
 if (!fs.existsSync(destDir)) {
@@ -18,7 +18,7 @@ if (!fs.existsSync(destDir)) {
 }
 
 // Copy each file
-Object.entries(mappings).forEach(([srcFile, destFile]) => {
+mappings.forEach(({ src: srcFile, dest: destFile }) => {
   const srcPath = path.join(srcDir, srcFile);
   const destPath = path.join(destDir, destFile);
 

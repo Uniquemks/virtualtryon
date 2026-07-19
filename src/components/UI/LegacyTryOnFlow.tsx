@@ -22,6 +22,23 @@ export const LegacyTryOnFlow: React.FC<Props> = ({ onClose }) => {
   const { setCustomAvatar, setProfileInfo, size, bodyType } = useAvatar();
   const [step, setStep] = useState<'profile' | 'upload' | 'processing'>('profile');
   
+  // New States and Refs for Production Network Resilience
+  const [customLoadingText, setCustomLoadingText] = useState<string | null>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
+
+  const handleCancelOrClose = () => {
+    if (isProcessing) {
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+      setIsProcessing(false);
+      setStep('upload');
+      setCustomLoadingText(null);
+    } else {
+      onClose();
+    }
+  };
+
   // Profile Form States
   const [name, setName] = useState('');
   const [gender, setGender] = useState<'Male' | 'Female'>('Male');
@@ -83,46 +100,194 @@ export const LegacyTryOnFlow: React.FC<Props> = ({ onClose }) => {
 
     setStep('processing');
     setIsProcessing(true);
+    setCustomLoadingText(null);
+
+    const maxRetries = 2;
+    let attempt = 0;
+    
+    // Prepare blobs
+    let selfieBlob: Blob;
+    let bodyBlob: Blob;
+    try {
+      setCustomLoadingText("Preparing files...");
+      selfieBlob = await fetchImageBlob(selfieSrc);
+      bodyBlob = await fetchImageBlob(bodySrc);
+    } catch (e: any) {
+      console.error("Blob conversion error:", e);
+      Alert.alert("File Error", "Could not load the selected images. Please try re-selecting them.");
+      setIsProcessing(false);
+      setStep('upload');
+      return;
+    }
+
+    const runAttempt = async (): Promise<any> => {
+      attempt++;
+      
+      // Setup AbortController for this attempt
+      const controller = new AbortController();
+      abortControllerRef.current = controller;
+
+      // 180 seconds (3 minutes) timeout
+      const timeoutId = setTimeout(() => {
+        controller.abort();
+      }, 180000);
+
+      try {
+        if (attempt > 1) {
+          setCustomLoadingText(`Retrying request (Attempt ${attempt}/${maxRetries + 1})...`);
+        } else {
+          setCustomLoadingText("Sending request to server...");
+        }
+
+        const formData = new FormData();
+        formData.append('selfie_image', selfieBlob, 'selfie.png');
+        formData.append('body_image', bodyBlob, 'body.png');
+        formData.append('user_height', height);
+        formData.append('size', size);
+        formData.append('body_type', bodyType);
+
+        const res = await fetch(API_CONFIG.PROCESS_AVATAR, {
+          method: 'POST',
+          body: formData,
+          signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
+
+        if (!res.ok) {
+          // Parse error description if available
+          let errorDetail = `Server returned status ${res.status}`;
+          try {
+            const errJson = await res.json();
+            if (errJson && errJson.error) {
+              errorDetail = errJson.error;
+            }
+          } catch (e) {}
+
+          // Handle server waking up (Render Free Tier 502 / 503 / 504 / 408)
+          if (res.status === 502 || res.status === 503 || res.status === 504 || res.status === 408) {
+            if (attempt <= maxRetries) {
+              setCustomLoadingText("Server is waking up. Please wait...");
+              // Wait 15 seconds before retrying to let the server boot up
+              await new Promise(r => setTimeout(r, 15000));
+              return await runAttempt();
+            }
+          }
+
+          const httpError: any = new Error(errorDetail);
+          httpError.status = res.status;
+          throw httpError;
+        }
+
+        const data = await res.json();
+        if (!data.image || !data.metadata) {
+          throw new Error("Invalid response format from server.");
+        }
+
+        return data;
+      } catch (error: any) {
+        clearTimeout(timeoutId);
+        
+        if (error.name === 'AbortError') {
+          // Check if abort was due to timeout or user cancel
+          if (abortControllerRef.current === controller) {
+            // It was a timeout!
+            if (attempt <= maxRetries) {
+              setCustomLoadingText("Server is waking up. Please wait...");
+              await new Promise(r => setTimeout(r, 5000));
+              return await runAttempt();
+            }
+            const timeoutErr: any = new Error("Request timed out after 3 minutes.");
+            timeoutErr.status = 408;
+            throw timeoutErr;
+          } else {
+            // Cancelled by user
+            throw new Error("Request cancelled by user");
+          }
+        }
+
+        // Handle network connection error
+        if (error.message && error.message.toLowerCase().includes('network request failed')) {
+          if (attempt <= maxRetries) {
+            setCustomLoadingText("Server is waking up. Please wait...");
+            await new Promise(r => setTimeout(r, 15000)); // wait 15s for Render wake up
+            return await runAttempt();
+          }
+        }
+
+        throw error;
+      } finally {
+        if (abortControllerRef.current === controller) {
+          abortControllerRef.current = null;
+        }
+      }
+    };
 
     try {
-      const formData = new FormData();
+      const data = await runAttempt();
       
-      // Fetch blobs from image URIs
-      const selfieBlob = await fetchImageBlob(selfieSrc);
-      const bodyBlob = await fetchImageBlob(bodySrc);
-
-      formData.append('selfie_image', selfieBlob, 'selfie.png');
-      formData.append('body_image', bodyBlob, 'body.png');
-      formData.append('user_height', height);
-      formData.append('size', size);
-      formData.append('body_type', bodyType);
-
-      const res = await fetch(API_CONFIG.PROCESS_AVATAR, {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (!res.ok) {
-        throw new Error(`Server returned status ${res.status}`);
-      }
-
-      const data = await res.json();
-      if (!data.image || !data.metadata) {
-        throw new Error("Invalid response format from server.");
-      }
-
       // Success - Save avatar image URI and metadata into store
       setCustomAvatar(data.image, data.metadata);
       setIsProcessing(false);
-      onClose(); // Exit overlay flow to view custom avatar in studio
+      setCustomLoadingText(null);
+      onClose(); // Exit onboarding flow
     } catch (error: any) {
+      if (error.message === "Request cancelled by user") {
+        setIsProcessing(false);
+        setStep('upload');
+        setCustomLoadingText(null);
+        return;
+      }
+
       console.error("Avatar Generation Error:", error);
+      
+      // Determine user-friendly error message based on error type
+      let userFriendlyTitle = "Generation Failed";
+      let userFriendlyMsg = `Could not generate avatar. Make sure the Python backend is running on Render.\n\nError: ${error.message}`;
+
+      if (error.status) {
+        switch (error.status) {
+          case 404:
+            userFriendlyTitle = "Service Unavailable (404)";
+            userFriendlyMsg = "The generation endpoint was not found on the server. Please verify your API URL.";
+            break;
+          case 400:
+          case 422:
+            userFriendlyTitle = "Invalid Response (422)";
+            userFriendlyMsg = "The server rejected the inputs. Please ensure your selfie and body photos are clear and contain visible poses.";
+            break;
+          case 408:
+            userFriendlyTitle = "Server Timeout";
+            userFriendlyMsg = "The server took too long to wake up or process the request. Please try again in a few moments.";
+            break;
+          case 500:
+            userFriendlyTitle = "Server Processing Error (500)";
+            userFriendlyMsg = "The AI model encountered a processing exception. Try selecting another face selfie or full body image.";
+            break;
+          case 502:
+          case 503:
+          case 504:
+            userFriendlyTitle = "Gateway Error";
+            userFriendlyMsg = "The server is sleeping or under heavy load. Please wait a minute and try again.";
+            break;
+          default:
+            userFriendlyMsg = `Server returned error status code: ${error.status}\n\nMessage: ${error.message}`;
+        }
+      } else if (error.message && error.message.toLowerCase().includes('network request failed')) {
+        userFriendlyTitle = "Network Error";
+        userFriendlyMsg = "Unable to connect to the server. Please verify your internet connection or check if the backend service is offline.";
+      } else if (error.message && error.message.toLowerCase().includes('json')) {
+        userFriendlyTitle = "Parsing Failure";
+        userFriendlyMsg = "Failed to parse the server's response. Please ensure your network has no firewall blocking the data.";
+      }
+
       Alert.alert(
-        "Generation Failed",
-        `Could not generate avatar. Make sure the Python backend is running on ${API_CONFIG.BACKEND_BASE_URL}.\n\nError: ${error.message}`,
+        userFriendlyTitle,
+        userFriendlyMsg,
         [{ text: "Go Back", onPress: () => setStep('upload') }]
       );
       setIsProcessing(false);
+      setCustomLoadingText(null);
     }
   };
 
@@ -152,7 +317,7 @@ export const LegacyTryOnFlow: React.FC<Props> = ({ onClose }) => {
       {/* Onboarding Header */}
       <View style={styles.headerBar}>
         <Text style={styles.headerTitle}>Studio Onboarding</Text>
-        <TouchableOpacity style={styles.closeBtn} onPress={onClose} disabled={isProcessing}>
+        <TouchableOpacity style={styles.closeBtn} onPress={handleCancelOrClose}>
           <Ionicons name="close" size={24} color="#333" />
         </TouchableOpacity>
       </View>
@@ -325,7 +490,7 @@ export const LegacyTryOnFlow: React.FC<Props> = ({ onClose }) => {
             <View style={[styles.progressBarFill, { width: `${((loadingStep + 1) / 6) * 100}%` }]} />
           </View>
 
-          <Text style={styles.processingText}>{processingTexts[loadingStep]}</Text>
+          <Text style={styles.processingText}>{customLoadingText || processingTexts[loadingStep]}</Text>
         </View>
       )}
     </View>

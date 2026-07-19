@@ -44,18 +44,28 @@ The server will start at `http://127.0.0.1:5001`.
 
 ## 2. Render Production Deployment
 
-When deploying to [Render](https://render.com/), use the following configurations:
+To run MediaPipe and OpenCV successfully in headless production without missing OpenGL library errors (`libGLESv2.so.2`), deploy this service using **Docker**.
 
-### Option A: Subdirectory Build (Recommended)
-Set **Root Directory** to `backend` in the Render web service settings.
-- **Build Command**: `pip install -r requirements.txt`
-- **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+### Render Configuration Settings
 
-### Option B: Project Root Build
-If you leave the **Root Directory** as the repository root:
-- **Build Command**: `pip install -r backend/requirements.txt`
-- **Start Command**: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
+When creating a new **Web Service** on Render, configure it with the following settings:
 
-### Required Environment Variables
-Configure this under the **Environment** tab on Render:
-- `REPLICATE_API_TOKEN`: Your Replicate API credentials token.
+1. **Runtime**: Select **Docker** (instead of Python).
+2. **Root Directory**: Set to `.` (the project root, so that the build context can access both the backend code and the patch assets).
+3. **Dockerfile Path**: Set to `backend/Dockerfile` (or `Dockerfile` if you move it to the root).
+4. **Environment Variables**:
+   * `REPLICATE_API_TOKEN`: Your private token key obtained from Replicate.
+   * `PORT`: Set by Render automatically (e.g., `10000`), or defaults to `10000` if not set.
+
+### Local Docker Verification (Optional)
+
+If you want to build and run the Docker container locally:
+```bash
+# From the project root directory
+docker build -f backend/Dockerfile -t virtualtryon-backend .
+
+# Run the container locally (passing your API token)
+docker run -p 5001:10000 -e REPLICATE_API_TOKEN="your_token_here" virtualtryon-backend
+```
+The server will start locally on port 5001 using the Docker environment.
+

@@ -1,0 +1,25 @@
+Created At: 2026-06-28T05:52:01Z
+Completed At: 2026-06-28T05:52:02Z
+File Path: `file:///c:/Users/HP/virtual-trail-room-demo/src/config/outfits/workday.ts`
+Total Lines: 17
+Total Bytes: 446
+Showing lines 1 to 17
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import { OutfitCombo } from '../../types/outfit';
+2: 
+3: export const workday: OutfitCombo = {
+4:   id: 'workday',
+5:   name: 'Work Day',
+6:   thumbnail: require('../../assets/thumbnail img for  wardrobe/black pant trouser.png'),
+7:   supportedSizes: ['S', 'M', 'L', 'XL', 'XXL'],
+8:   items: {
+9:     shirt: 'white-formal',
+10:     variant: 'buttoned_tucked',
+11:     tie: 'black-tie',
+12:     trouser: 'formal-black',
+13:     bag: 'office-bag',
+14:     shoes: 'formal-black-shoes'
+15:   }
+16: };
+17: 
+The above content shows the entire, complete file contents of the requested file.

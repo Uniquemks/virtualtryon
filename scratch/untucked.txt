@@ -1,0 +1,1914 @@
+export const BODY_PART_MAPPING = {
+  face: "A",
+  tummy: "AA",
+  chest: "B",
+  neck: "C",
+  hand: "D",
+  arms: "E",
+  shoulder: "Shl",
+  torso: "F",
+  leg: "G",
+  feet: "H",
+};
+
+
+export interface PatchLayer {
+  source: any;
+  zIndex: number;
+  name?: string;
+  type?: string;
+  yOffset?: number;
+  xOffset?: number;
+  scale?: number;
+  id?: string;
+  scaleX?: number;
+}
+
+export interface AvatarConfig {
+  bodyShape: 'B1' | 'B2' | 'B3' | 'B4' | 'B5' | 'B6';
+  torso: 'F1' | 'F2' | 'F3' | 'F4' | 'F5' | 'F6';
+  size: 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'A' | 'H';
+  chest: string;
+  leftArm: string;
+  rightArm: string;
+  neck: string;
+  shoulders: string;
+  legs: string;
+  tummy?: string;
+}
+
+export const DEFAULT_CONFIG: AvatarConfig = {
+  bodyShape: 'B1',
+  torso: 'F1',
+  size: 'M',
+  chest: 'B1',
+  leftArm: 'D1',
+  rightArm: 'E1',
+  neck: 'C1',
+  shoulders: 'SHL1',
+  legs: 'L1',
+  tummy: 'AA1'
+};
+
+export const BODY_PRESETS: Record<string, AvatarConfig> = {
+  S: { bodyShape: 'B1', torso: 'F1', size: 'S', chest: 'B1', leftArm: 'D1', rightArm: 'E1', neck: 'C1', shoulders: 'SHL1', legs: 'L1', tummy: 'AA1' },
+  M: { bodyShape: 'B2', torso: 'F2', size: 'M', chest: 'B2', leftArm: 'D2', rightArm: 'E2', neck: 'C2', shoulders: 'SHL2', legs: 'L2', tummy: 'AA2' },
+  L: { bodyShape: 'B3', torso: 'F4', size: 'L', chest: 'B3', leftArm: 'D3', rightArm: 'E3', neck: 'C3', shoulders: 'SHL3', legs: 'L3', tummy: 'AA3' },
+  XL: { bodyShape: 'B4', torso: 'F3', size: 'XL', chest: 'B4', leftArm: 'D4', rightArm: 'E4', neck: 'C4', shoulders: 'SHL4', legs: 'L4', tummy: 'AA4' },
+  XXL: { bodyShape: 'B5', torso: 'F5', size: 'XXL', chest: 'B5', leftArm: 'D5', rightArm: 'E5', neck: 'C5', shoulders: 'SHL5', legs: 'L5', tummy: 'AA5' }
+};
+
+export const validateBodyFamily = (config: AvatarConfig) => { return true; };
+export const validateConfig = (config: AvatarConfig | string) => { return typeof config === 'string' ? BODY_PRESETS[config] || DEFAULT_CONFIG : config; };
+
+export const ASSET_MAP: Record<string, any> = {
+  "FACE": require("../assets/bodies/Light-M Body Male light brown/A/FACE.webp"),
+  "AA1": require("../assets/bodies/Light-M Body Male light brown/AA/AA1.webp"),
+  "AA2": require("../assets/bodies/Light-M Body Male light brown/AA/AA2.webp"),
+  "AA3": require("../assets/bodies/Light-M Body Male light brown/AA/AA3.webp"),
+  "AA4": require("../assets/bodies/Light-M Body Male light brown/AA/AA4.webp"),
+  "AA5": require("../assets/bodies/Light-M Body Male light brown/AA/AA5.webp"),
+  "TC": require("../assets/bodies/Light-M Body Male light brown/AA/TC.webp"),
+  "C1": require("../assets/bodies/Light-M Body Male light brown/C/C1.webp"),
+  "C2": require("../assets/bodies/Light-M Body Male light brown/C/C2.webp"),
+  "C3": require("../assets/bodies/Light-M Body Male light brown/C/C3.webp"),
+  "D1-S": require("../assets/bodies/Light-M Body Male light brown/D/D1-S.webp"),
+  "D2-M": require("../assets/bodies/Light-M Body Male light brown/D/D2-M.webp"),
+  "D3-A": require("../assets/bodies/Light-M Body Male light brown/D/D3-A.webp"),
+  "D4-H": require("../assets/bodies/Light-M Body Male light brown/D/D4-H.webp"),
+  "E1-S": require("../assets/bodies/Light-M Body Male light brown/E/E1-S.webp"),
+  "E2-M": require("../assets/bodies/Light-M Body Male light brown/E/E2-M.webp"),
+  "E3-A": require("../assets/bodies/Light-M Body Male light brown/E/E3-A.webp"),
+  "E4-H": require("../assets/bodies/Light-M Body Male light brown/E/E4-H.webp"),
+  "F1": require("../assets/bodies/Light-M Body Male light brown/F/F1.webp"),
+  "F2": require("../assets/bodies/Light-M Body Male light brown/F/F2.webp"),
+  "F3": require("../assets/bodies/Light-M Body Male light brown/F/F3.webp"),
+  "F4": require("../assets/bodies/Light-M Body Male light brown/F/F4.webp"),
+  "F5": require("../assets/bodies/Light-M Body Male light brown/F/F5.webp"),
+  "F6": require("../assets/bodies/Light-M Body Male light brown/F/F6.webp"),
+  "G1": require("../assets/bodies/Light-M Body Male light brown/G/G1.webp"),
+  "G2": require("../assets/bodies/Light-M Body Male light brown/G/G2.webp"),
+  "G3": require("../assets/bodies/Light-M Body Male light brown/G/G3.webp"),
+  "PATCH-LEG": require("../assets/bodies/Light-M Body Male light brown/G/patch-leg.webp"),
+  "H1": require("../assets/bodies/Light-M Body Male light brown/H/H1.webp"),
+  "SHL1": require("../assets/bodies/Light-M Body Male light brown/Shoulder/Shl1.webp"),
+  "SHL2": require("../assets/bodies/Light-M Body Male light brown/Shoulder/Shl2.webp"),
+  "SHL3": require("../assets/bodies/Light-M Body Male light brown/Shoulder/Shl3.webp"),
+  "SHL4": require("../assets/bodies/Light-M Body Male light brown/Shoulder/Shl4.webp"),
+};
+
+
+export const getBodyPatches = (
+  rawConfig?: AvatarConfig | string,
+): PatchLayer[] => {
+  let config = DEFAULT_CONFIG;
+
+  if (typeof rawConfig === "string") {
+    // If it's a preset size string, pull directly from the BODY_PRESETS map (bypassing validation)
+    if (BODY_PRESETS[rawConfig]) {
+      config = BODY_PRESETS[rawConfig];
+      validateBodyFamily(config);
+    } else {
+      config = DEFAULT_CONFIG;
+    }
+  } else if (rawConfig) {
+    // Dynamically generated configurations must pass validation
+    config = validateConfig(rawConfig);
+  }
+
+  const patches: PatchLayer[] = [
+    { source: ASSET_MAP[config.legs], zIndex: 2.6, id: BODY_PART_MAPPING.leg },
+    { source: ASSET_MAP[config.torso], zIndex: 2, id: BODY_PART_MAPPING.torso },
+  ];
+
+  if (config.tummy && ASSET_MAP[config.tummy]) {
+    patches.push({
+      source: ASSET_MAP[config.tummy],
+      zIndex: 3.5,
+      id: BODY_PART_MAPPING.tummy,
+    });
+  }
+
+  patches.push(
+    { source: ASSET_MAP[config.chest], zIndex: 3, id: BODY_PART_MAPPING.chest },
+    {
+      source: ASSET_MAP[config.shoulders],
+      zIndex: 4,
+      id: BODY_PART_MAPPING.shoulder,
+    },
+    { source: ASSET_MAP[config.neck], zIndex: 5, id: BODY_PART_MAPPING.neck },
+    {
+      source: require("../assets/bodies/Light-M Body Male light brown/A/FACE.webp"),
+      zIndex: 6,
+      id: BODY_PART_MAPPING.face,
+    },
+    {
+      source: ASSET_MAP[config.leftArm],
+      zIndex: 7,
+      id: BODY_PART_MAPPING.hand,
+    },
+    {
+      source: ASSET_MAP[config.rightArm],
+      zIndex: 7,
+      id: BODY_PART_MAPPING.arms,
+    },
+    {
+      source: require("../assets/bodies/Light-M Body Male light brown/H/H1.webp"),
+      zIndex: 8,
+      id: BODY_PART_MAPPING.feet,
+    },
+  );
+
+  return patches;
+};
+
+import { ImageSourcePropType } from "react-native";
+import { GARMENT_META } from "../config/garments";
+
+export class InvalidPatchCombinationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "InvalidPatchCombinationError";
+  }
+}
+
+export const CLOTHING_ASSET_MAP: Record<string, any> = {
+tshirt: {
+      "white-tshirt": {
+        untucked: {
+          S: {
+            torso: {
+              source: require("../assets/clothes/normal white t-shirt avif/torso/f2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            },
+            tummy: {
+              source: require("../assets/clothes/normal white t-shirt avif/tummy/a2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            },
+            neck: {
+              source: require("../assets/clothes/normal white t-shirt avif/neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            },
+            shoulder: {
+              source: require("../assets/clothes/normal white t-shirt avif/sh2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            },
+            sleeve: {
+              source: require("../assets/clothes/normal white t-shirt avif/arms/m1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            },
+            chest: {
+              source: require("../assets/clothes/normal white t-shirt avif/chest/bm1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            }
+          },
+          M: {
+            torso: {
+              source: require("../assets/clothes/normal white t-shirt avif/torso/f3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.954 }
+            },
+            tummy: {
+              source: require("../assets/clothes/normal white t-shirt avif/tummy/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.954 }
+            },
+            neck: {
+              source: require("../assets/clothes/normal white t-shirt avif/neck/c2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.954 }
+            },
+            shoulder: {
+              source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.954 }
+            },
+            sleeve: {
+              source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.954 }
+            },
+            chest: {
+              source: require("../assets/clothes/normal white t-shirt avif/chest/ba1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 0.954 }
+            }
+          },
+          L: {
+            torso: {
+              source: require("../assets/clothes/normal white t-shirt avif/torso/f4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+            },
+            tummy: {
+              source: require("../assets/clothes/normal white t-shirt avif/tummy/a4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+            },
+            neck: {
+              source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+            },
+            shoulder: {
+              source: require("../assets/clothes/normal white t-shirt avif/sh4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+            },
+            sleeve: {
+              source: require("../assets/clothes/normal white t-shirt avif/arms/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+            },
+            chest: {
+              source: require("../assets/clothes/normal white t-shirt avif/chest/bh1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+            }
+          },
+          XL: {
+            torso: {
+              source: require("../assets/clothes/normal white t-shirt avif/torso/f3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+            },
+            tummy: {
+              source: require("../assets/clothes/normal white t-shirt avif/tummy/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+            },
+            neck: {
+              source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+            },
+            shoulder: {
+              source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+            },
+            sleeve: {
+              source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+            },
+            chest: {
+              source: require("../assets/clothes/normal white t-shirt avif/chest/ba1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+            }
+          },
+          XXL: {
+            torso: {
+              source: require("../assets/clothes/normal white t-shirt avif/torso/f5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 },
+              maskBottom: 10
+            },
+            tummy: {
+              source: require("../assets/clothes/normal white t-shirt avif/tummy/a5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 }
+            },
+            neck: {
+              source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 }
+            },
+            shoulder: {
+              source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 }
+            },
+            sleeve: {
+              source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 }
+            },
+            chest: {
+              source: require("../assets/clothes/normal white t-shirt avif/chest/ba1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 }
+            }
+          },
+        }
+      },
+"notch-collar-powder-pink": {
+      buttoned_tucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/mid tuck torso/t1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/s1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/tuck tummy/tmy1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/mid tuck torso/t2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/m1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/tuck tummy/tmy2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/mid tuck torso/t4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/tuck tummy/tmy4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/mid tuck torso/t3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/tuck tummy/tmy3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/mid tuck torso/t5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/tuck tummy/tmy5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+      },
+untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/s1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/m1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+      },
+unbuttoned_untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/s1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/m1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+      },
+      },
+"notch-collar-pumpkin": {
+      buttoned_tucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/mid tuck torso/t1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/s1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/tuck tummy/tmy1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/mid tuck torso/t2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/m1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/tuck tummy/tmy2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/mid tuck torso/t4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/tuck tummy/tmy4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/mid tuck torso/t3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/tuck tummy/tmy3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/mid tuck torso/t5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/tuck tummy/tmy5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+      },
+untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/s1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/m1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+      },
+unbuttoned_untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/s1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/m1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+      },
+      },
+"notch-collar-butter-yellow": {
+      buttoned_tucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/mid tuck torso/t1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/s1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/tuck tummy/tmy1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/mid tuck torso/t2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/m1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/tuck tummy/tmy2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/mid tuck torso/t4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/tuck tummy/tmy4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/mid tuck torso/t3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/tuck tummy/tmy3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/mid tuck torso/t5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+              maskBottom: 10,
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/tuck tummy/tmy5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            buttons: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/button/buttontu.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+      },
+untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/s1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/m1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+      },
+unbuttoned_untucked: {
+          S: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/s1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          M: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f2.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/m1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          L: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/a1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a4.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+          XXL: {
+            shoulder: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            torso: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            sleeve: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/h1.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            tummy: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a5.avif"),
+              transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            },
+            back: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+            collar: {
+              source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
+              transform: { x: 0, y: 0, scale: 1 },
+            },
+          },
+      },
+      },
+"white-shirt": {
+      
+buttoned_tucked: {
+        S: {
+          shoulder: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          torso: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            maskBottom: 10,
+          },
+          sleeve: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/s1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          tummy: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          back: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          buttons: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttontu.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar_button: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+        },
+        M: {
+          shoulder: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          torso: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          sleeve: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/m1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          tummy: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          back: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          buttons: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttontu.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar_button: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+        },
+        L: {
+          shoulder: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          torso: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t4.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          sleeve: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/a1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          tummy: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy4.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          back: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          buttons: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttontu.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar_button: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+        },
+        XL: {
+          shoulder: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
+          },
+          torso: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
+          },
+          sleeve: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/h1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
+          },
+          tummy: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
+          },
+          back: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          buttons: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttontu.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar_button: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+        },
+        XXL: {
+          shoulder: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
+          },
+          torso: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t5.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 ,
+            maskBottom: 10
+          },
+            maskBottom: 10,
+          },
+          sleeve: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/h1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
+          },
+          tummy: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy5.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
+          },
+          back: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          buttons: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttontu.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar_button: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+        },
+      },
+untucked: {
+        S: {
+          shoulder: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          torso: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          sleeve: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/s1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          tummy: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          back: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar_button: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+        },
+        M: {
+          shoulder: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          torso: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          sleeve: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/m1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          tummy: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          back: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar_button: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+        },
+        L: {
+          shoulder: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          torso: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f4.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          sleeve: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/a1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          tummy: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a4.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          },
+          back: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar_button: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+        },
+        XL: {
+          shoulder: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
+          },
+          torso: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
+          },
+          sleeve: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/h1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
+          },
+          tummy: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
+          },
+          back: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar_button: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+        },
+        XXL: {
+          shoulder: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
+          },
+          torso: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f5.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
+          },
+          sleeve: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/h1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
+          },
+          tummy: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a5.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
+          },
+          back: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          buttons: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/front open style patch/op123456.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+          collar_button: {
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
+            transform: { x: 0, y: 0, scale: 1 },
+          },
+        },
+      },
