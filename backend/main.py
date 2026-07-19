@@ -94,6 +94,31 @@ def overlay_transparent(background, overlay, x, y):
     
     return background
 
+def color_shift_patch(patch, target_bgr):
+    if patch is None or len(patch.shape) != 3 or patch.shape[2] != 4:
+        return patch
+    alpha = patch[:, :, 3]
+    mask = alpha > 50
+    if not np.any(mask):
+        return patch
+    bgr = patch[:, :, :3]
+    patch_bgr_pixels = bgr[mask]
+    patch_median_bgr = np.median(patch_bgr_pixels, axis=0)
+    target_lab = cv2.cvtColor(np.uint8([[target_bgr]]), cv2.COLOR_BGR2LAB)[0][0]
+    source_lab = cv2.cvtColor(np.uint8([[patch_median_bgr]]), cv2.COLOR_BGR2LAB)[0][0]
+    l_diff = int(target_lab[0]) - int(source_lab[0])
+    a_diff = int(target_lab[1]) - int(source_lab[1])
+    b_diff = int(target_lab[2]) - int(source_lab[2])
+    lab = cv2.cvtColor(bgr, cv2.COLOR_BGR2LAB).astype(np.int16)
+    lab[:, :, 0] += l_diff
+    lab[:, :, 1] += a_diff
+    lab[:, :, 2] += b_diff
+    lab = np.clip(lab, 0, 255).astype(np.uint8)
+    new_bgr = cv2.cvtColor(lab, cv2.COLOR_LAB2BGR)
+    shifted_patch = patch.copy()
+    shifted_patch[:, :, :3] = np.where(alpha[:, :, None] > 0, new_bgr, bgr)
+    return shifted_patch
+
 # Using `def` instead of `async def` makes FastAPI run this in an external threadpool!
 # This prevents blocking the main server loop.
 @app.post("/process")
@@ -411,6 +436,9 @@ def process_image(
             full_path = os.path.join(PATCHES_DIR, relative_path)
             patch = read_image_alpha(full_path)
             if patch is not None and len(patch.shape) == 3 and patch.shape[2] == 4:
+                # Color shift each skin patch individually to match the target user skin color
+                patch = color_shift_patch(patch, user_bgr)
+                
                 loaded_count += 1
                 ph, pw, _ = patch.shape
                 offset_x = (1100 - pw) // 2
@@ -419,26 +447,6 @@ def process_image(
             else:
                 print(f"Failed to load or not BGRA: {full_path}")
 
-        generic_bgr = np.array([131.0, 160.0, 204.0])
-        target_lab = cv2.cvtColor(np.uint8([[user_bgr]]), cv2.COLOR_BGR2LAB)[0][0]
-        source_lab = cv2.cvtColor(np.uint8([[generic_bgr]]), cv2.COLOR_BGR2LAB)[0][0]
-        
-        l_diff = int(target_lab[0]) - int(source_lab[0])
-        a_diff = int(target_lab[1]) - int(source_lab[1])
-        b_diff = int(target_lab[2]) - int(source_lab[2])
-        
-        alpha_mask = temp_canvas[:, :, 3] > 0
-        bgr = temp_canvas[:, :, :3]
-        
-        lab = cv2.cvtColor(bgr, cv2.COLOR_BGR2LAB).astype(np.int16)
-        lab[:, :, 0] += l_diff
-        lab[:, :, 1] += a_diff
-        lab[:, :, 2] += b_diff
-        
-        lab = np.clip(lab, 0, 255).astype(np.uint8)
-        new_bgr = cv2.cvtColor(lab, cv2.COLOR_LAB2BGR)
-        
-        temp_canvas[:, :, :3] = np.where(alpha_mask[:, :, None], new_bgr, bgr)
 
         # Always output the preset 1100x3000 body frame directly
         visible_avatar = temp_canvas[0:3000, 0:1100]
