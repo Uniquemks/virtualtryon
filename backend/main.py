@@ -119,6 +119,28 @@ def color_shift_patch(patch, target_bgr):
     shifted_patch[:, :, :3] = np.where(alpha[:, :, None] > 0, new_bgr, bgr)
     return shifted_patch
 
+def run_replicate_prediction(client, version_id, inputs):
+    import time
+    prediction = client.predictions.create(
+        version=version_id,
+        input=inputs
+    )
+    
+    start_time = time.time()
+    while prediction.status not in ["succeeded", "failed", "canceled"]:
+        if time.time() - start_time > 300: # 5 minutes max
+            raise TimeoutError("Replicate prediction timed out")
+        time.sleep(2)
+        try:
+            prediction.reload()
+        except Exception as poll_err:
+            print(f"Warning: Polling error occurred, retrying... Details: {poll_err}")
+            
+    if prediction.status == "succeeded":
+        return prediction.output
+    else:
+        raise RuntimeError(f"Replicate prediction failed with status '{prediction.status}'. Details: {prediction.error}")
+
 # Using `def` instead of `async def` makes FastAPI run this in an external threadpool!
 # This prevents blocking the main server loop.
 @app.post("/process")
@@ -481,9 +503,10 @@ def process_image(
                 f_avatar = open(avatar_path, "rb")
                 try:
                     client = replicate.Client(api_token=os.environ['REPLICATE_API_TOKEN'], timeout=300.0)
-                    output_url = client.run(
-                        "codeplugtech/face-swap:278a81e7ebb22db98bcba54de985d22cc1abeead2754eb1f2af717247be69b34",
-                        input={
+                    output_url = run_replicate_prediction(
+                        client,
+                        "278a81e7ebb22db98bcba54de985d22cc1abeead2754eb1f2af717247be69b34",
+                        {
                             "swap_image": f_user,
                             "input_image": f_avatar
                         }
@@ -571,9 +594,10 @@ def virtual_tryon(model_image: UploadFile = File(...), garment_url: str = Form(.
         try:
             with open(human_img_path, "rb") as human_file:
                 client = replicate.Client(api_token=os.environ['REPLICATE_API_TOKEN'], timeout=300.0)
-                output = client.run(
-                    "cuuupid/idm-vton:0513734a452173b8173e907e3a59d19a36266e55b48528559432bd21c7d7e985",
-                    input={
+                output = run_replicate_prediction(
+                    client,
+                    "0513734a452173b8173e907e3a59d19a36266e55b48528559432bd21c7d7e985",
+                    {
                         "human_img": human_file,
                         "garm_img": garment_url,
                         "category": category,
