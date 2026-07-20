@@ -433,9 +433,9 @@ def process_image(
             shoulder_name,
             neck_name,
             'A/FACE.webp',
-            'H/H1.webp', # Draw hands behind arms to overlay wrists correctly
             left_arm,
-            right_arm
+            right_arm,
+            'H/H1.webp' # Draw hands on top of arms as requested
         ]
         
         metadata = {
