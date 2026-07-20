@@ -484,7 +484,7 @@ def process_image(
             except Exception as e:
                 return None
         
-        for relative_path in paths:
+        for idx, relative_path in enumerate(paths):
             full_path = os.path.join(PATCHES_DIR, relative_path)
             patch = read_image_alpha(full_path)
             if patch is not None and len(patch.shape) == 3 and patch.shape[2] == 4:
@@ -500,12 +500,16 @@ def process_image(
                 offset_x = (1100 - pw) // 2
                 offset_y = 0 
                 temp_canvas = overlay_transparent(temp_canvas, patch, offset_x, offset_y)
+                
+                # Write debug steps
+                cv2.imwrite(f"debug_step_{idx+1}_{os.path.basename(relative_path).replace('.webp', '')}.png", temp_canvas)
             else:
                 print(f"Failed to load or not BGRA: {full_path}")
 
 
         # Always output the preset 1100x3000 body frame directly
         visible_avatar = temp_canvas[0:3000, 0:1100]
+        cv2.imwrite("debug_07_before_faceswap.png", visible_avatar)
         
         metadata.update({
             "crop_x": 0,
@@ -598,6 +602,7 @@ def process_image(
                         swapped_img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
                         
                         if swapped_img is not None:
+                            cv2.imwrite("debug_08_after_faceswap.png", swapped_img)
                             target_h, target_w = visible_avatar.shape[:2]
                             if swapped_img.shape[:2] != (target_h, target_w):
                                 swapped_img = cv2.resize(swapped_img, (target_w, target_h))
@@ -681,6 +686,17 @@ def virtual_tryon(model_image: UploadFile = File(...), garment_url: str = Form(.
                 url_val = str(output.url)
             else:
                 url_val = str(output)
+
+            # Save the tryon output image locally as debug_10_after_tryon.png
+            try:
+                import requests
+                vton_res = requests.get(url_val)
+                if vton_res.status_code == 200:
+                    with open("debug_10_after_tryon.png", "wb") as f:
+                        f.write(vton_res.content)
+                    print("Successfully saved debug_10_after_tryon.png")
+            except Exception as vton_err:
+                print("Failed to save debug_10_after_tryon.png:", vton_err)
 
             return {"image_url": url_val}
 
