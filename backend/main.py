@@ -157,10 +157,16 @@ def run_replicate_prediction(client, version_id, inputs):
     )
     
     start_time = time.time()
+    checks = 0
     while prediction.status not in ["succeeded", "failed", "canceled"]:
         if time.time() - start_time > 300: # 5 minutes max
             raise TimeoutError("Replicate prediction timed out")
-        time.sleep(2)
+        
+        # Fast poll initially (0.5s), slow down later (2.0s)
+        sleep_time = 0.5 if checks < 5 else 2.0
+        time.sleep(sleep_time)
+        checks += 1
+        
         try:
             prediction.reload()
         except Exception as poll_err:
@@ -183,7 +189,6 @@ def process_image(
 ):
     try:
         pose = get_pose_landmarker()
-        segmenter = get_image_segmenter()
         
         user_height_str = user_height
         user_height_cm = 0
@@ -241,69 +246,7 @@ def process_image(
             
         body_ratio = user_shoulder_w / max(1, user_torso_h)
         
-        # Use segmenter to get physical body silhouette width
-        seg_results = segmenter.segment(mp_image)
-        mask = seg_results.confidence_masks[0].numpy_view()
-        
-        l_elbow = pixel(lms[13])
-        r_elbow = pixel(lms[14])
-        l_wrist = pixel(lms[15])
-        r_wrist = pixel(lms[16])
-        
-        def get_x_on_line(y, x1, y1, x2, y2):
-            if y2 == y1: return (x1 + x2) / 2
-            return x1 + (x2 - x1) * (y - y1) / (y2 - y1)
-            
-        def get_arm_x(y, shoulder, elbow, wrist):
-            if min(shoulder[1], elbow[1]) <= y <= max(shoulder[1], elbow[1]):
-                return get_x_on_line(y, shoulder[0], shoulder[1], elbow[0], elbow[1])
-            if min(elbow[1], wrist[1]) <= y <= max(elbow[1], wrist[1]):
-                return get_x_on_line(y, elbow[0], elbow[1], wrist[0], wrist[1])
-            return -1
-        
-        def get_mask_width_at(y, cx):
-            if y < 0 or y >= height: return 0
-            row = mask[y, :]
-            
-            min_x = 0
-            lax = get_arm_x(y, r_shoulder, r_elbow, r_wrist)
-            if lax != -1 and lax < cx:
-                min_x = int(lax + user_shoulder_w * 0.08)
-                
-            max_x = width - 1
-            rax = get_arm_x(y, l_shoulder, l_elbow, l_wrist)
-            if rax != -1 and rax > cx:
-                max_x = int(rax - user_shoulder_w * 0.08)
-
-            l_edge = cx
-            while l_edge > min_x and row[l_edge] > 0.5:
-                l_edge -= 1
-            r_edge = cx
-            while r_edge < max_x and row[r_edge] > 0.5:
-                r_edge += 1
-            return r_edge - l_edge
-            
-        def get_full_mask_width_at(y, cx):
-            if y < 0 or y >= height: return 0
-            row = mask[y, :]
-            l_edge = cx
-            while l_edge > 0 and row[l_edge] > 0.5:
-                l_edge -= 1
-            r_edge = cx
-            while r_edge < width - 1 and row[r_edge] > 0.5:
-                r_edge += 1
-            return r_edge - l_edge
-            
-        tummy_y = int(shoulder_mid[1] + (hip_mid[1] - shoulder_mid[1]) * 0.75)
-        cx = max(0, min(width - 1, shoulder_mid[0]))
-        
-        real_tummy_w = get_mask_width_at(tummy_y, cx)
-        real_shoulder_w = get_full_mask_width_at(shoulder_mid[1], cx)
-        
-        if real_tummy_w > 0 and real_shoulder_w > 0:
-            tummy_ratio = real_tummy_w / max(1, real_shoulder_w)
-        else:
-            tummy_ratio = user_hip_w / max(1, user_shoulder_w)
+        tummy_ratio = user_hip_w / max(1, user_shoulder_w)
         
         # Extract skin color from selfie image to match the face swap
         selfie_mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=cv2.cvtColor(selfie_img, cv2.COLOR_BGR2RGB))
