@@ -94,6 +94,26 @@ def overlay_transparent(background, overlay, x, y):
     
     return background
 
+def feather_top_boundary(patch, feather_pixels=40):
+    if patch is None or len(patch.shape) != 3 or patch.shape[2] != 4:
+        return patch
+    
+    h, w, c = patch.shape
+    alpha = patch[:, :, 3].copy()
+    
+    for x in range(w):
+        ys = np.where(alpha[:, x] > 10)[0]
+        if len(ys) > 0:
+            first_y = ys[0]
+            for i in range(min(feather_pixels, len(ys))):
+                y_idx = ys[i]
+                blend = float(i) / float(feather_pixels)
+                alpha[y_idx, x] = int(alpha[y_idx, x] * blend)
+                
+    feathered_patch = patch.copy()
+    feathered_patch[:, :, 3] = alpha
+    return feathered_patch
+
 def color_shift_patch(patch, target_bgr):
     if patch is None or len(patch.shape) != 3 or patch.shape[2] != 4:
         return patch
@@ -470,6 +490,10 @@ def process_image(
             if patch is not None and len(patch.shape) == 3 and patch.shape[2] == 4:
                 # Color shift each skin patch individually to match the target user skin color
                 patch = color_shift_patch(patch, user_bgr)
+                
+                # Apply soft feathering to the hand patch wrist boundary to blend seamlessly with the arm underneath
+                if relative_path == 'H/H1.webp':
+                    patch = feather_top_boundary(patch, feather_pixels=45)
                 
                 loaded_count += 1
                 ph, pw, _ = patch.shape
