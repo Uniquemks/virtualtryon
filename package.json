@@ -15,8 +15,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@babel/core": "^7.25.2",
     "@expo/metro-runtime": "~4.0.1",
     "@expo/vector-icons": "^14.0.2",
+    "babel-preset-expo": "^52.0.0",
     "expo": "~52.0.30",
     "expo-asset": "~11.0.3",
     "expo-font": "~13.0.3",
@@ -30,9 +32,7 @@
     "react-native-web": "~0.19.13"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
     "@types/react": "~18.3.12",
-    "babel-preset-expo": "^52.0.0",
     "typescript": "~5.3.3"
   }
 }
