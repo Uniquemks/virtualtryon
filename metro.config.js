@@ -7,14 +7,10 @@ if (!config.resolver.assetExts.includes('avif')) {
   config.resolver.assetExts.push('avif');
 }
 
-// Ignore build and .gradle directories inside node_modules from Metro watcher
-config.watcher = config.watcher || {};
+// Block list only for native android build artifacts (do NOT block node_modules build folders)
 config.resolver.blockList = [
-  /.*\/node_modules\/.*\/build\/.*/,
-  /.*\/node_modules\/.*\/\.gradle\/.*/,
   /.*\/android\/build\/.*/,
   /.*\/android\/\.gradle\/.*/,
 ];
 
 module.exports = config;
-
