@@ -5,11 +5,13 @@ import { AvatarProvider, useAvatar } from '../store/avatarStore';
 import AvatarCanvas from '../components/Avatar/AvatarCanvas';
 import WardrobeMenu from '../components/UI/WardrobeMenu';
 import SizeDropdown from '../components/UI/SizeDropdown';
+import OutfitSliderBar from '../components/UI/OutfitSliderBar';
 import { LegacyTryOnFlow } from '../components/UI/LegacyTryOnFlow';
 
 const MainScreenContent = () => {
   const [activePanel, setActivePanel] = useState<'none' | 'wardrobe'>('none');
   const [isLegacyOpen, setIsLegacyOpen] = useState(false);
+  const [showSlider, setShowSlider] = useState(true);
   const { showDebug, setShowDebug, avatarUri, resetAvatar } = useAvatar();
 
   const togglePanel = (panel: 'wardrobe') => {
@@ -35,36 +37,29 @@ const MainScreenContent = () => {
 
           {/* Floating Action Buttons */}
           <View style={styles.fabContainer}>
-            <View style={styles.fabItem}>
-              <Text style={styles.fabLabel}>Wardrobe</Text>
-              <TouchableOpacity style={styles.fab} onPress={() => togglePanel('wardrobe')}>
-                <Ionicons name="shirt-outline" size={24} color="#fff" />
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity style={styles.fab} onPress={() => togglePanel('wardrobe')}>
+              <Ionicons name="shirt-outline" size={24} color="#fff" />
+            </TouchableOpacity>
 
-            <View style={styles.fabItem}>
-              <Text style={styles.fabLabel}>Launch AI Try-On</Text>
-              <TouchableOpacity style={styles.fab} onPress={handleOpenLegacy}>
-                <Ionicons name="sparkles-outline" size={24} color="#fff" />
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity style={styles.fab} onPress={handleOpenLegacy}>
+              <Ionicons name="sparkles-outline" size={24} color="#fff" />
+            </TouchableOpacity>
 
             {avatarUri && (
-              <View style={styles.fabItem}>
-                <Text style={styles.fabLabel}>Reset Avatar</Text>
-                <TouchableOpacity style={[styles.fab, { backgroundColor: 'rgba(230, 0, 0, 0.7)' }]} onPress={resetAvatar}>
-                  <Ionicons name="refresh-outline" size={24} color="#fff" />
-                </TouchableOpacity>
-              </View>
+              <TouchableOpacity style={[styles.fab, { backgroundColor: 'rgba(230, 0, 0, 0.7)' }]} onPress={resetAvatar}>
+                <Ionicons name="refresh-outline" size={24} color="#fff" />
+              </TouchableOpacity>
             )}
 
-            <View style={styles.fabItem}>
-              <Text style={styles.fabLabel}>Debug Info</Text>
-              <TouchableOpacity style={[styles.fab, showDebug && { backgroundColor: 'rgba(255, 0, 0, 0.5)' }]} onPress={() => setShowDebug(prev => !prev)}>
-                <Ionicons name="bug-outline" size={24} color="#fff" />
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity style={[styles.fab, showDebug && { backgroundColor: 'rgba(255, 0, 0, 0.5)' }]} onPress={() => setShowDebug(prev => !prev)}>
+              <Ionicons name="bug-outline" size={24} color="#fff" />
+            </TouchableOpacity>
           </View>
+
+          {/* Initial Startup Outfit Thumbnail Slider */}
+          {showSlider && !avatarUri && activePanel !== 'wardrobe' && (
+            <OutfitSliderBar onClose={() => setShowSlider(false)} />
+          )}
 
           {/* Floating Panels */}
           {activePanel === 'wardrobe' && (

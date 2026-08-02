@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { useAvatar } from '../../store/avatarStore';
 import { getGarmentPatches, PatchLayer, BODY_PART_MAPPING } from '../../utils/patchResolver';
@@ -52,7 +52,7 @@ const SimplePatch: React.FC<{
   debugIndex: number, 
   tuning: any,
   customStyle?: any
-}> = ({ patch, showDebug, currentSize, debugIndex, tuning, customStyle }) => {
+}> = React.memo(({ patch, showDebug, currentSize, debugIndex, tuning, customStyle }) => {
   const isAlignmentDebug = (DEBUG_PATCH_ALIGNMENT && patch.category === 'shirt') || (DEBUG_TUMMY && patch.part === 'tummy');
   const isDebugBox = (showDebug && SHOW_BOUNDING_BOX) || isAlignmentDebug;
   
@@ -105,6 +105,7 @@ const SimplePatch: React.FC<{
       <View style={{ width: '100%', height: maskHeight as any, overflow: 'hidden' }}>
         <Image 
           source={patch.source}
+          fadeDuration={0}
           style={{
             width: '100%',
             height: imgHeight as any,
@@ -153,7 +154,7 @@ const SimplePatch: React.FC<{
       )}
     </View>
   );
-};
+});
 
 const AvatarCanvas = () => {
   const { 
@@ -276,46 +277,99 @@ const AvatarCanvas = () => {
     }
   };
 
-  const bodyPatches = avatarUri ? [] : getBodyPatches(size).map(p => ({ ...p, type: 'body' }));
-  const resolvedOutfit = resolveCombo(selectedCombo, selectedProducts, size);
+  // Preload all size assets for equipped items & body size presets in the background
+  useEffect(() => {
+    const ALL_SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+    const CATEGORIES = ['tshirt', 'shirt', 'trouser', 'shorts', 'sweater', 'coat', 'jacket', 'tie', 'scarf', 'shoes', 'cap', 'bag', 'watch', 'glasses'];
+    const sourcesToPreload = new Set<any>();
 
-  if (selectedCombo && resolvedOutfit === null) {
+    ALL_SIZES.forEach(sz => {
+      // Body size patches
+      const bPatches = getBodyPatches(sz);
+      bPatches.forEach(p => {
+        if (p.source) sourcesToPreload.add(p.source);
+      });
+
+      // Garment patches for resolved outfit at size sz
+      const outfit = resolveCombo(selectedCombo, selectedProducts, sz);
+      if (outfit) {
+        CATEGORIES.forEach(category => {
+          const garment = (outfit as any)[category];
+          if (garment && garment.id) {
+            const patches = getGarmentPatches(category, garment.id, garment.variant || 'normal', sz, bodyType);
+            patches.forEach(p => {
+              if (p.source) sourcesToPreload.add(p.source);
+            });
+          }
+        });
+      }
+    });
+
+    sourcesToPreload.forEach(source => {
+      try {
+        if (typeof source === 'number') {
+          const asset = resolveAssetSourceSafe(source);
+          if (asset && asset.uri) {
+            Image.prefetch(asset.uri);
+          }
+        } else if (typeof source === 'object' && source?.uri) {
+          Image.prefetch(source.uri);
+        }
+      } catch (e) {
+        // Silently ignore prefetch failures
+      }
+    });
+  }, [selectedCombo, selectedProducts, bodyType]);
+
+  const { sortedPatches, outfitNotAvailable } = useMemo(() => {
+    const bodyPatches = avatarUri ? [] : getBodyPatches(size).map(p => ({ ...p, type: 'body' }));
+    const resolvedOutfit = resolveCombo(selectedCombo, selectedProducts, size);
+
+    if (selectedCombo && resolvedOutfit === null) {
+      return { sortedPatches: [], outfitNotAvailable: true };
+    }
+
+    let garmentPatches: any[] = [];
+    const occludedParts = new Set<string>();
+
+    if (resolvedOutfit) {
+      ['tshirt', 'shirt', 'trouser', 'shorts', 'sweater', 'coat', 'jacket', 'tie', 'scarf', 'shoes', 'cap', 'bag', 'watch', 'glasses'].forEach(category => {
+        const garment = resolvedOutfit[category as keyof typeof resolvedOutfit];
+        if (garment) {
+          const patches = getGarmentPatches(category, (garment as any).id, (garment as any).variant || 'normal', size, bodyType);
+          garmentPatches = [...garmentPatches, ...patches.map(p => ({ ...p, category }))];
+          
+          // Add patch-level occlusions
+          patches.forEach(p => {
+            if (p.occludes) {
+              p.occludes.forEach(part => occludedParts.add(part));
+            }
+          });
+        }
+      });
+    }
+
+    const sorted = [
+      ...bodyPatches.filter(p => {
+        // Map body part IDs (like "AA") to GARMENT_META tags (like "body_tummy")
+        const mappedKeys = Object.entries(BODY_PART_MAPPING)
+          .filter(([k, v]) => v === p.id)
+          .map(([k]) => `body_${k}`);
+        return !mappedKeys.some(k => occludedParts.has(k)) && !occludedParts.has(p.id!);
+      }),
+      ...garmentPatches.filter(p => !occludedParts.has(`${p.category}_${p.part}`) && (SHOW_TUMMY || p.part !== 'tummy')),
+    ].sort((a, b) => (a.zIndex ?? a.z) - (b.zIndex ?? b.z));
+
+    return { sortedPatches: sorted, outfitNotAvailable: false };
+  }, [selectedCombo, selectedProducts, size, bodyType, avatarUri]);
+
+  if (outfitNotAvailable) {
     return (
       <View style={styles.errorContainer}>
         <Text style={styles.errorText}>Outfit not available for {size}</Text>
       </View>
     );
   }
-
-  let garmentPatches: any[] = [];
-  const occludedParts = new Set<string>();
-
-  // Extract garments and their patches dynamically
-  ['tshirt', 'shirt', 'trouser', 'shorts', 'sweater', 'coat', 'jacket', 'tie', 'scarf', 'shoes', 'cap', 'bag', 'watch', 'glasses'].forEach(category => {
-    const garment = resolvedOutfit![category as keyof typeof resolvedOutfit];
-    if (garment) {
-      const patches = getGarmentPatches(category, (garment as any).id, (garment as any).variant || 'normal', size, bodyType);
-      garmentPatches = [...garmentPatches, ...patches.map(p => ({ ...p, category }))];
-      
-      // Add patch-level occlusions
-      patches.forEach(p => {
-        if (p.occludes) {
-          p.occludes.forEach(part => occludedParts.add(part));
-        }
-      });
-    }
-  });
-
-  const sortedPatches = [
-    ...bodyPatches.filter(p => {
-      // Map body part IDs (like "AA") to GARMENT_META tags (like "body_tummy")
-      const mappedKeys = Object.entries(BODY_PART_MAPPING)
-        .filter(([k, v]) => v === p.id)
-        .map(([k]) => `body_${k}`);
-      return !mappedKeys.some(k => occludedParts.has(k)) && !occludedParts.has(p.id!);
-    }),
-    ...garmentPatches.filter(p => !occludedParts.has(`${p.category}_${p.part}`) && (SHOW_TUMMY || p.part !== 'tummy')),
-  ].sort((a, b) => (a.zIndex ?? a.z) - (b.zIndex ?? b.z));
 
   allPatches = sortedPatches;
 
@@ -331,6 +385,7 @@ const AvatarCanvas = () => {
         {avatarUri && (
           <Image 
             source={{ uri: avatarUri }} 
+            fadeDuration={0}
             style={[StyleSheet.absoluteFill, { zIndex: 5 }]} 
             resizeMode="contain"
           />
@@ -384,7 +439,7 @@ const AvatarCanvas = () => {
             <Text style={{ fontWeight: 'bold', fontSize: 16, marginBottom: 5 }}>Current Size: {size}</Text>
             
             <Text style={{ fontWeight: 'bold', marginTop: 10, color: 'red' }}>Body Layers:</Text>
-            {bodyPatches.filter(p => p.id === BODY_PART_MAPPING.torso || p.id === BODY_PART_MAPPING.tummy || p.id === BODY_PART_MAPPING.leg).map(p => (
+            {allPatches.filter(p => p.type === 'body' && (p.id === BODY_PART_MAPPING.torso || p.id === BODY_PART_MAPPING.tummy || p.id === BODY_PART_MAPPING.leg)).map(p => (
               <Text key={p.id} style={{ fontSize: 12 }}>• {p.id} patch</Text>
             ))}
 

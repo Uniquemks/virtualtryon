@@ -123,68 +123,38 @@ export const ASSET_MAP: Record<string, any> = {
 };
 
 
+export const BODY_SIZE_ASSETS: Record<string, any> = {
+  XS: require("../assets/bodies/BODY_SIZE/skinny-1.png"),
+  S: require("../assets/bodies/BODY_SIZE/skinny-1.png"),
+  M: require("../assets/bodies/BODY_SIZE/medium-1.png"),
+  L: require("../assets/bodies/BODY_SIZE/large-1.png"),
+  XL: require("../assets/bodies/BODY_SIZE/xl-1.png"),
+  XXL: require("../assets/bodies/BODY_SIZE/Xll-1.png"),
+  OBESE: require("../assets/bodies/BODY_SIZE/obese.png"),
+};
+
 export const getBodyPatches = (
   rawConfig?: AvatarConfig | string,
 ): PatchLayer[] => {
-  let config = DEFAULT_CONFIG;
+  let sizeKey = 'M';
 
   if (typeof rawConfig === "string") {
-    // If it's a preset size string, pull directly from the BODY_PRESETS map (bypassing validation)
-    if (BODY_PRESETS[rawConfig]) {
-      config = BODY_PRESETS[rawConfig];
-      validateBodyFamily(config);
-    } else {
-      config = DEFAULT_CONFIG;
-    }
-  } else if (rawConfig) {
-    // Dynamically generated configurations must pass validation
-    config = validateConfig(rawConfig);
+    sizeKey = rawConfig.toUpperCase();
+  } else if (rawConfig && rawConfig.size) {
+    sizeKey = rawConfig.size.toUpperCase();
   }
 
-  const patches: PatchLayer[] = [
-    { source: ASSET_MAP[config.legs], zIndex: 2.6, id: BODY_PART_MAPPING.leg },
-    { source: ASSET_MAP[config.torso], zIndex: 2, id: BODY_PART_MAPPING.torso },
+  const source = BODY_SIZE_ASSETS[sizeKey] || BODY_SIZE_ASSETS['M'];
+
+  return [
+    {
+      source,
+      zIndex: 1,
+      id: "body_full",
+      name: "full_body",
+      type: "body",
+    },
   ];
-
-  if (config.tummy && ASSET_MAP[config.tummy]) {
-    patches.push({
-      source: ASSET_MAP[config.tummy],
-      zIndex: 3.5,
-      id: BODY_PART_MAPPING.tummy,
-    });
-  }
-
-  patches.push(
-    { source: ASSET_MAP[config.chest], zIndex: 3, id: BODY_PART_MAPPING.chest },
-    {
-      source: ASSET_MAP[config.shoulders],
-      zIndex: 4,
-      id: BODY_PART_MAPPING.shoulder,
-    },
-    { source: ASSET_MAP[config.neck], zIndex: 5, id: BODY_PART_MAPPING.neck },
-    {
-      source: require("../assets/bodies/Light-M Body Male light brown/A/FACE.webp"),
-      zIndex: 6,
-      id: BODY_PART_MAPPING.face,
-    },
-    {
-      source: ASSET_MAP[config.leftArm],
-      zIndex: 2.8,
-      id: BODY_PART_MAPPING.hand,
-    },
-    {
-      source: ASSET_MAP[config.rightArm],
-      zIndex: 2.4,
-      id: BODY_PART_MAPPING.arms,
-    },
-    {
-      source: require("../assets/bodies/Light-M Body Male light brown/H/H1.webp"),
-      zIndex: 8,
-      id: BODY_PART_MAPPING.feet,
-    },
-  );
-
-  return patches;
 };
 
 import { ImageSourcePropType } from "react-native";
@@ -324,27 +294,27 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           back: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"), transform: { x: 0, y: 0, scale: 1 } },
           torso: {
             source: require("../assets/clothes/normal white t-shirt avif/torso/f2.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.035 }
           },
           tummy: {
             source: require("../assets/clothes/normal white t-shirt avif/tummy/a2.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.035 }
           },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.035 }
           },
           shoulder: {
             source: require("../assets/clothes/normal white t-shirt avif/sh2.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            transform: { x: 0, y: 0, scale: 1.01, scaleX: 1.035 }
           },
           sleeve: {
             source: require("../assets/clothes/normal white t-shirt avif/arms/m1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.035 }
           },
           chest: {
             source: require("../assets/clothes/normal white t-shirt avif/chest/bm1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 0.992 }
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.035 }
           }
         },
         M: {
@@ -432,28 +402,28 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           back: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"), transform: { x: 0, y: 0, scale: 1 } },
           torso: {
             source: require("../assets/clothes/normal white t-shirt avif/torso/f5.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 },
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 },
             maskBottom: 10
           },
           tummy: {
             source: require("../assets/clothes/normal white t-shirt avif/tummy/a5.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 }
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
           },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 }
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
           },
           shoulder: {
-            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 }
+            source: require("../assets/clothes/normal white t-shirt avif/sh4.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
           },
           sleeve: {
-            source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 }
+            source: require("../assets/clothes/normal white t-shirt avif/arms/h1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
           },
           chest: {
-            source: require("../assets/clothes/normal white t-shirt avif/chest/bm1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.005 }
+            source: require("../assets/clothes/normal white t-shirt avif/chest/bh1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
           }
         },
       }
@@ -1735,11 +1705,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         S: {
           shoulder: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1.03, scaleX: 1.03 },
           },
           torso: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1.03, scaleX: 1.03 },
             maskBottom: 10,
           },
           sleeve: {
@@ -1760,7 +1730,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           collar: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
+            transform: { x: 0, y: 0, scale: 1.0 },
           },
           collar_button: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
@@ -6554,8 +6524,8 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         'S': { main: { source: require('../assets/accessories/watch & bag/watch-s-m-a.png') } },
         'M': { main: { source: require('../assets/accessories/watch & bag/watch-s-m-a.png') } },
         'L': { main: { source: require('../assets/accessories/watch & bag/watch-s-m-a.png') } },
-        'XL': { main: { source: require('../assets/accessories/watch & bag/watch-s-m-a.png') } },
-        'XXL': { main: { source: require('../assets/accessories/watch & bag/watch-hy.png') } },
+        'XL': { main: { source: require('../assets/accessories/watch & bag/watch-s-m-a.png'), transform: { x: 0, y: -20, scale: 1 } } },
+        'XXL': { main: { source: require('../assets/accessories/watch & bag/watch-hy.png'), transform: { x: 5, y: 0, scale: 1 } } },
       }
     }
   },
@@ -6604,27 +6574,27 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
   glasses: {
     'goggles1': {
       'normal': {
-        'S': { main: { source: require('../assets/accessories/goggles1/sgoggles.png'), transform: { x: 0, y: 4, scale: 1 } } },
-        'M': { main: { source: require('../assets/accessories/goggles1/mgoggles.png'), transform: { x: 0, y: 5, scale: 1 } } },
-        'L': { main: { source: require('../assets/accessories/goggles1/mgoggles.png'), transform: { x: 0, y: 5, scale: 1 } } },
+        'S': { main: { source: require('../assets/accessories/goggles1/sgoggles.png'), transform: { x: 0, y: -10, scale: 1 } } },
+        'M': { main: { source: require('../assets/accessories/goggles1/mgoggles.png'), transform: { x: 0, y: -5, scale: 1 } } },
+        'L': { main: { source: require('../assets/accessories/goggles1/mgoggles.png'), transform: { x: -2, y: -5, scale: 1 } } },
         'XL': { main: { source: require('../assets/accessories/goggles1/hgoggles.png'), transform: { x: 0, y: 5, scale: 1 } } },
         'XXL': { main: { source: require('../assets/accessories/goggles1/hgoggles.png'), transform: { x: 0, y: 6, scale: 1 } } },
       }
     },
     'goggles2': {
       'normal': {
-        'S': { main: { source: require('../assets/accessories/goggles2/sgoggles.png'), transform: { x: 0, y: 4, scale: 1 } } },
-        'M': { main: { source: require('../assets/accessories/goggles2/mgoggles.png'), transform: { x: 0, y: 5, scale: 1 } } },
-        'L': { main: { source: require('../assets/accessories/goggles2/mgoggles.png'), transform: { x: 0, y: 5, scale: 1 } } },
+        'S': { main: { source: require('../assets/accessories/goggles2/sgoggles.png'), transform: { x: 0, y: -10, scale: 1 } } },
+        'M': { main: { source: require('../assets/accessories/goggles2/mgoggles.png'), transform: { x: 0, y: -5, scale: 1 } } },
+        'L': { main: { source: require('../assets/accessories/goggles2/mgoggles.png'), transform: { x: -2, y: -5, scale: 1 } } },
         'XL': { main: { source: require('../assets/accessories/goggles2/hgoggles.png'), transform: { x: 0, y: 5, scale: 1 } } },
         'XXL': { main: { source: require('../assets/accessories/goggles2/hgoggles.png'), transform: { x: 0, y: 6, scale: 1 } } },
       }
     },
     'goggles3': {
       'normal': {
-        'S': { main: { source: require('../assets/accessories/goggles3/sgoggles.png'), transform: { x: 0, y: 4, scale: 1 } } },
-        'M': { main: { source: require('../assets/accessories/goggles3/mgoggles.png'), transform: { x: 0, y: 5, scale: 1 } } },
-        'L': { main: { source: require('../assets/accessories/goggles3/mgoggles.png'), transform: { x: 0, y: 5, scale: 1 } } },
+        'S': { main: { source: require('../assets/accessories/goggles3/sgoggles.png'), transform: { x: 0, y: -10, scale: 1 } } },
+        'M': { main: { source: require('../assets/accessories/goggles3/mgoggles.png'), transform: { x: 0, y: -5, scale: 1 } } },
+        'L': { main: { source: require('../assets/accessories/goggles3/mgoggles.png'), transform: { x: -2, y: -5, scale: 1 } } },
         'XL': { main: { source: require('../assets/accessories/goggles3/hgoggles.png'), transform: { x: 0, y: 5, scale: 1 } } },
         'XXL': { main: { source: require('../assets/accessories/goggles3/hgoggles.png'), transform: { x: 0, y: 6, scale: 1 } } },
       }
@@ -6634,9 +6604,9 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
     'cream-jacket': {
       normal: {
         S: {
-          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh1.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jks1.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jks1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.05 } },
           back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk1.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
@@ -6662,18 +6632,18 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         XXL: {
-          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh4.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh4.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.06 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf5.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkh1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkh1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 } },
+          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 } },
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
         }
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh1.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jks1.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jks1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.05 } },
           back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk1.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
@@ -6699,10 +6669,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         XXL: {
-          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh4.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh4.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.06 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo5.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkh1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkh1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 } },
+          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 } },
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
         }
       }
