@@ -32,6 +32,10 @@ interface AvatarState {
   dynamicCap: any | null;
   dynamicCategoryItems: Record<string, any[]>;
 
+  // Draping State
+  isDraping: boolean;
+  setIsDraping: (loading: boolean | ((prev: boolean) => boolean)) => void;
+
   // Actions
   setCustomAvatar: (uri: string | null, metadata: any | null) => void;
   setSelfieUri: (uri: string | null) => void;
@@ -60,6 +64,7 @@ export const AvatarProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   });
   const [showDebug, setShowDebug] = useState<boolean>(false);
   const [bodyType, setBodyType] = useState<'Slim' | 'Medium' | 'Athletic' | 'Heavy'>('Medium');
+  const [isDraping, setIsDraping] = useState<boolean>(false);
 
   // Custom states
   const [avatarUri, setAvatarUri] = useState<string | null>(null);
@@ -156,6 +161,7 @@ export const AvatarProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       selectedCombo, selectCombo,
       selectedProducts, setProduct,
       showDebug, setShowDebug, bodyType, setBodyType,
+      isDraping, setIsDraping,
       avatarUri, avatarMetadata, selfieUri, bodyUri, userName, userGender, userHeight,
       dynamicInner, dynamicTop, dynamicBottom, dynamicShoes, dynamicGoggles, dynamicCap, dynamicCategoryItems,
       setCustomAvatar, setSelfieUri, setBodyUri, setProfileInfo, resetAvatar,

@@ -4917,8 +4917,8 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: {
               x: 0,
               y: 0,
-              scale: 1,
-              scaleX: 1.03
+              scale: 0.8,
+              scaleX: 1.05
             }
           },
           torso: {
@@ -4926,8 +4926,8 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: {
               x: 0,
               y: 0,
-              scale: 1,
-              scaleX: 1.03
+              scale: 0.97,
+              scaleX: 1.1
             },
             maskBottom: 10
           },
@@ -4937,7 +4937,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1
             }
           },
           tummy: {
@@ -4954,7 +4954,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: {
               x: 0,
               y: 0,
-              scale: 1
+              scale: 1.02
             }
           },
           buttons: {
@@ -4970,7 +4970,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: {
               x: 0,
               y: 0,
-              scale: 1
+              scale: 1.01
             }
           }
         },
@@ -5780,8 +5780,8 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: {
               x: 0,
               y: 0,
-              scale: 1,
-              scaleX: 1.03
+              scale: 0.8,
+              scaleX: 1.05
             }
           },
           torso: {
@@ -5789,8 +5789,8 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: {
               x: 0,
               y: 0,
-              scale: 1,
-              scaleX: 1.03
+              scale: 0.97,
+              scaleX: 1.1
             },
             maskBottom: 10
           },
@@ -5800,7 +5800,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1
             }
           },
           tummy: {
@@ -5817,7 +5817,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: {
               x: 0,
               y: 0,
-              scale: 1
+              scale: 1.02
             }
           },
           buttons: {
@@ -5833,7 +5833,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: {
               x: 0,
               y: 0,
-              scale: 1
+              scale: 1.01
             }
           }
         },

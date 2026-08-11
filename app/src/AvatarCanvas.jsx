@@ -228,62 +228,79 @@ const AvatarCanvas = ({ selfieSrc, bodySrc, userData, onUploadClick }) => {
     }
   }, [avatarMetadata]);
 
+  const [isDraping, setIsDraping]       = useState(false);
+
   // ── 4. Re-render canvas ─────────────────────────────────────────────────
   useEffect(() => {
     if (!baseAvatarImage || !canvasRef.current || !avatarMetadata) return;
 
+    let isMounted = true;
+    setIsDraping(true);
+
     (async () => {
-      const canvas = canvasRef.current;
-      canvas.width  = targetWidth;
-      canvas.height = targetHeight;
-      const ctx = canvas.getContext('2d');
+      try {
+        const canvas = canvasRef.current;
+        canvas.width  = targetWidth;
+        canvas.height = targetHeight;
+        const ctx = canvas.getContext('2d');
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Helper to identify patches that must go BEHIND the avatar (e.g. inner back collar)
-      const isBackPatch = (url) => {
-        const f = url.split('/').pop().toLowerCase().replace(/^ex/, '');
-        return (f.startsWith('bp') && !f.startsWith('bptm')) || f === 'b.avif' || f.startsWith('bpal') || f.startsWith('bphy');
-      };
+        // Helper to identify patches that must go BEHIND the avatar (e.g. inner back collar)
+        const isBackPatch = (url) => {
+          const f = url.split('/').pop().toLowerCase().replace(/^ex/, '');
+          return (f.startsWith('bp') && !f.startsWith('bptm')) || f === 'b.avif' || f.startsWith('bpal') || f.startsWith('bphy');
+        };
 
-      // Calculate dynamic patch combinations (handles inner t-shirt forcing open shirts)
-      const forceOpen = !!selectedInner;
-      const innerUrls = selectedInner ? sortByDrawOrder(selectRelevantPatches(selectedInner.allUrls, avatarMetadata, false)) : [];
-      const topUrls = selectedTop ? sortByDrawOrder(selectRelevantPatches(selectedTop.allUrls, avatarMetadata, forceOpen)) : [];
-      const bottomUrls = selectedBottom ? sortByDrawOrder(selectRelevantPatches(selectedBottom.allUrls, avatarMetadata, false)) : [];
+        // Calculate dynamic patch combinations (handles inner t-shirt forcing open shirts)
+        const forceOpen = !!selectedInner;
+        const innerUrls = selectedInner ? sortByDrawOrder(selectRelevantPatches(selectedInner.allUrls, avatarMetadata, false)) : [];
+        const topUrls = selectedTop ? sortByDrawOrder(selectRelevantPatches(selectedTop.allUrls, avatarMetadata, forceOpen)) : [];
+        const bottomUrls = selectedBottom ? sortByDrawOrder(selectRelevantPatches(selectedBottom.allUrls, avatarMetadata, false)) : [];
 
-      const innerBack = innerUrls.filter(isBackPatch);
-      const innerFront = innerUrls.filter(u => !isBackPatch(u));
-      const topBack = topUrls.filter(isBackPatch);
-      const topFront = topUrls.filter(u => !isBackPatch(u));
-      const bottomBack = bottomUrls.filter(isBackPatch);
-      const bottomFront = bottomUrls.filter(u => !isBackPatch(u));
+        const innerBack = innerUrls.filter(isBackPatch);
+        const innerFront = innerUrls.filter(u => !isBackPatch(u));
+        const topBack = topUrls.filter(isBackPatch);
+        const topFront = topUrls.filter(u => !isBackPatch(u));
+        const bottomBack = bottomUrls.filter(isBackPatch);
+        const bottomFront = bottomUrls.filter(u => !isBackPatch(u));
 
-      // 1. Draw BACK clothing patches (Outer back, then Inner back)
-      if (bottomBack.length) await compositePatches(bottomBack, ctx, avatarMetadata, targetWidth, targetHeight);
-      if (topBack.length)    await compositePatches(topBack,    ctx, avatarMetadata, targetWidth, targetHeight);
-      if (innerBack.length)  await compositePatches(innerBack,  ctx, avatarMetadata, targetWidth, targetHeight);
+        // 1. Draw BACK clothing patches (Outer back, then Inner back)
+        if (bottomBack.length) await compositePatches(bottomBack, ctx, avatarMetadata, targetWidth, targetHeight);
+        if (topBack.length)    await compositePatches(topBack,    ctx, avatarMetadata, targetWidth, targetHeight);
+        if (innerBack.length)  await compositePatches(innerBack,  ctx, avatarMetadata, targetWidth, targetHeight);
 
-      // 2. Draw the base avatar (person's body & swapped face)
-      ctx.drawImage(baseAvatarImage, 0, 0);
+        // 2. Draw the base avatar (person's body & swapped face)
+        ctx.drawImage(baseAvatarImage, 0, 0);
 
-      // 3. Draw FRONT clothing patches
-      let allFront = [...innerFront, ...bottomFront, ...topFront];
-      
-      // If no pants are worn, hide the 'bt' (bottom tuck) patches to prevent sharp raw edges at the crotch
-      if (!selectedBottom) {
-        allFront = allFront.filter(u => !u.split('/').pop().toLowerCase().replace(/^ex/, '').startsWith('bt'));
+        // 3. Draw FRONT clothing patches
+        let allFront = [...innerFront, ...bottomFront, ...topFront];
+        
+        // If no pants are worn, hide the 'bt' (bottom tuck) patches to prevent sharp raw edges at the crotch
+        if (!selectedBottom) {
+          allFront = allFront.filter(u => !u.split('/').pop().toLowerCase().replace(/^ex/, '').startsWith('bt'));
+        }
+
+        // Sort universally to ensure perfect stacking (e.g. untucked shirts drape over jeans)
+        const sortedFront = sortByDrawOrder(allFront);
+        if (sortedFront.length) await compositePatches(sortedFront, ctx, avatarMetadata, targetWidth, targetHeight);
+
+        // 4. Draw accessories
+        if (selectedShoes?.patchUrls?.length)   await compositePatches(selectedShoes.patchUrls,   ctx, avatarMetadata, targetWidth, targetHeight);
+        if (selectedGoggles?.patchUrls?.length) await compositePatches(selectedGoggles.patchUrls, ctx, avatarMetadata, targetWidth, targetHeight);
+        if (selectedCap?.patchUrls?.length)     await compositePatches(selectedCap.patchUrls,     ctx, avatarMetadata, targetWidth, targetHeight);
+      } catch (err) {
+        console.error("Canvas compositing error:", err);
+      } finally {
+        if (isMounted) {
+          setTimeout(() => {
+            if (isMounted) setIsDraping(false);
+          }, 250);
+        }
       }
-
-      // Sort universally to ensure perfect stacking (e.g. untucked shirts drape over jeans)
-      const sortedFront = sortByDrawOrder(allFront);
-      if (sortedFront.length) await compositePatches(sortedFront, ctx, avatarMetadata, targetWidth, targetHeight);
-
-      // 4. Draw accessories
-      if (selectedShoes?.patchUrls?.length)   await compositePatches(selectedShoes.patchUrls,   ctx, avatarMetadata, targetWidth, targetHeight);
-      if (selectedGoggles?.patchUrls?.length) await compositePatches(selectedGoggles.patchUrls, ctx, avatarMetadata, targetWidth, targetHeight);
-      if (selectedCap?.patchUrls?.length)     await compositePatches(selectedCap.patchUrls,     ctx, avatarMetadata, targetWidth, targetHeight);
     })();
+
+    return () => { isMounted = false; };
   }, [baseAvatarImage, avatarMetadata, selectedInner, selectedTop, selectedBottom, selectedShoes, selectedGoggles, selectedCap, targetWidth, targetHeight]);
 
   // ── UI ───────────────────────────────────────────────────────────────────
@@ -355,6 +372,19 @@ const AvatarCanvas = ({ selfieSrc, bodySrc, userData, onUploadClick }) => {
                 ][loadingStep] || "Finalizing details..."
               }
             </p>
+          </div>
+        </div>
+      )}
+
+      {/* Draping Loader Overlay */}
+      {isDraping && !isProcessing && (
+        <div className="absolute inset-0 z-[80] flex flex-col items-center justify-center bg-black/30 backdrop-blur-sm transition-all duration-300">
+          <div className="bg-white/95 border border-white/60 shadow-2xl rounded-2xl px-6 py-4 flex items-center gap-3 transform transition-all scale-100">
+            <div className="relative w-8 h-8 flex items-center justify-center">
+              <div className="absolute inset-0 border-3 border-indigo-200 rounded-full"></div>
+              <div className="absolute inset-0 border-3 border-indigo-600 rounded-full border-t-transparent animate-spin"></div>
+            </div>
+            <span className="text-sm font-extrabold text-slate-800 tracking-wide">Draping outfit...</span>
           </div>
         </div>
       )}

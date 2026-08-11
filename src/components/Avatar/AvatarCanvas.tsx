@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { View, Image, StyleSheet, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { useAvatar } from '../../store/avatarStore';
 import { getGarmentPatches, PatchLayer, BODY_PART_MAPPING } from '../../utils/patchResolver';
 import { getBodyPatches } from '../../utils/patchResolver';
@@ -159,6 +159,7 @@ const SimplePatch: React.FC<{
 const AvatarCanvas = () => {
   const { 
     selectedCombo, selectedProducts, size, setSize, bodyType, showDebug, avatarUri, avatarMetadata,
+    isDraping, setIsDraping,
     dynamicInner, dynamicTop, dynamicBottom, dynamicShoes, dynamicGoggles, dynamicCap, dynamicCategoryItems,
     setDynamicInner, setDynamicTop, setDynamicBottom, setDynamicShoes, setDynamicGoggles, setDynamicCap, setDynamicCategoryItems
   } = useAvatar();
@@ -363,6 +364,65 @@ const AvatarCanvas = () => {
     return { sortedPatches: sorted, outfitNotAvailable: false };
   }, [selectedCombo, selectedProducts, size, bodyType, avatarUri]);
 
+  const isFirstRender = useRef(true);
+
+  // Preload patches and show loader overlay during draping process
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    if (!sortedPatches || sortedPatches.length === 0) {
+      setIsDraping(false);
+      return;
+    }
+
+    setIsDraping(true);
+    let isCancelled = false;
+
+    const preloadPromises = sortedPatches.map(patch => {
+      return new Promise<void>((resolve) => {
+        if (!patch.source) {
+          resolve();
+          return;
+        }
+        try {
+          const asset = resolveAssetSourceSafe(patch.source);
+          if (asset && asset.uri) {
+            if (typeof Image.prefetch === 'function') {
+              Image.prefetch(asset.uri).then(() => resolve()).catch(() => resolve());
+            } else if (typeof window !== 'undefined' && (window as any).Image) {
+              const img = new (window as any).Image();
+              img.src = asset.uri;
+              img.onload = () => resolve();
+              img.onerror = () => resolve();
+            } else {
+              resolve();
+            }
+          } else {
+            resolve();
+          }
+        } catch (e) {
+          resolve();
+        }
+      });
+    });
+
+    // Enforce a smooth minimal delay (350ms) to prevent UI flicker
+    const minDelayPromise = new Promise(resolve => setTimeout(resolve, 350));
+
+    Promise.all([...preloadPromises, minDelayPromise]).then(() => {
+      if (!isCancelled) {
+        setIsDraping(false);
+      }
+    });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [sortedPatches]);
+
   if (outfitNotAvailable) {
     return (
       <View style={styles.errorContainer}>
@@ -404,6 +464,16 @@ const AvatarCanvas = () => {
             />
           );
         })}
+
+        {/* Draping Loader Overlay */}
+        {isDraping && (
+          <View style={styles.loaderOverlay} pointerEvents="none">
+            <View style={styles.loaderCard}>
+              <ActivityIndicator size="large" color="#e60000" />
+              <Text style={styles.loaderText}>Draping outfit...</Text>
+            </View>
+          </View>
+        )}
 
         {/* SHOW_ANCHORS Reference Lines */}
         {showDebug && SHOW_ANCHORS && (
@@ -549,6 +619,35 @@ const styles = StyleSheet.create({
     maxWidth: 600,
     aspectRatio: 1100 / 3000,
     position: 'relative',
+  },
+  loaderOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(255, 255, 255, 0.75)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 500,
+    borderRadius: 16,
+  },
+  loaderCard: {
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    paddingHorizontal: 24,
+    paddingVertical: 18,
+    borderRadius: 16,
+    alignItems: 'center',
+    gap: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 10,
+    elevation: 8,
+    borderWidth: 1,
+    borderColor: '#f1f5f9',
+  },
+  loaderText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#1e293b',
+    letterSpacing: 0.3,
   },
 });
 
