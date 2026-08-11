@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, SafeAreaView, Dimensions, ScrollView, NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, SafeAreaView, useWindowDimensions, ScrollView, NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useAvatar } from '../../store/avatarStore';
 import { OUTFIT_COMBOS } from '../../config/outfits';
@@ -8,9 +8,8 @@ interface Props {
   onClose: () => void;
 }
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
-
 export const OutfitSliderBar: React.FC<Props> = ({ onClose }) => {
+  const { width: windowWidth } = useWindowDimensions();
   const { selectCombo, setSize } = useAvatar();
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -27,7 +26,7 @@ export const OutfitSliderBar: React.FC<Props> = ({ onClose }) => {
   };
 
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-    const slide = Math.round(event.nativeEvent.contentOffset.x / SCREEN_WIDTH);
+    const slide = Math.round(event.nativeEvent.contentOffset.x / (windowWidth || 1));
     if (slide !== activeIndex && slide >= 0 && slide < OUTFIT_COMBOS.length) {
       setActiveIndex(slide);
     }
@@ -57,7 +56,7 @@ export const OutfitSliderBar: React.FC<Props> = ({ onClose }) => {
         {OUTFIT_COMBOS.map((combo) => (
           <TouchableOpacity
             key={combo.id}
-            style={styles.slide}
+            style={[styles.slide, { width: windowWidth }]}
             onPress={() => handleSelectCombo(combo.id)}
             activeOpacity={0.9}
           >
@@ -94,18 +93,18 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: '#f8fafc', // Clean full-screen background
+    backgroundColor: '#f8fafc',
     zIndex: 1000,
     justifyContent: 'center',
     alignItems: 'center',
   },
   topCloseButton: {
     position: 'absolute',
-    top: 45,
-    right: 24,
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    top: 20,
+    right: 20,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
     backgroundColor: '#ffffff',
     justifyContent: 'center',
     alignItems: 'center',
@@ -120,18 +119,20 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
-    width: SCREEN_WIDTH,
+    width: '100%',
   },
   slide: {
-    width: SCREEN_WIDTH,
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 12,
+    paddingTop: 68,
+    paddingBottom: 55,
   },
   cardContainer: {
-    width: SCREEN_WIDTH * 0.85,
-    height: SCREEN_HEIGHT * 0.68,
+    width: '96%',
+    maxWidth: 680,
+    flex: 1,
     backgroundColor: '#ffffff',
     borderRadius: 24,
     padding: 16,
@@ -144,14 +145,13 @@ const styles = StyleSheet.create({
     elevation: 8,
     borderWidth: 1,
     borderColor: '#e2e8f0',
-    marginTop: 30,
   },
   imageContainer: {
     width: '100%',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 8,
   },
   fullImage: {
     width: '100%',
@@ -159,17 +159,17 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     alignItems: 'center',
-    paddingBottom: 8,
+    paddingBottom: 4,
   },
   comboTitle: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: '800',
     color: '#0f172a',
     textAlign: 'center',
-    marginBottom: 4,
+    marginBottom: 2,
   },
   tapPrompt: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: '700',
     color: '#e60000',
     textTransform: 'uppercase',
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
   },
   pagination: {
     position: 'absolute',
-    bottom: 35,
+    bottom: 22,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
