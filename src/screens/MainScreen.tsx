@@ -13,7 +13,7 @@ const MainScreenContent = () => {
   const [activePanel, setActivePanel] = useState<'none' | 'wardrobe'>('none');
   const [isLegacyOpen, setIsLegacyOpen] = useState(false);
   const [showSlider, setShowSlider] = useState(true);
-  const { showDebug, setShowDebug, avatarUri, resetAvatar } = useAvatar();
+  const { avatarUri, resetAvatar } = useAvatar();
 
   const togglePanel = (panel: 'wardrobe') => {
     setActivePanel((prev) => (prev === panel ? 'none' : panel));
@@ -52,9 +52,6 @@ const MainScreenContent = () => {
               </TouchableOpacity>
             )}
 
-            <TouchableOpacity style={[styles.fab, showDebug && { backgroundColor: 'rgba(255, 0, 0, 0.5)' }]} onPress={() => setShowDebug(prev => !prev)}>
-              <Ionicons name="bug-outline" size={24} color="#fff" />
-            </TouchableOpacity>
           </View>
 
           {/* Initial Startup Outfit Thumbnail Slider */}
