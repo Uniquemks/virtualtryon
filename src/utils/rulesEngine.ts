@@ -20,12 +20,12 @@ export interface OutfitSelection {
 
 export interface RenderOutfit {
   tshirt?: { id: string; variant?: 'untucked' };
-  shirt?: { id: string; variant?: 'buttoned_tucked' | 'unbuttoned_untucked' | 'buttoned_tucked_tie' | 'unbuttoned_untucked_tie' };
+  shirt?: { id: string; variant?: 'buttoned_tucked' | 'unbuttoned_untucked' | 'untucked' | 'buttoned_tucked_tie' | 'unbuttoned_untucked_tie' };
   trouser?: { id: string; variant?: 'normal' };
   shorts?: { id: string; variant?: 'normal' };
   sweater?: { id: string };
   coat?: { id: string };
-  jacket?: { id: string };
+  jacket?: { id: string; variant?: 'normal' | 'unbuttoned_untucked' };
   tie?: { id: string };
   scarf?: { id: string };
   shoes?: { id: string };
@@ -40,18 +40,12 @@ export function resolveOutfit(selection: OutfitSelection): RenderOutfit {
   const outfit: RenderOutfit = {};
 
   let tshirtVariant: 'untucked' = 'untucked';
-  let shirtVariant: 'buttoned_tucked' | 'unbuttoned_untucked' | 'buttoned_tucked_tie' | 'unbuttoned_untucked_tie' = 'buttoned_tucked';
+  let shirtVariant: 'buttoned_tucked' | 'unbuttoned_untucked' | 'untucked' | 'buttoned_tucked_tie' | 'unbuttoned_untucked_tie' = 'buttoned_tucked';
   
   if (tshirt && shirt) {
     shirtVariant = tie ? 'unbuttoned_untucked_tie' : 'unbuttoned_untucked';
-  } else if (!tshirt && shirt && (trouser || shorts)) {
-    if (jacket) {
-      shirtVariant = tie ? 'unbuttoned_untucked_tie' : 'unbuttoned_untucked';
-    } else {
-      shirtVariant = tie ? 'buttoned_tucked_tie' : 'buttoned_tucked';
-    }
-  } else if (!tshirt && shirt && !trouser && !shorts) {
-    shirtVariant = tie ? 'unbuttoned_untucked_tie' : 'unbuttoned_untucked'; // Default to untucked if wearing shirt only
+  } else if (!tshirt && shirt) {
+    shirtVariant = tie ? 'buttoned_tucked_tie' : 'buttoned_tucked';
   } else if (tshirt && !shirt) {
     tshirtVariant = 'untucked';
   }
@@ -112,8 +106,8 @@ export function resolveCombo(comboId: string | null, selectedProducts: Record<st
 
   const shirt = checkAsset('shirt', combo.items.shirt);
   if (shirt) {
-    const hasJacket = !!combo.items.jacket;
-    outfit.shirt = { id: shirt, variant: combo.items.variant || (hasJacket ? 'unbuttoned_untucked' : 'buttoned_tucked') as any };
+    const hasTshirt = !!tshirt;
+    outfit.shirt = { id: shirt, variant: combo.items.variant || (hasTshirt ? 'unbuttoned_untucked' : 'buttoned_tucked') as any };
   }
 
   const trouser = checkAsset('trouser', combo.items.trouser);

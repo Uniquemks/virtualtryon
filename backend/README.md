@@ -1,6 +1,6 @@
 # Virtual Wardrobe — FastAPI Backend
 
-This is the Python FastAPI backend for the Virtual Trail Room (VirtualWardrobe) mobile application. It handles MediaPipe pose landmarker analysis, skin tone calculation, and communicates with Replicate for AI face swaps (`codeplugtech/face-swap`) and virtual try-ons (`cuuupid/idm-vton`).
+This is the Python FastAPI backend for the Virtual Trail Room (VirtualWardrobe) mobile application. It handles MediaPipe pose landmarker analysis, skin tone calculation, Magic Hour Head Swap for AI full head/face/hair transfer onto 2D avatars, and Replicate for IDM-VTON virtual try-on (`cuuupid/idm-vton`).
 
 ---
 
@@ -31,7 +31,7 @@ This is the Python FastAPI backend for the Virtual Trail Room (VirtualWardrobe) 
    ```bash
    cp .env.example .env
    ```
-5. Open `.env` and fill in your `REPLICATE_API_TOKEN`.
+5. Open `.env` and fill in your `MAGIC_HOUR_API_KEY` (and `REPLICATE_API_TOKEN` for IDM-VTON tryon).
 
 ### Running Locally
 Run the server with Uvicorn:
@@ -54,7 +54,8 @@ When creating a new **Web Service** on Render, configure it with the following s
 2. **Root Directory**: Set to `.` (the project root, so that the build context can access both the backend code and the patch assets).
 3. **Dockerfile Path**: Set to `backend/Dockerfile` (or `Dockerfile` if you move it to the root).
 4. **Environment Variables**:
-   * `REPLICATE_API_TOKEN`: Your private token key obtained from Replicate.
+   * `MAGIC_HOUR_API_KEY`: Your private API key obtained from Magic Hour (for Head + Hair Swap).
+   * `REPLICATE_API_TOKEN`: Your private token key obtained from Replicate (for IDM-VTON tryon).
    * `PORT`: Set by Render automatically (e.g., `10000`), or defaults to `10000` if not set.
 
 ### Local Docker Verification (Optional)

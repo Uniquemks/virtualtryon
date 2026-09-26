@@ -29,16 +29,19 @@ export const GARMENT_META = {
     layer: RenderLayer.SHIRT,
     variants: {
       buttoned_tucked: {
-        occludes: ['tshirt_torso', 'tshirt_tummy', 'tshirt_shoulder', 'tshirt_sleeve', 'tshirt_chest']
+        occludes: ['tshirt_torso', 'tshirt_tummy', 'tshirt_shoulder', 'tshirt_sleeve', 'tshirt_chest', 'tshirt_neck', 'tshirt_back']
       },
       unbuttoned_untucked: {
-        occludes: ['tshirt_torso', 'tshirt_tummy', 'tshirt_shoulder', 'tshirt_sleeve']
+        occludes: ['tshirt_shoulder', 'tshirt_sleeve', 'tshirt_back']
+      },
+      untucked: {
+        occludes: ['tshirt_shoulder', 'tshirt_sleeve', 'tshirt_back']
       },
       buttoned_tucked_tie: {
-        occludes: ['tshirt_torso', 'tshirt_tummy', 'tshirt_shoulder', 'tshirt_sleeve', 'tshirt_chest']
+        occludes: ['tshirt_torso', 'tshirt_tummy', 'tshirt_shoulder', 'tshirt_sleeve', 'tshirt_chest', 'tshirt_neck', 'tshirt_back']
       },
       unbuttoned_untucked_tie: {
-        occludes: ['tshirt_torso', 'tshirt_tummy', 'tshirt_shoulder', 'tshirt_sleeve']
+        occludes: ['tshirt_shoulder', 'tshirt_sleeve', 'tshirt_back']
       }
     }
   },

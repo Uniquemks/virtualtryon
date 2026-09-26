@@ -462,120 +462,269 @@ def process_image(
             "scale_factor": 1.0,
             "start_y": 0
         })
-        print("Initiating Replicate API Face Swap...")
+        print("Initiating Magic Hour Head Swap...")
+        magic_hour_api_key = os.environ.get('MAGIC_HOUR_API_KEY')
+        if not magic_hour_api_key:
+            print("ERROR: MAGIC_HOUR_API_KEY environment variable not set")
+            raise HTTPException(
+                status_code=500,
+                detail="MAGIC_HOUR_API_KEY environment variable not set. Please configure it in your .env file."
+            )
+
         try:
-            import replicate
             import tempfile
             import requests
-            
-            if not os.environ.get('REPLICATE_API_TOKEN'):
-                raise KeyError("REPLICATE_API_TOKEN environment variable not set")
-            
+            import time
+
             with tempfile.TemporaryDirectory() as temp_dir:
-                user_img_path = os.path.join(temp_dir, 'user_img.png')
-                avatar_path = os.path.join(temp_dir, 'avatar.png')
-                
-                # Convert 4-channel BGRA template to 3-channel BGR by blending onto solid background
-                # This ensures the face swap model receives a standard 3-channel image without alpha crashes
-                alpha = visible_avatar[:, :, 3:4] / 255.0
-                bgr = visible_avatar[:, :, :3]
-                bg_color = np.array([217, 216, 214]) # BGR light gray background
-                bgr_avatar = (bgr * alpha + bg_color * (1 - alpha)).astype(np.uint8)
-                
-                cv2.imwrite(user_img_path, selfie_img) 
-                cv2.imwrite(avatar_path, bgr_avatar) 
-                
-                print("Uploading to Replicate (codeplugtech/face-swap)...")
-                
-                f_user = open(user_img_path, "rb")
-                f_avatar = open(avatar_path, "rb")
+                user_img_path = os.path.join(temp_dir, 'user_head.png')
+                avatar_path = os.path.join(temp_dir, 'avatar_body.png')
+
+                # Blend 4-channel BGRA avatar canvas onto solid background matching app canvas (#d6d8d9 -> BGR: [217, 216, 214])
+                alpha_canvas = visible_avatar[:, :, 3:4] / 255.0
+                bgr_canvas = visible_avatar[:, :, :3]
+                bg_color = np.array([217, 216, 214], dtype=np.float32)
+                bgr_avatar = (bgr_canvas * alpha_canvas + bg_color * (1.0 - alpha_canvas)).astype(np.uint8)
+
+                # Crop upper body to square (1100 x 1100) instead of sending the full 1100 x 3000 vertical banner.
+                # Sending an extreme 1:100/3000 banner caused Magic Hour to downsample the whole image to 208x576,
+                # shrinking the head to only ~66px and making it blurry.
+                # A 1:1 square crop allows Magic Hour to process the head at full 1024x1024 HD resolution!
+                CROP_H = 1100
+                upper_bgr = bgr_avatar[:CROP_H, :].copy()
+                upper_alpha = visible_avatar[:CROP_H, :, 3]
+
+                # Clothe upper body for Magic Hour to prevent triggering automated cloud NSFW / nudity filters
+                # (The base 2D avatar is in underwear, which cloud moderation models flag as explicit/nsfw).
+                # We cover the torso and chest with a neutral shirt on the API input, then blend only
+                # the swapped head + hair back onto the original skin-matched visible_avatar canvas.
+                clothed_upper = upper_bgr.copy()
+                body_mask = (upper_alpha > 30)
+
+                # Torso & chest t-shirt (y >= 650 on the crop)
+                tshirt_mask = body_mask.copy()
+                tshirt_mask[:650, :] = False
+                clothed_upper[tshirt_mask] = [50, 48, 48] # Neutral charcoal shirt
+
+                cv2.imwrite(user_img_path, selfie_img)
+                cv2.imwrite(avatar_path, clothed_upper)
+                cv2.imwrite("debug_sent_avatar.png", clothed_upper)
+                cv2.imwrite("debug_sent_selfie.png", selfie_img)
+
+                content_bytes = None
+
+                # Primary attempt: Official Magic Hour Python SDK
                 try:
-                    client = replicate.Client(api_token=os.environ['REPLICATE_API_TOKEN'], timeout=300.0)
-                    output_url = run_replicate_prediction(
-                        client,
-                        "278a81e7ebb22db98bcba54de985d22cc1abeead2754eb1f2af717247be69b34",
-                        {
-                            "swap_image": f_user,
-                            "input_image": f_avatar
-                        }
+                    from magic_hour import Client
+                    print("Calling Magic Hour Head Swap API via SDK...")
+                    client = Client(token=magic_hour_api_key)
+                    mh_response = client.v1.head_swap.generate(
+                        assets={
+                            "body_file_path": avatar_path,
+                            "head_file_path": user_img_path
+                        },
+                        name="Virtual Try-On Head Swap",
+                        wait_for_completion=True,
+                        download_outputs=True,
+                        download_directory=temp_dir
                     )
-                finally:
-                    f_user.close()
-                    f_avatar.close()
-                
-                if output_url:
-                    print(f"Face Swap successful! Output type: {type(output_url)}")
-                    if isinstance(output_url, list) and len(output_url) > 0:
-                        output_url = output_url[0]
-                    
-                    content_bytes = None
-                    if hasattr(output_url, "read"):
-                        try:
-                            content_bytes = output_url.read()
-                            print("Read bytes directly from Replicate output stream.")
-                        except Exception as read_err:
-                            print("Failed to read from output stream:", read_err)
-                            
-                    if content_bytes is None and hasattr(output_url, "url"):
-                        try:
-                            url_str = str(output_url.url)
-                            print(f"Downloading from output_url.url: {url_str}")
-                            response = requests.get(url_str)
-                            if response.status_code == 200:
-                                content_bytes = response.content
-                        except Exception as url_err:
-                            print("Failed to download from output_url.url:", url_err)
-                            
+
+                    if hasattr(mh_response, 'downloaded_paths') and mh_response.downloaded_paths:
+                        dl_path = mh_response.downloaded_paths[0]
+                        print(f"Magic Hour Head Swap completed! Output file: {dl_path}")
+                        with open(dl_path, 'rb') as f:
+                            content_bytes = f.read()
+                    elif hasattr(mh_response, 'downloads') and mh_response.downloads:
+                        dl_item = mh_response.downloads[0]
+                        dl_url = dl_item.url if hasattr(dl_item, 'url') else str(dl_item)
+                        print(f"Downloading Magic Hour output from URL: {dl_url}")
+                        res = requests.get(dl_url, timeout=60)
+                        if res.status_code == 200:
+                            content_bytes = res.content
+                except ImportError:
+                    print("magic_hour Python SDK not installed. Falling back to direct REST API...")
+                except Exception as sdk_err:
+                    print(f"Magic Hour SDK attempt encountered an issue: {sdk_err}. Falling back to direct REST API...")
+
+                # Secondary fallback: Direct Magic Hour REST API
+                if content_bytes is None:
+                    print("Executing Magic Hour Head Swap via direct REST API...")
+                    headers = {
+                        "Authorization": f"Bearer {magic_hour_api_key}",
+                        "Content-Type": "application/json"
+                    }
+
+                    # 1. Request upload pre-signed URLs
+                    upload_res = requests.post(
+                        "https://api.magichour.ai/v1/files/upload-urls",
+                        headers=headers,
+                        json={
+                            "items": [
+                                {"type": "image", "extension": "png"},
+                                {"type": "image", "extension": "png"}
+                            ]
+                        },
+                        timeout=30
+                    )
+                    if upload_res.status_code != 200:
+                        raise RuntimeError(f"Failed to get upload URLs from Magic Hour: {upload_res.status_code} {upload_res.text}")
+
+                    upload_data = upload_res.json()
+                    items = upload_data.get("items", upload_data) if isinstance(upload_data, dict) else upload_data
+                    body_upload_info = items[0]
+                    head_upload_info = items[1]
+
+                    # 2. Upload local images to pre-signed S3 storage
+                    with open(avatar_path, "rb") as bf:
+                        body_put = requests.put(body_upload_info["upload_url"], data=bf, headers={"Content-Type": "image/png"}, timeout=60)
+                        if body_put.status_code not in (200, 201):
+                            raise RuntimeError(f"Failed to upload avatar body to Magic Hour storage: {body_put.status_code}")
+
+                    with open(user_img_path, "rb") as hf:
+                        head_put = requests.put(head_upload_info["upload_url"], data=hf, headers={"Content-Type": "image/png"}, timeout=60)
+                        if head_put.status_code not in (200, 201):
+                            raise RuntimeError(f"Failed to upload user head to Magic Hour storage: {head_put.status_code}")
+
+                    # 3. Create Head Swap project
+                    create_res = requests.post(
+                        "https://api.magichour.ai/v1/head-swap",
+                        headers=headers,
+                        json={
+                            "assets": {
+                                "body_file_path": body_upload_info["file_path"],
+                                "head_file_path": head_upload_info["file_path"]
+                            },
+                            "name": "Virtual Try-On Head Swap"
+                        },
+                        timeout=30
+                    )
+                    if create_res.status_code not in (200, 201, 202):
+                        raise RuntimeError(f"Failed to create Magic Hour Head Swap task: {create_res.status_code} {create_res.text}")
+
+                    project_id = create_res.json().get("id")
+                    if not project_id:
+                        raise RuntimeError(f"No project ID returned from Magic Hour: {create_res.text}")
+
+                    print(f"Magic Hour Head Swap project created (ID: {project_id}). Polling for result...")
+
+                    # 4. Poll for project completion
+                    poll_start = time.time()
+                    while time.time() - poll_start < 300: # 5 min max
+                        # Official Magic Hour docs specify GET /v1/image-projects/:id for image projects
+                        status_res = requests.get(
+                            f"https://api.magichour.ai/v1/image-projects/{project_id}",
+                            headers=headers,
+                            timeout=30
+                        )
+                        if status_res.status_code != 200:
+                            status_res = requests.get(
+                                f"https://api.magichour.ai/v1/head-swap/{project_id}",
+                                headers=headers,
+                                timeout=30
+                            )
+                        if status_res.status_code == 200:
+                            status_data = status_res.json()
+                            job_status = status_data.get("status")
+                            if job_status in ("complete", "succeeded"):
+                                downloads = status_data.get("downloads", [])
+                                if downloads:
+                                    dl_url = downloads[0].get("url") if isinstance(downloads[0], dict) else str(downloads[0])
+                                    dl_res = requests.get(dl_url, timeout=60)
+                                    if dl_res.status_code == 200:
+                                        content_bytes = dl_res.content
+                                        break
+                                raise RuntimeError(f"Magic Hour task succeeded but no downloads found: {status_data}")
+                            elif job_status in ("failed", "canceled", "error"):
+                                error_details = status_data.get("error", "Unknown error")
+                                raise RuntimeError(f"Magic Hour Head Swap task failed with status '{job_status}': {error_details}")
+                        time.sleep(2)
+
                     if content_bytes is None:
-                        try:
-                            url_str = str(output_url)
-                            if url_str.startswith("http"):
-                                print(f"Downloading from URL string: {url_str}")
-                                response = requests.get(url_str)
-                                if response.status_code == 200:
-                                    content_bytes = response.content
-                            else:
-                                print(f"Output string is not a valid URL: {url_str}")
-                        except Exception as dl_err:
-                            print("Failed to download from string URL:", dl_err)
-                            
-                    if content_bytes is not None:
-                        print("Successfully retrieved face-swapped avatar bytes.")
-                        nparr = np.frombuffer(content_bytes, np.uint8)
-                        swapped_img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-                        
-                        if swapped_img is not None:
-                            cv2.imwrite("debug_08_after_faceswap.png", swapped_img)
-                            target_h, target_w = visible_avatar.shape[:2]
-                            if swapped_img.shape[:2] != (target_h, target_w):
-                                swapped_img = cv2.resize(swapped_img, (target_w, target_h))
-                            
-                            b, g, r = cv2.split(swapped_img)
-                            alpha = visible_avatar[:, :, 3]
-                            
-                            final_bgra = cv2.merge((b, g, r, alpha))
-                            
-                            is_success, final_buffer = cv2.imencode(".png", final_bgra)
-                            if is_success:
-                                b64 = base64.b64encode(final_buffer).decode('utf-8')
-                                return {
-                                    'image': f"data:image/png;base64,{b64}",
-                                    'metadata': metadata
-                                }
-                                
-                        b64 = base64.b64encode(response.content).decode('utf-8')
-                        return {
-                            'image': f"data:image/png;base64,{b64}",
-                            'metadata': metadata
-                        }
-                    else:
-                        print(f"Failed to download swapped image. Status code: {response.status_code}")
+                        raise TimeoutError("Magic Hour Head Swap polling timed out after 300 seconds")
+
+                if content_bytes is None:
+                    raise RuntimeError("Failed to retrieve swapped image from Magic Hour")
+
+                print("Successfully retrieved Magic Hour Head Swap output bytes.")
+                nparr = np.frombuffer(content_bytes, np.uint8)
+                swapped_img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+
+                if swapped_img is None:
+                    raise RuntimeError("Failed to decode image returned by Magic Hour Head Swap")
+
+                cv2.imwrite("debug_08_after_faceswap.png", swapped_img)
+                crop_w = 1100
+                if swapped_img.shape[:2] != (CROP_H, crop_w):
+                    swapped_img = cv2.resize(swapped_img, (crop_w, CROP_H), interpolation=cv2.INTER_LANCZOS4)
+
+                # Preserve transparency: retain avatar body alpha, and expand alpha in head region (y < 480)
+                # so the user's hair and head volume are preserved without clipping or bleeding onto shoulders
+                base_alpha = visible_avatar[:, :, 3].copy()
+                final_alpha = base_alpha.copy()
+
+                try:
+                    segmenter = get_image_segmenter()
+                    mp_swapped = mp.Image(
+                        image_format=mp.ImageFormat.SRGB,
+                        data=cv2.cvtColor(swapped_img, cv2.COLOR_BGR2RGB)
+                    )
+                    seg_result = segmenter.segment(mp_swapped)
+                    if seg_result.confidence_masks and len(seg_result.confidence_masks) > 0:
+                        conf_mask = seg_result.confidence_masks[0].numpy_view()
+                        seg_alpha = np.clip(conf_mask * 255.0, 0, 255).astype(np.uint8)
+                        # In head region (y < 480), ensure hair isn't clipped
+                        final_alpha[:480, :] = np.maximum(base_alpha[:480, :], seg_alpha[:480, :])
+                except Exception as seg_err:
+                    print(f"Warning: MediaPipe segmentation fallback: {seg_err}")
+                    # Color distance fallback for head region against bg_color
+                    diff = np.linalg.norm(swapped_img[:480, :].astype(np.float32) - bg_color.astype(np.float32), axis=2)
+                    hair_mask = np.clip((diff - 12.0) / 15.0 * 255.0, 0, 255).astype(np.uint8)
+                    final_alpha[:480, :] = np.maximum(base_alpha[:480, :], hair_mask)
+
+                # Composite the swapped head + hair onto visible_avatar
+                # Construct smooth 2D composite blend mask for head & neck:
+                # weight = 1.0 (swapped_img: face/hair/neck) -> weight = 0.0 (clean visible_avatar body & shoulders)
+                weight_map = np.zeros((CROP_H, crop_w), dtype=np.float32)
+
+                # Head and hair: y < 480 is 100% swapped_img
+                weight_map[:480, :] = 1.0
+
+                # Neck transition: 480 <= y < 630
+                # Neck center is x=550, half-width ~ 80px (x=470 to 630)
+                # Outer shoulders (|x - 550| >= 120) are 0.0 (100% clean visible_avatar skin)
+                ys = np.arange(480, 630, dtype=np.float32)
+                v_factors = (630.0 - ys) / 150.0  # shape: (150,)
+
+                xs = np.arange(crop_w, dtype=np.float32)
+                dxs = np.abs(xs - 550.0)  # shape: (crop_w,)
+                h_factors = np.clip((120.0 - dxs) / 40.0, 0.0, 1.0)  # 1.0 if dx<=80, 0.0 if dx>=120
+
+                weight_map[480:630, :] = v_factors[:, None] * h_factors[None, :]
+
+                # Composite using the smooth 2D blend mask
+                final_bgr = visible_avatar[:, :, :3].copy()
+                weight_3d = weight_map[:, :, None]
+                final_bgr[:CROP_H, :] = (swapped_img.astype(np.float32) * weight_3d +
+                                         visible_avatar[:CROP_H, :, :3].astype(np.float32) * (1.0 - weight_3d)).astype(np.uint8)
+
+                b, g, r = cv2.split(final_bgr)
+                final_bgra = cv2.merge((b, g, r, final_alpha))
+
+                is_success, final_buffer = cv2.imencode(".png", final_bgra)
+                if is_success:
+                    b64 = base64.b64encode(final_buffer).decode('utf-8')
+                    return {
+                        'image': f"data:image/png;base64,{b64}",
+                        'metadata': metadata
+                    }
+                else:
+                    raise RuntimeError("Failed to encode final BGRA avatar to PNG")
+
         except Exception as e:
-            print("Face Swap failed! Error:", e)
-            import traceback
+            print("Magic Hour Head Swap failed! Error:", e)
             traceback.print_exc()
-            raise HTTPException(status_code=500, detail=f"Face Swap failed: {str(e)}")
-        
+            raise HTTPException(status_code=500, detail=f"Magic Hour Head Swap failed: {str(e)}")
+
         is_success, buffer = cv2.imencode(".png", visible_avatar)
         if is_success:
             b64 = base64.b64encode(buffer).decode('utf-8')

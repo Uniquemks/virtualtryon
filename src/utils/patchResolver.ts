@@ -290,41 +290,65 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
   tshirt: {
     "white-tshirt": {
       untucked: {
-        S: {
-          back: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"), transform: { x: 0, y: 0, scale: 1 } },
+        XS: {
           torso: {
-            source: require("../assets/clothes/normal white t-shirt avif/torso/f2.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.035 }
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
           },
           tummy: {
-            source: require("../assets/clothes/normal white t-shirt avif/tummy/a2.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.035 }
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/aa1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
           },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.035 }
+            transform: { x: 0, y: 0, scale: 1 }
           },
           shoulder: {
-            source: require("../assets/clothes/normal white t-shirt avif/sh2.avif"),
-            transform: { x: 0, y: 0, scale: 1.01, scaleX: 1.035 }
+            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
           },
           sleeve: {
-            source: require("../assets/clothes/normal white t-shirt avif/arms/m1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.035 }
+            source: require("../assets/clothes/normal white t-shirt avif/arms/s1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
           },
           chest: {
-            source: require("../assets/clothes/normal white t-shirt avif/chest/bm1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.035 }
+            source: require("../assets/clothes/normal white t-shirt avif/chest/bs1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          }
+        },
+        S: {
+          torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          tummy: {
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/aa1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          neck: {
+            source: require("../assets/clothes/normal white t-shirt avif/neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          shoulder: {
+            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/s1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/bs1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
           }
         },
         M: {
-          back: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"), transform: { x: 0, y: 0, scale: 1 } },
           torso: {
-            source: require("../assets/clothes/normal white t-shirt avif/torso/f3.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f2.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
           tummy: {
-            source: require("../assets/clothes/normal white t-shirt avif/tummy/a3.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/a2.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
           neck: {
@@ -332,11 +356,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
           shoulder: {
-            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/sh2.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
           sleeve: {
-            source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/arms/m1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
           chest: {
@@ -345,13 +369,12 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           }
         },
         L: {
-          back: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"), transform: { x: 0, y: 0, scale: 1 } },
           torso: {
-            source: require("../assets/clothes/normal white t-shirt avif/torso/f4.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
           tummy: {
-            source: require("../assets/clothes/normal white t-shirt avif/tummy/a4.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/a3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
           neck: {
@@ -359,26 +382,25 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
           shoulder: {
-            source: require("../assets/clothes/normal white t-shirt avif/sh4.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
           sleeve: {
-            source: require("../assets/clothes/normal white t-shirt avif/arms/h1.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
           chest: {
-            source: require("../assets/clothes/normal white t-shirt avif/chest/bm1.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/chest/ba1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           }
         },
         XL: {
-          back: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"), transform: { x: 0, y: 0, scale: 1 } },
           torso: {
-            source: require("../assets/clothes/normal white t-shirt avif/torso/f3.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
           },
           tummy: {
-            source: require("../assets/clothes/normal white t-shirt avif/tummy/a3.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/a4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
           },
           neck: {
@@ -386,7 +408,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
           },
           shoulder: {
-            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
           },
           sleeve: {
@@ -394,12 +416,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
           },
           chest: {
-            source: require("../assets/clothes/normal white t-shirt avif/chest/bm1.avif"),
+            source: require("../assets/clothes/normal white t-shirt avif/chest/ba1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
           }
         },
         XXL: {
-          back: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"), transform: { x: 0, y: 0, scale: 1 } },
           torso: {
             source: require("../assets/clothes/normal white t-shirt avif/torso/f5.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 },
@@ -433,9 +454,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
     "notch-collar-powder-pink": {
       buttoned_tucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/mid tuck torso/t1.avif"),
@@ -444,7 +463,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           tummy: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/tuck tummy/tmy1.avif"),
@@ -500,7 +519,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/mid tuck torso/t4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/mid tuck torso/t3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
             maskBottom: 10,
           },
@@ -509,7 +528,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/tuck tummy/tmy4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/tuck tummy/tmy3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -527,11 +546,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/mid tuck torso/t3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/mid tuck torso/t4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
             maskBottom: 10,
           },
@@ -540,7 +559,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/tuck tummy/tmy3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/tuck tummy/tmy4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -590,9 +609,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f1.avif"),
@@ -600,7 +617,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           tummy: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a2.avif"),
@@ -647,7 +664,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
@@ -655,7 +672,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -669,11 +686,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
@@ -681,7 +698,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -722,28 +739,18 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f1.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a2.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -753,23 +760,15 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f2.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/m1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -779,49 +778,33 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/a1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a4.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/h1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -831,23 +814,15 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open torso fitted/f5.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/normal half slv/h1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/open tummy fitted/a5.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -856,9 +831,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
     "notch-collar-pumpkin": {
       buttoned_tucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/mid tuck torso/t1.avif"),
@@ -867,7 +840,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           tummy: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/tuck tummy/tmy1.avif"),
@@ -923,7 +896,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/mid tuck torso/t4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/mid tuck torso/t3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
             maskBottom: 10,
           },
@@ -932,7 +905,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/tuck tummy/tmy4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/tuck tummy/tmy3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -950,11 +923,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/mid tuck torso/t3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/mid tuck torso/t4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
             maskBottom: 10,
           },
@@ -963,7 +936,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/tuck tummy/tmy3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/tuck tummy/tmy4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -1013,9 +986,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f1.avif"),
@@ -1023,7 +994,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           tummy: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a2.avif"),
@@ -1070,7 +1041,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
@@ -1078,7 +1049,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -1092,11 +1063,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
@@ -1104,7 +1075,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -1145,28 +1116,18 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f1.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a2.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -1176,23 +1137,15 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f2.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/m1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -1202,49 +1155,33 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/a1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a4.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/h1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -1254,23 +1191,15 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open torso fitted/f5.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/normal half slv/h1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/open tummy fitted/a5.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -1279,9 +1208,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
     "notch-collar-butter-yellow": {
       buttoned_tucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/mid tuck torso/t1.avif"),
@@ -1290,7 +1217,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           tummy: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/tuck tummy/tmy1.avif"),
@@ -1346,7 +1273,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/mid tuck torso/t4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/mid tuck torso/t3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
             maskBottom: 10,
           },
@@ -1355,7 +1282,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/tuck tummy/tmy4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/tuck tummy/tmy3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -1373,11 +1300,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/mid tuck torso/t3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/mid tuck torso/t4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
             maskBottom: 10,
           },
@@ -1386,7 +1313,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/tuck tummy/tmy3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/tuck tummy/tmy4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -1436,9 +1363,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f1.avif"),
@@ -1446,7 +1371,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           tummy: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a2.avif"),
@@ -1493,7 +1418,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
@@ -1501,7 +1426,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -1515,11 +1440,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
@@ -1527,7 +1452,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -1568,28 +1493,18 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f1.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a2.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -1599,23 +1514,15 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f2.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/m1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -1625,49 +1532,33 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/a1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a4.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/h1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -1677,23 +1568,15 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open torso fitted/f5.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/normal half slv/h1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/open tummy fitted/a5.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -1703,18 +1586,16 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
 
       buttoned_tucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1.03, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t1.avif"),
-            transform: { x: 0, y: 0, scale: 1.03, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
             maskBottom: 10,
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           tummy: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy1.avif"),
@@ -1778,7 +1659,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
             maskBottom: 10,
           },
@@ -1787,7 +1668,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -1809,11 +1690,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
             maskBottom: 10,
           },
@@ -1822,7 +1703,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
           },
           back: {
@@ -1883,9 +1764,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f1.avif"),
@@ -1893,7 +1772,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           tummy: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a2.avif"),
@@ -1948,7 +1827,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
@@ -1956,7 +1835,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           back: {
@@ -1974,11 +1853,11 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
           },
           sleeve: {
@@ -1986,7 +1865,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
           },
           back: {
@@ -2039,32 +1918,18 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+          shoulder: { source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f1.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/s1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a2.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1 },
           },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar_button: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -2074,27 +1939,15 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f2.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/m1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar_button: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -2104,57 +1957,33 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/a1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a4.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar_button: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh4.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/h1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar_button: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -2164,47 +1993,24 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
           },
           torso: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open torso fitted/f5.avif"),
+            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/front open style patch/op123456.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/h1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/open tummy fitted/a5.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 },
-          },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
-          buttons: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/front open style patch/op123456.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar_button: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          }
         }
       }
     },
     "blue-linen-shirt": {
       buttoned_tucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh1.png"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
             source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck torso/t1.avif"),
@@ -2333,7 +2139,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck torso/t4.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck torso/t3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2352,7 +2158,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck tummy/tmy4.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck tummy/tmy3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2387,7 +2193,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh4.png"),
             transform: {
               x: 0,
               y: 0,
@@ -2396,7 +2202,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck torso/t3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck torso/t4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2415,7 +2221,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck tummy/tmy3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/tuck tummy/tmy4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2514,14 +2320,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh1.png"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
             source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f1.avif"),
@@ -2632,7 +2431,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2650,7 +2449,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a4.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2677,7 +2476,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh4.png"),
             transform: {
               x: 0,
               y: 0,
@@ -2686,7 +2485,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2704,7 +2503,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2786,17 +2585,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh1.png"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f1.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2813,15 +2605,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/aa1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
             transform: {
@@ -2830,14 +2613,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         M: {
           shoulder: {
@@ -2850,7 +2625,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f2.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2867,15 +2642,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a3.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
             transform: {
@@ -2884,14 +2650,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         L: {
           shoulder: {
@@ -2904,7 +2662,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2921,15 +2679,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a4.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
             transform: {
@@ -2938,18 +2687,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh3.png"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/sh4.png"),
             transform: {
               x: 0,
               y: 0,
@@ -2958,7 +2699,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -2975,15 +2716,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a3.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
             transform: {
@@ -2992,14 +2724,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         XXL: {
           shoulder: {
@@ -3012,7 +2736,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open torso fitted/f5.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3029,15 +2753,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/open tummy fitted/a5.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bp12.png"),
             transform: {
@@ -3046,28 +2761,13 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar normal shirt blue color avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         }
       }
     },
     "olive-linen-shirt": {
       buttoned_tucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
             source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck torso/t1.avif"),
@@ -3196,7 +2896,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck torso/t4.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck torso/t3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3215,7 +2915,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck tummy/tmy4.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck tummy/tmy3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3250,7 +2950,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3259,7 +2959,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck torso/t3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck torso/t4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3278,7 +2978,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck tummy/tmy3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/tuck tummy/tmy4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3377,14 +3077,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
             source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f1.avif"),
@@ -3495,7 +3188,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3513,7 +3206,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a4.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3540,7 +3233,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3549,7 +3242,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3567,7 +3260,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3649,17 +3342,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f1.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3676,15 +3362,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a2.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
             transform: {
@@ -3693,14 +3370,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         M: {
           shoulder: {
@@ -3713,7 +3382,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f2.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3730,15 +3399,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a3.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
             transform: {
@@ -3747,14 +3407,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         L: {
           shoulder: {
@@ -3767,7 +3419,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3784,15 +3436,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a4.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
             transform: {
@@ -3801,18 +3444,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3821,7 +3456,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3838,15 +3473,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a3.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
             transform: {
@@ -3855,14 +3481,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         XXL: {
           shoulder: {
@@ -3875,7 +3493,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open torso fitted/f5.avif"),
+            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -3892,15 +3510,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/open tummy fitted/a5.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bp12.avif"),
             transform: {
@@ -3909,28 +3518,13 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar normal  shirt olive avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         }
       }
     },
     "black-linen-shirt": {
       buttoned_tucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
             source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck torso/t1.avif"),
@@ -4059,7 +3653,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck torso/t4.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck torso/t3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4078,7 +3672,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck tummy/tmy4.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck tummy/tmy3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4113,7 +3707,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4122,7 +3716,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck torso/t3.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck torso/t4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4141,7 +3735,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck tummy/tmy3.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/tuck tummy/tmy4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4240,14 +3834,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
             source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f1.avif"),
@@ -4358,7 +3945,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4376,7 +3963,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a4.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4403,7 +3990,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4412,7 +3999,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4430,7 +4017,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a3.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4512,17 +4099,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f1.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4539,15 +4119,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a2.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
             transform: {
@@ -4556,14 +4127,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         M: {
           shoulder: {
@@ -4576,7 +4139,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f2.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4593,15 +4156,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a3.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
             transform: {
@@ -4610,14 +4164,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         L: {
           shoulder: {
@@ -4630,7 +4176,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4647,15 +4193,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a4.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
             transform: {
@@ -4664,18 +4201,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4684,7 +4213,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4701,15 +4230,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a3.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
             transform: {
@@ -4718,14 +4238,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         XXL: {
           shoulder: {
@@ -4738,7 +4250,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open torso fitted/f5.avif"),
+            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4755,15 +4267,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/open tummy fitted/a5.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bp12.avif"),
             transform: {
@@ -4772,28 +4275,13 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic collar shirt normal black avif/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         }
       }
     },
     "dawn-blue-linen-shirt": {
       buttoned_tucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck torso/t1.avif"),
@@ -4922,7 +4410,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck torso/t4.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck torso/t3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4941,7 +4429,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck tummy/tmy4.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck tummy/tmy3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4976,7 +4464,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -4985,7 +4473,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck torso/t3.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck torso/t4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5004,7 +4492,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck tummy/tmy3.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/tuck tummy/tmy4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5103,14 +4591,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f1.avif"),
@@ -5221,7 +4702,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5239,7 +4720,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a4.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5266,7 +4747,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5275,7 +4756,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5293,7 +4774,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a3.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5375,17 +4856,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f1.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5402,15 +4876,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a2.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
             transform: {
@@ -5419,14 +4884,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         M: {
           shoulder: {
@@ -5439,7 +4896,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f2.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5456,15 +4913,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a3.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
             transform: {
@@ -5473,14 +4921,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         L: {
           shoulder: {
@@ -5493,7 +4933,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5510,15 +4950,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a4.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
             transform: {
@@ -5527,18 +4958,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5547,7 +4970,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5564,15 +4987,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a3.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
             transform: {
@@ -5581,14 +4995,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         XXL: {
           shoulder: {
@@ -5601,7 +5007,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open torso fitted/f5.avif"),
+            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5618,15 +5024,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/open tummy fitted/a5.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bp12.avif"),
             transform: {
@@ -5635,28 +5032,13 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/mandarin Collar neck/m1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         }
       }
     },
     "white-linen-shirt": {
       buttoned_tucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic white shirt/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
             source: require("../assets/clothes/shirts/classic white shirt/tuck torso/t1.avif"),
@@ -5785,7 +5167,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic white shirt/tuck torso/t4.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/tuck torso/t3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5804,7 +5186,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy4.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5839,7 +5221,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5848,7 +5230,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic white shirt/tuck torso/t3.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/tuck torso/t4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5867,7 +5249,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy3.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -5966,14 +5348,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic white shirt/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
             source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f1.avif"),
@@ -6084,7 +5459,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6102,7 +5477,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a4.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a3.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6129,7 +5504,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6138,7 +5513,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6156,7 +5531,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           tummy: {
-            source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a3.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6238,17 +5613,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: {
-            source: require("../assets/clothes/shirts/classic white shirt/sh1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
+          shoulder: { source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"), transform: { x: 0, y: 0, scale: 1 }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f1.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6265,15 +5633,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a2.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
             transform: {
@@ -6282,14 +5641,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         M: {
           shoulder: {
@@ -6302,7 +5653,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f2.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6319,15 +5670,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a3.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
             transform: {
@@ -6336,14 +5678,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         L: {
           shoulder: {
@@ -6356,7 +5690,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f4.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6373,15 +5707,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a4.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
             transform: {
@@ -6390,18 +5715,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         XL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6410,7 +5727,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f3.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6427,15 +5744,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a3.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
             transform: {
@@ -6444,14 +5752,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         },
         XXL: {
           shoulder: {
@@ -6464,7 +5764,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           torso: {
-            source: require("../assets/clothes/shirts/classic white shirt/open torso fitted/f5.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/front open style patch/op123456.avif"),
             transform: {
               x: 0,
               y: 0,
@@ -6481,15 +5781,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scaleX: 1.03
             }
           },
-          tummy: {
-            source: require("../assets/clothes/shirts/classic white shirt/open tummy fitted/a5.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1,
-              scaleX: 1.03
-            }
-          },
           back: {
             source: require("../assets/clothes/shirts/classic white shirt/back patch/bp12.avif"),
             transform: {
@@ -6498,14 +5789,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1
             }
           },
-          collar: {
-            source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
-            transform: {
-              x: 0,
-              y: 0,
-              scale: 1
-            }
-          }
         }
       }
     },
@@ -6619,14 +5902,14 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         L: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh3.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf4.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf3.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jka1.avif'), transform: { x: 0, y: 0, scale: 1 } },
           back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         XL: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh4.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf3.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf4.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkh1.avif'), transform: { x: 0, y: 0, scale: 1 } },
           back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1 } },
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
@@ -6656,14 +5939,14 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         L: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh3.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo4.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo3.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jka1.avif'), transform: { x: 0, y: 0, scale: 1 } },
           back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         XL: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh4.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo3.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo4.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkh1.avif'), transform: { x: 0, y: 0, scale: 1 } },
           back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1 } },
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
@@ -6735,9 +6018,23 @@ export const getGarmentPatches = (
     if (isTieVariant) {
       assetVariant = assetVariant.slice(0, -4);
     }
+    if (!CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]) {
+      if (assetVariant === 'unbuttoned_untucked' && CLOTHING_ASSET_MAP[category]?.[id]?.['untucked']) {
+        assetVariant = 'untucked';
+      } else if (assetVariant === 'untucked' && CLOTHING_ASSET_MAP[category]?.[id]?.['unbuttoned_untucked']) {
+        assetVariant = 'unbuttoned_untucked';
+      } else {
+        const availableVariants = Object.keys(CLOTHING_ASSET_MAP[category]?.[id] || {});
+        if (availableVariants.length > 0) {
+          assetVariant = availableVariants[0];
+        }
+      }
+    }
   }
 
-  const sizeMap = CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]?.[size] || CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]?.['M'];
+  const sizeMap = CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]?.[size] || 
+    (size === 'XS' ? CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]?.['S'] : null) || 
+    CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]?.['M'];
   if (!sizeMap) return patches;
 
   for (const [part, data] of Object.entries(sizeMap)) {

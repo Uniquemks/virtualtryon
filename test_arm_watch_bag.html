@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Watch, Bag & Cuff Alignment</title>
+<style>
+  body { background: #222; color: white; font-family: sans-serif; padding: 20px; }
+  .canvas-box {
+    position: relative;
+    width: 347px;
+    height: 985px; /* exactly 1042 x 2955 scaled down by 3 */
+    background: #d6d8d9;
+    overflow: hidden;
+  }
+  .canvas-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /* Zoomed into Wrist & Bag area (orig x: 600..1042, y: 1350..2250) */
+  .zoom-crop {
+    position: relative;
+    width: 442px;
+    height: 900px;
+    background: #d6d8d9;
+    overflow: hidden;
+    border: 2px solid #555;
+  }
+  .zoom-crop img {
+    position: absolute;
+    width: 1042px;
+    height: 2955px;
+    top: -1350px;
+    left: -600px;
+  }
+  .row { display: flex; gap: 20px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+  <h2>Zoomed Inspection: Wrist, Cuff, Watch, and Bag</h2>
+  
+  <div class="row">
+    <div>
+      <h3>1. Bag Y=1610 + Fitted Cuff + Watch (y=-10)</h3>
+      <div class="zoom-crop">
+        <img src="src/assets/bodies/BODY_SIZE/medium-1.png" style="z-index: 1;">
+        <img src="src/assets/clothes/trousers/mid/legs/bl2.png" style="z-index: 100;">
+        <img src="src/assets/clothes/shirts/classic white shirt/full slv fitted/mf1.avif" style="z-index: 215;">
+        <img src="scratch/repaired_bag_y1610.png" style="z-index: 350;">
+        <img src="src/assets/accessories/watch & bag/watch-s-m-a.png" style="z-index: 450; transform: translateY(-10px);">
+      </div>
+    </div>
+
+    <div>
+      <h3>2. Bag Y=1625 + Fitted Cuff + Watch (y=-10)</h3>
+      <div class="zoom-crop">
+        <img src="src/assets/bodies/BODY_SIZE/medium-1.png" style="z-index: 1;">
+        <img src="src/assets/clothes/trousers/mid/legs/bl2.png" style="z-index: 100;">
+        <img src="src/assets/clothes/shirts/classic white shirt/full slv fitted/mf1.avif" style="z-index: 215;">
+        <img src="scratch/repaired_bag_y1625.png" style="z-index: 350;">
+        <img src="src/assets/accessories/watch & bag/watch-s-m-a.png" style="z-index: 450; transform: translateY(-10px);">
+      </div>
+    </div>
+
+    <div>
+      <h3>3. Bag Y=1640 + Fitted Cuff + Watch (y=-10)</h3>
+      <div class="zoom-crop">
+        <img src="src/assets/bodies/BODY_SIZE/medium-1.png" style="z-index: 1;">
+        <img src="src/assets/clothes/trousers/mid/legs/bl2.png" style="z-index: 100;">
+        <img src="src/assets/clothes/shirts/classic white shirt/full slv fitted/mf1.avif" style="z-index: 215;">
+        <img src="scratch/repaired_bag_y1640.png" style="z-index: 350;">
+        <img src="src/assets/accessories/watch & bag/watch-s-m-a.png" style="z-index: 450; transform: translateY(-10px);">
+      </div>
+    </div>
+
+    <div>
+      <h3>4. Hand Holding Handle (Hand at z:360, Watch at z:450)</h3>
+      <div class="zoom-crop">
+        <img src="src/assets/bodies/BODY_SIZE/medium-1.png" style="z-index: 1;">
+        <img src="src/assets/clothes/trousers/mid/legs/bl2.png" style="z-index: 100;">
+        <img src="src/assets/clothes/shirts/classic white shirt/full slv fitted/mf1.avif" style="z-index: 215;">
+        <img src="scratch/repaired_bag_y1610.png" style="z-index: 350;">
+        <!-- Hand overlay on top of bag handle -->
+        <img src="src/assets/bodies/Light-M Body Male light brown/D/D2-M.webp" style="z-index: 360; clip-path: polygon(70% 53%, 100% 53%, 100% 60%, 70% 60%);">
+        <img src="src/assets/accessories/watch & bag/watch-s-m-a.png" style="z-index: 450; transform: translateY(-10px);">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+  <script>
+    const brokenBag = new Image();
+    const cleanBag = new Image();
+    brokenBag.src = 'src/assets/accessories/watch & bag/bag-s-m-a.png';
+    cleanBag.src = 'src/assets/thumbnail img for  wardrobe/bag.png';
+
+    Promise.all([
+      new Promise(r => brokenBag.onload = r),
+      new Promise(r => cleanBag.onload = r)
+    ]).then(() => {
+      // Find non-transparent bounding box of brokenBag and cleanBag
+      function getBBox(img) {
+        const c = document.createElement('canvas');
+        c.width = img.naturalWidth;
+        c.height = img.naturalHeight;
+        const ctx = c.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        const id = ctx.getImageData(0, 0, c.width, c.height);
+        let minX = c.width, maxX = 0, minY = c.height, maxY = 0;
+        for (let y = 0; y < c.height; y++) {
+          for (let x = 0; x < c.width; x++) {
+            const a = id.data[(y * c.width + x) * 4 + 3];
+            if (a > 20) {
+              if (x < minX) minX = x;
+              if (x > maxX) maxX = x;
+              if (y < minY) minY = y;
+              if (y > maxY) maxY = y;
+            }
+          }
+        }
+        return { minX, maxX, minY, maxY, w: maxX - minX + 1, h: maxY - minY + 1, canvas: c, ctx };
+      }
+
+      const bbBroken = getBBox(brokenBag);
+      const bbClean = getBBox(cleanBag);
+      console.log('Broken BBox:', bbBroken);
+      console.log('Clean BBox:', bbClean);
+
+      // Now create a restored bag canvas of size 1042 x 2955
+      const outC = document.getElementById('blend-canvas');
+      const outCtx = outC.getContext('2d');
+      outCtx.clearRect(0, 0, 1042, 2955);
+
+      // Scale cleanBag to match brokenBag's main body
+      // Let's compute scale ratio:
+      const scaleX = bbBroken.w / bbClean.w;
+      const scaleY = bbBroken.h / bbClean.h;
+      const targetW = cleanBag.naturalWidth * scaleX;
+      const targetH = cleanBag.naturalHeight * scaleY;
+      const targetX = bbBroken.minX - (bbClean.minX * scaleX);
+      const targetY = bbBroken.minY - (bbClean.minY * scaleY);
+
+      // Draw clean intact bag
+      outCtx.drawImage(cleanBag, targetX, targetY, targetW, targetH);
+      
+      const logEl = document.getElementById('log');
+      logEl.innerHTML = `Broken Bag Bounds: X(${bbBroken.minX}..${bbBroken.maxX}) Y(${bbBroken.minY}..${bbBroken.maxY}) W:${bbBroken.w} H:${bbBroken.h}<br>` +
+                        `Clean Bag Bounds: X(${bbClean.minX}..${bbClean.maxX}) Y(${bbClean.minY}..${bbClean.maxY}) W:${bbClean.w} H:${bbClean.h}<br>` +
+                        `Computed Placement: X:${targetX.toFixed(2)} Y:${targetY.toFixed(2)} W:${targetW.toFixed(2)} H:${targetH.toFixed(2)}`;
+    });
+  </script>
+</body>
+</html>

@@ -9,3 +9,4 @@ replicate
 requests
 python-multipart
 python-dotenv
+magic-hour

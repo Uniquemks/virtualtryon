@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import AvatarCanvas from './AvatarCanvas';
 import './index.css';
+import cantabilLogo from './assets/cantabil-logo.svg';
 
 function App() {
   const [step, setStep] = useState('form');
@@ -152,12 +153,13 @@ function App() {
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none z-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}></div>
 
       {/* Top Header Bar */}
-      <header className="absolute top-0 w-full h-24 bg-gradient-to-b from-black/10 to-transparent flex items-start justify-center pt-6 z-50 pointer-events-none">
-        {/* Red Logo Approximation from Image */}
-        <svg className="w-28 h-12" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 25 Q 50 20 80 22" stroke="#FF0000" strokeWidth="2.5" strokeLinecap="round" />
-          <path d="M60 10 C 75 0, 80 15, 60 35 C 50 45, 40 45, 45 40 C 50 35, 65 25, 60 10 Z" stroke="#FF0000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+      <header className="absolute top-0 w-full h-24 bg-gradient-to-b from-black/10 to-transparent flex items-start justify-center pt-5 z-50 pointer-events-none">
+        {/* Cantabil Logo */}
+        <img 
+          src={cantabilLogo} 
+          alt="Cantabil Logo" 
+          className="h-14 w-auto object-contain filter drop-shadow-md" 
+        />
       </header>
 
       {/* Main Area */}

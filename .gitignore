@@ -6,6 +6,7 @@ venv/
 replicate_error.log
 backend/replicate_error.log
 backend/temp_*.png
+backend/debug_*.png
 
 # Node & Expo
 node_modules/
@@ -25,3 +26,11 @@ ios/
 uploads/
 temp/
 logs/
+scratch/
+.artifacts/
+*.bak
+*.log
+*-dump.txt
+*dump*.txt
+tsc-*.txt
+*_error.json

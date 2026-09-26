@@ -4,11 +4,11 @@
 export const API_CONFIG = {
   // Python FastAPI Backend Base URL
   // Default for local development is http://127.0.0.1:5001 or machine IP for mobile emulators.
-  BACKEND_BASE_URL: 'https://virtualtryon-1-i8wr.onrender.com',
+  BACKEND_BASE_URL: 'http://localhost:5001',
 
   // Endpoints
-  PROCESS_AVATAR: 'https://virtualtryon-1-i8wr.onrender.com/process',
-  VIRTUAL_TRYON: 'https://virtualtryon-1-i8wr.onrender.com/tryon',
+  PROCESS_AVATAR: 'http://localhost:5001/process',
+  VIRTUAL_TRYON: 'http://localhost:5001/tryon',
 
   // Wardrobe / Products APIs
   CLOTHES_API: 'https://instastyles.in/script/app/WebserviceApi/MalefetchPriceandDress.php',

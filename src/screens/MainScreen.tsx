@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, SafeAreaView, TouchableOpacity, Text, Alert, Platform, Linking } from 'react-native';
+import { View, StyleSheet, SafeAreaView, TouchableOpacity, Alert, Platform, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { AvatarProvider, useAvatar } from '../store/avatarStore';
 import AvatarCanvas from '../components/Avatar/AvatarCanvas';
@@ -7,6 +7,7 @@ import WardrobeMenu from '../components/UI/WardrobeMenu';
 import SizeDropdown from '../components/UI/SizeDropdown';
 import OutfitSliderBar from '../components/UI/OutfitSliderBar';
 import { LegacyTryOnFlow } from '../components/UI/LegacyTryOnFlow';
+import CantabilLogo from '../components/UI/CantabilLogo';
 
 const MainScreenContent = () => {
   const [activePanel, setActivePanel] = useState<'none' | 'wardrobe'>('none');
@@ -25,9 +26,9 @@ const MainScreenContent = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       {/* Top Logo Bar */}
-        <View style={styles.header}>
-          <Text style={styles.logoText}>f</Text>
-        </View>
+      <View style={styles.header}>
+        <CantabilLogo height={50} width={50} />
+      </View>
 
         <View style={styles.container}>
           {/* Avatar Rendering Area - Full Screen */}
@@ -97,19 +98,13 @@ const styles = StyleSheet.create({
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#c6c8c9', // Slightly darker gray for the header
+    backgroundColor: '#ffffff', // Clean white background for official Cantabil branding
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.08,
     shadowRadius: 2,
+    elevation: 2,
     zIndex: 10,
-  },
-  logoText: {
-    fontFamily: 'cursive',
-    fontSize: 40,
-    color: '#e60000', // Red logo text
-    fontWeight: 'bold',
-    fontStyle: 'italic',
   },
   container: {
     flex: 1,

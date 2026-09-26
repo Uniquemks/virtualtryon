@@ -52,15 +52,19 @@ interface AvatarState {
   clearDynamicSelections: () => void;
 }
 
+export const DEFAULT_PRODUCTS: Record<string, string> = {
+  tshirt: 'white-tshirt',
+  trouser: 'jeans',
+  shoes: 'red-shoes'
+};
+
 const AvatarContext = createContext<AvatarState | undefined>(undefined);
 
 export const AvatarProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [size, setSize] = useState<Size>('M');
   const [selectedCombo, setSelectedCombo] = useState<string | null>(null);
   const [selectedProducts, setSelectedProducts] = useState<Record<string, string>>({
-    tshirt: 'white-tshirt',
-    trouser: 'jeans',
-    shoes: 'black-shoes'
+    ...DEFAULT_PRODUCTS
   });
   const [showDebug, setShowDebug] = useState<boolean>(false);
   const [bodyType, setBodyType] = useState<'Slim' | 'Medium' | 'Athletic' | 'Heavy'>('Medium');
@@ -89,17 +93,48 @@ export const AvatarProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     if (comboId) {
       // When a combo is selected, clear individual products to rely entirely on the combo's definition
       setSelectedProducts({});
+    } else {
+      // When combo is cleared/cancelled, restore default draped clothes
+      setSelectedProducts({ ...DEFAULT_PRODUCTS });
     }
   };
 
   const setProduct = (category: string, id: string | null) => {
+    const currentCombo = selectedCombo;
     setSelectedCombo(null); // break combo when custom product is selected
     setSelectedProducts(prev => {
-      const next = { ...prev };
+      let base: Record<string, string> = { ...prev };
+      if (currentCombo || Object.keys(prev).length === 0) {
+        base = { ...DEFAULT_PRODUCTS };
+      }
+      const next = { ...base };
       if (id === null) {
         delete next[category];
+        // If unselecting shirt and no tops remain, restore default tshirt
+        if (category === 'shirt' && !next.tshirt) {
+          next.tshirt = DEFAULT_PRODUCTS.tshirt;
+        }
+        // If unselecting tshirt and no tops remain, restore default tshirt
+        if (category === 'tshirt' && !next.shirt) {
+          next.tshirt = DEFAULT_PRODUCTS.tshirt;
+        }
+        // If unselecting trouser and no bottom remains, restore default trouser
+        if (category === 'trouser') {
+          next.trouser = DEFAULT_PRODUCTS.trouser;
+        }
       } else {
+        // When user selects a shirt and the only tshirt was the initial default, replace it
+        if (category === 'shirt' && next.tshirt === DEFAULT_PRODUCTS.tshirt) {
+          delete next.tshirt;
+        }
         next[category] = id;
+      }
+      // Ensure bottom and shoes are always present
+      if (!next.trouser && !next.shorts) {
+        next.trouser = DEFAULT_PRODUCTS.trouser;
+      }
+      if (!next.shoes) {
+        next.shoes = DEFAULT_PRODUCTS.shoes;
       }
       return next;
     });
@@ -149,9 +184,7 @@ export const AvatarProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setSize('M');
     setBodyType('Medium');
     setSelectedProducts({
-      tshirt: 'white-tshirt',
-      trouser: 'jeans',
-      shoes: 'black-shoes'
+      ...DEFAULT_PRODUCTS
     });
   };
 

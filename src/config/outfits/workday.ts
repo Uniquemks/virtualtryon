@@ -6,7 +6,7 @@ export const workday: OutfitCombo = {
   thumbnail: require('../../assets/thumbnail img for  wardrobe/WorkDay Thumbnail.png'),
   supportedSizes: ['S', 'M', 'L', 'XL', 'XXL'],
   items: {
-    shirt: 'white-shirt',
+    shirt: 'white-linen-shirt',
     variant: 'buttoned_tucked',
     tie: 'black-tie',
     trouser: 'black-trouser',
