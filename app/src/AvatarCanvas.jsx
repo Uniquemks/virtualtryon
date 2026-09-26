@@ -170,7 +170,8 @@ const AvatarCanvas = ({ selfieSrc, bodySrc, userData, onUploadClick }) => {
         formData.append('body_image', bodyBlob, 'body.png');
         if (userData?.height) formData.append('user_height', userData.height);
 
-        const backendRes = await fetch('http://localhost:5001/process', { method: 'POST', body: formData });
+        const apiBase = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_URL) || 'https://virtualtryon-1-i8wr.onrender.com';
+        const backendRes = await fetch(`${apiBase.replace(/\/+$/, '')}/process`, { method: 'POST', body: formData });
         if (!backendRes.ok) throw new Error('Backend failed');
 
         const json = await backendRes.json();
