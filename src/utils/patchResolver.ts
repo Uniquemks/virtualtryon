@@ -5901,7 +5901,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk2.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         L: {
-          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh3.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh2.avif'), transform: { x: 0, y: 0, scale: 1 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf3.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jka1.avif'), transform: { x: 0, y: 0, scale: 1 } },
           back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
@@ -5938,7 +5938,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           collar: { source: require('../assets/clothes/Cream Jacket png avif/jk2.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         L: {
-          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh3.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh2.avif'), transform: { x: 0, y: 0, scale: 1 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo3.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jka1.avif'), transform: { x: 0, y: 0, scale: 1 } },
           back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
