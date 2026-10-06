@@ -6010,7 +6010,10 @@ export const getGarmentPatches = (
   if (!meta) return patches;
 
   const variantMeta = (meta.variants as any)[variant];
-  const occludes = variantMeta?.occludes || [];
+  let occludes = variantMeta?.occludes || [];
+  if (category === 'jacket' && (!occludes || occludes.length === 0)) {
+    occludes = ['shirt_sleeve', 'tshirt_sleeve', 'shirt_shoulder', 'tshirt_shoulder'];
+  }
 
   let assetVariant = variant;
   const isTieVariant = variant.endsWith('_tie');
