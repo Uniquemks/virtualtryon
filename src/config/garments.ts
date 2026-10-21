@@ -4,6 +4,7 @@ export enum RenderLayer {
   SHORTS = 100,
   TSHIRT = 110,
   SHIRT = 200,
+  WATCH = 200,
   SHIRT_SLEEVE = 215,
   TIE = 210,
   SWEATER = 220,
@@ -112,7 +113,7 @@ export const GARMENT_META = {
     }
   },
   watch: {
-    layer: RenderLayer.ACCESSORY,
+    layer: RenderLayer.WATCH,
     variants: {
       normal: { occludes: [] }
     }
