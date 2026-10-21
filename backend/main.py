@@ -396,9 +396,9 @@ def process_image(
             shoulder_name,
             neck_name,
             'A/FACE.webp',
-            left_arm,
-            right_arm,
-            'H/H1.webp' # Draw hands on top of arms as requested
+            'H/H1.webp', # Feet on legs
+            right_arm,   # E (Arms / Forearms) under hands
+            left_arm     # D (Hands) drawn on top of arms so feathered wrist gradient sits seamlessly on top
         ]
         
         metadata = {
@@ -435,8 +435,8 @@ def process_image(
                 patch = color_shift_patch(patch, user_bgr)
                 
                 # Apply soft feathering to the hand patch wrist boundary to blend seamlessly with the arm underneath
-                if relative_path == 'H/H1.webp':
-                    patch = feather_top_boundary(patch, feather_pixels=45)
+                if relative_path == left_arm:
+                    patch = feather_top_boundary(patch, feather_pixels=25)
                 
                 loaded_count += 1
                 ph, pw, _ = patch.shape
@@ -657,8 +657,8 @@ def process_image(
                 if swapped_img.shape[:2] != (CROP_H, crop_w):
                     swapped_img = cv2.resize(swapped_img, (crop_w, CROP_H), interpolation=cv2.INTER_LANCZOS4)
 
-                # Preserve transparency: retain avatar body alpha, and expand alpha in head region (y < 480)
-                # so the user's hair and head volume are preserved without clipping or bleeding onto shoulders
+                # Preserve transparency: retain avatar body alpha, and use segmented head mask
+                # so the user's hair, head volume, jawline, and beard are preserved without clipping or ghost silhouettes
                 base_alpha = visible_avatar[:, :, 3].copy()
                 final_alpha = base_alpha.copy()
 
@@ -672,34 +672,44 @@ def process_image(
                     if seg_result.confidence_masks and len(seg_result.confidence_masks) > 0:
                         conf_mask = seg_result.confidence_masks[0].numpy_view()
                         seg_alpha = np.clip(conf_mask * 255.0, 0, 255).astype(np.uint8)
-                        # In head region (y < 480), ensure hair isn't clipped
-                        final_alpha[:480, :] = np.maximum(base_alpha[:480, :], seg_alpha[:480, :])
+                        # Head, hair, and beard/chin: y < 575 uses swapped head segmentation
+                        # This preserves the user's actual head silhouette & beard without ghost base avatar ears/hair
+                        final_alpha[:575, :] = seg_alpha[:575, :]
+                        # Smooth alpha transition across neck: 575 <= y < 650
+                        ys_alpha = np.arange(575, 650, dtype=np.float32)
+                        v_alpha = (650.0 - ys_alpha) / 75.0
+                        for i, y_idx in enumerate(range(575, 650)):
+                            v = v_alpha[i]
+                            final_alpha[y_idx, :] = np.clip(
+                                seg_alpha[y_idx, :].astype(np.float32) * v + base_alpha[y_idx, :].astype(np.float32) * (1.0 - v),
+                                0, 255
+                            ).astype(np.uint8)
                 except Exception as seg_err:
                     print(f"Warning: MediaPipe segmentation fallback: {seg_err}")
                     # Color distance fallback for head region against bg_color
-                    diff = np.linalg.norm(swapped_img[:480, :].astype(np.float32) - bg_color.astype(np.float32), axis=2)
+                    diff = np.linalg.norm(swapped_img[:575, :].astype(np.float32) - bg_color.astype(np.float32), axis=2)
                     hair_mask = np.clip((diff - 12.0) / 15.0 * 255.0, 0, 255).astype(np.uint8)
-                    final_alpha[:480, :] = np.maximum(base_alpha[:480, :], hair_mask)
+                    final_alpha[:575, :] = hair_mask
 
                 # Composite the swapped head + hair onto visible_avatar
                 # Construct smooth 2D composite blend mask for head & neck:
-                # weight = 1.0 (swapped_img: face/hair/neck) -> weight = 0.0 (clean visible_avatar body & shoulders)
+                # weight = 1.0 (swapped_img: face/hair/beard/chin) -> weight = 0.0 (clean visible_avatar body & shoulders)
                 weight_map = np.zeros((CROP_H, crop_w), dtype=np.float32)
 
-                # Head and hair: y < 480 is 100% swapped_img
-                weight_map[:480, :] = 1.0
+                # Head, hair, beard and chin: y < 575 is 100% swapped_img
+                weight_map[:575, :] = 1.0
 
-                # Neck transition: 480 <= y < 630
-                # Neck center is x=550, half-width ~ 80px (x=470 to 630)
-                # Outer shoulders (|x - 550| >= 120) are 0.0 (100% clean visible_avatar skin)
-                ys = np.arange(480, 630, dtype=np.float32)
-                v_factors = (630.0 - ys) / 150.0  # shape: (150,)
+                # Neck transition: 575 <= y < 650
+                # Neck center is x=550, half-width ~ 100px (x=450 to 650)
+                # Outer shoulders (|x - 550| >= 125) are 0.0 (clean visible_avatar skin/collar)
+                ys = np.arange(575, 650, dtype=np.float32)
+                v_factors = (650.0 - ys) / 75.0  # shape: (75,)
 
                 xs = np.arange(crop_w, dtype=np.float32)
                 dxs = np.abs(xs - 550.0)  # shape: (crop_w,)
-                h_factors = np.clip((120.0 - dxs) / 40.0, 0.0, 1.0)  # 1.0 if dx<=80, 0.0 if dx>=120
+                h_factors = np.clip((125.0 - dxs) / 25.0, 0.0, 1.0)  # 1.0 if dx<=100, 0.0 if dx>=125
 
-                weight_map[480:630, :] = v_factors[:, None] * h_factors[None, :]
+                weight_map[575:650, :] = v_factors[:, None] * h_factors[None, :]
 
                 # Composite using the smooth 2D blend mask
                 final_bgr = visible_avatar[:, :, :3].copy()
