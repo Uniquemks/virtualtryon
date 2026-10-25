@@ -55,7 +55,7 @@ export const BODY_PRESETS: Record<string, AvatarConfig> = {
   M: { bodyShape: 'B2', torso: 'F2', size: 'M', chest: 'B2-F2-M', leftArm: 'D2-M', rightArm: 'E2-M', neck: 'C2', shoulders: 'SHL2', legs: 'G2', tummy: 'AA2' },
   L: { bodyShape: 'B3', torso: 'F3', size: 'L', chest: 'B3-F3-A', leftArm: 'D3-A', rightArm: 'E3-A', neck: 'C3', shoulders: 'SHL3', legs: 'G3', tummy: 'AA3' },
   XL: { bodyShape: 'B4', torso: 'F4', size: 'XL', chest: 'B4-F4-A', leftArm: 'D3-A', rightArm: 'E3-A', neck: 'C3', shoulders: 'SHL4', legs: 'G3', tummy: 'AA4' },
-  XXL: { bodyShape: 'B5', torso: 'F5', size: 'XXL', chest: 'B5-F5-H', leftArm: 'D4-H', rightArm: 'E4-H', neck: 'C3', shoulders: 'SHL3', legs: 'G3', tummy: 'AA5' }
+  XXL: { bodyShape: 'B5', torso: 'F5', size: 'XXL', chest: 'B5-F5-H', leftArm: 'D4-H', rightArm: 'E4-H', neck: 'C3', shoulders: 'SHL4', legs: 'G3', tummy: 'AA5' }
 };
 
 export const validateBodyFamily = (config: AvatarConfig) => { return true; };
@@ -440,8 +440,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         XXL: {
           torso: {
             source: require("../assets/clothes/normal white t-shirt avif/torso/f5.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 },
-            maskBottom: 10
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
           },
           tummy: {
             source: require("../assets/clothes/normal white t-shirt avif/tummy/a5.avif"),
@@ -449,15 +448,15 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.12 }
           },
           back: {
-            source: require("../assets/clothes/normal white t-shirt avif/back patch/bphy.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.12 }
           },
           shoulder: {
             source: require("../assets/clothes/normal white t-shirt avif/sh4.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.12 }
           },
           sleeve: {
             source: require("../assets/clothes/normal white t-shirt avif/arms/h1.avif"),

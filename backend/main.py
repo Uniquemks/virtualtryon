@@ -359,7 +359,7 @@ def process_image(
             left_arm = 'D/D4-H.webp'
             right_arm = 'E/E4-H.webp'
             neck_name = 'C/C3.webp'
-            shoulder_name = 'Shoulder/Shl3.webp'
+            shoulder_name = 'Shoulder/Shl4.webp'
             
             sizeCode = 'H'
             tummyIndex = 5
