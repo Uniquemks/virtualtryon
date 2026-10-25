@@ -300,6 +300,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 }
           },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
           shoulder: {
             source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
             transform: { x: 0, y: 0, scale: 1 }
@@ -326,7 +330,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1.02 }
           },
-
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 0, scale: 1.02 }
+          },
           sleeve: {
             source: require("../assets/clothes/normal white t-shirt avif/arms/s1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1 }
@@ -351,6 +358,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
           shoulder: {
@@ -379,6 +390,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+          },
           shoulder: {
             source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
@@ -403,6 +418,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.1 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
             transform: { x: 0, y: 3, scale: 1, scaleX: 1.1 }
           },
           shoulder: {
@@ -430,6 +449,10 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bphy.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
           },
           shoulder: {
