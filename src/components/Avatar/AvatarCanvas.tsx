@@ -243,6 +243,7 @@ const AvatarCanvas = () => {
             patch.part === 'back' ||
             patch.part === 'shoulder' ||
             patch.part === 'sleeve' ||
+            patch.part === 'back_sleeve' ||
             patch.part === 'torso' ||
             patch.part === 'tummy' ||
             patch.part === 'buttons' ||
@@ -304,6 +305,25 @@ const AvatarCanvas = () => {
           }
         });
       }
+
+      // Preload dynamic items at size sz
+      const dynamicItems = [
+        dynamicInner && { cat: (dynamicInner as any).category || 'tshirt', id: typeof dynamicInner === 'string' ? dynamicInner : (dynamicInner as any).id, variant: (dynamicInner as any).variant || 'normal' },
+        dynamicTop && { cat: (dynamicTop as any).category || 'shirt', id: typeof dynamicTop === 'string' ? dynamicTop : (dynamicTop as any).id, variant: (dynamicTop as any).variant || 'buttoned_tucked' },
+        dynamicBottom && { cat: (dynamicBottom as any).category || 'trouser', id: typeof dynamicBottom === 'string' ? dynamicBottom : (dynamicBottom as any).id, variant: (dynamicBottom as any).variant || 'normal' },
+        dynamicShoes && { cat: (dynamicShoes as any).category || 'shoes', id: typeof dynamicShoes === 'string' ? dynamicShoes : (dynamicShoes as any).id, variant: (dynamicShoes as any).variant || 'normal' },
+        dynamicGoggles && { cat: (dynamicGoggles as any).category || 'glasses', id: typeof dynamicGoggles === 'string' ? dynamicGoggles : (dynamicGoggles as any).id, variant: (dynamicGoggles as any).variant || 'normal' },
+        dynamicCap && { cat: (dynamicCap as any).category || 'cap', id: typeof dynamicCap === 'string' ? dynamicCap : (dynamicCap as any).id, variant: (dynamicCap as any).variant || 'normal' },
+      ].filter(Boolean) as { cat: string; id: string; variant: string }[];
+
+      dynamicItems.forEach(({ cat, id, variant }) => {
+        if (id) {
+          const dynPatches = getGarmentPatches(cat, id, variant, sz, bodyType);
+          dynPatches.forEach(p => {
+            if (p.source) sourcesToPreload.add(p.source);
+          });
+        }
+      });
     });
 
     sourcesToPreload.forEach(source => {
@@ -320,7 +340,7 @@ const AvatarCanvas = () => {
         // Silently ignore prefetch failures
       }
     });
-  }, [selectedCombo, selectedProducts, bodyType]);
+  }, [selectedCombo, selectedProducts, bodyType, dynamicInner, dynamicTop, dynamicBottom, dynamicShoes, dynamicGoggles, dynamicCap]);
 
   const { sortedPatches, outfitNotAvailable } = useMemo(() => {
     const bodyPatches = avatarUri ? [] : getBodyPatches(size).map(p => ({ ...p, type: 'body' }));
@@ -333,9 +353,38 @@ const AvatarCanvas = () => {
     let garmentPatches: any[] = [];
     const occludedParts = new Set<string>();
 
-    if (resolvedOutfit) {
+    const activeOutfit: Record<string, any> = resolvedOutfit ? { ...resolvedOutfit } : {};
+
+    // Incorporate dynamic wardrobe items if equipped
+    if (dynamicTop) {
+      const topCat = (dynamicTop as any).category || 'shirt';
+      const topId = typeof dynamicTop === 'string' ? dynamicTop : ((dynamicTop as any).id || 'dynamic-top');
+      activeOutfit[topCat] = { id: topId, variant: (dynamicTop as any).variant || 'buttoned_tucked' };
+    }
+    if (dynamicBottom) {
+      const bottomId = typeof dynamicBottom === 'string' ? dynamicBottom : ((dynamicBottom as any).id || 'dynamic-bottom');
+      activeOutfit.trouser = { id: bottomId, variant: (dynamicBottom as any).variant || 'normal' };
+    }
+    if (dynamicInner) {
+      const innerId = typeof dynamicInner === 'string' ? dynamicInner : ((dynamicInner as any).id || 'dynamic-inner');
+      activeOutfit.tshirt = { id: innerId, variant: (dynamicInner as any).variant || 'untucked' };
+    }
+    if (dynamicShoes) {
+      const shoesId = typeof dynamicShoes === 'string' ? dynamicShoes : ((dynamicShoes as any).id || 'dynamic-shoes');
+      activeOutfit.shoes = { id: shoesId };
+    }
+    if (dynamicGoggles) {
+      const gogId = typeof dynamicGoggles === 'string' ? dynamicGoggles : ((dynamicGoggles as any).id || 'dynamic-goggles');
+      activeOutfit.glasses = { id: gogId };
+    }
+    if (dynamicCap) {
+      const capId = typeof dynamicCap === 'string' ? dynamicCap : ((dynamicCap as any).id || 'dynamic-cap');
+      activeOutfit.cap = { id: capId };
+    }
+
+    if (Object.keys(activeOutfit).length > 0) {
       ['tshirt', 'shirt', 'trouser', 'shorts', 'sweater', 'coat', 'jacket', 'tie', 'scarf', 'shoes', 'cap', 'bag', 'watch', 'glasses'].forEach(category => {
-        const garment = resolvedOutfit[category as keyof typeof resolvedOutfit];
+        const garment = activeOutfit[category];
         if (garment) {
           const patches = getGarmentPatches(category, (garment as any).id, (garment as any).variant || 'normal', size, bodyType);
           garmentPatches = [...garmentPatches, ...patches.map(p => ({ ...p, category }))];
@@ -359,10 +408,40 @@ const AvatarCanvas = () => {
         return !mappedKeys.some(k => occludedParts.has(k)) && !occludedParts.has(p.id!);
       }),
       ...garmentPatches.filter(p => !occludedParts.has(`${p.category}_${p.part}`) && (SHOW_TUMMY || p.part !== 'tummy')),
-    ].sort((a, b) => (a.zIndex ?? a.z) - (b.zIndex ?? b.z));
+    ].sort((a, b) => {
+      const az = a.zIndex ?? a.z;
+      const bz = b.zIndex ?? b.z;
+      if (az !== bz) return az - bz;
+
+      // When sorting patches in the same category with identical z-index (e.g. tshirt at z: 110),
+      // enforce user's exact top-to-bottom sequence:
+      // 1 tummy, 2 chest, 3 neckline, 4 arms fitted for jacket, 5 normal arms, 6 shoulder, 7 tuck torso, 8 torso
+      if (a.category === 'tshirt' && b.category === 'tshirt') {
+        const TSHIRT_ORDER: Record<string, number> = {
+          tummy: 1,
+          chest: 2,
+          neck: 3,
+          neckline: 3,
+          fitted_arms: 4,
+          arms_fitted: 4,
+          fitted_sleeve: 4,
+          sleeve: 5,
+          arms: 5,
+          shoulder: 6,
+          tuck_torso: 7,
+          tuck: 7,
+          torso: 8,
+        };
+        const aOrder = TSHIRT_ORDER[a.part] || 50;
+        const bOrder = TSHIRT_ORDER[b.part] || 50;
+        return aOrder - bOrder;
+      }
+
+      return 0;
+    });
 
     return { sortedPatches: sorted, outfitNotAvailable: false };
-  }, [selectedCombo, selectedProducts, size, bodyType, avatarUri]);
+  }, [selectedCombo, selectedProducts, size, bodyType, avatarUri, dynamicInner, dynamicTop, dynamicBottom, dynamicShoes, dynamicGoggles, dynamicCap]);
 
   const isFirstRender = useRef(true);
 

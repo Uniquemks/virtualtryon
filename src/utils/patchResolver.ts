@@ -173,30 +173,23 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       'normal': {
         'S': {
           legs: { source: require('../assets/clothes/trousers/mid/legs/bl1.png'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/mid/torso/bt1.png'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/mid/tummy/tm1.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/mid/torso/bt1.png'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'M': {
           legs: { source: require('../assets/clothes/trousers/mid/legs/bl2.png'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/mid/torso/bt2.png'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/mid/tummy/tm2.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/mid/torso/bt2.png'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'L': {
           legs: { source: require('../assets/clothes/trousers/mid/legs/bl3.png'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/mid/torso/bt3.png'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/mid/tummy/tm3.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/mid/torso/bt3.png'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'XL': {
           legs: { source: require('../assets/clothes/trousers/mid/legs/bl4.png'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/mid/torso/bt4.png'), transform: { x: 0, y: 0, scale: 1.01, scaleX: 1.05 } },
-          //  tummy: { source: require('../assets/clothes/trousers/mid/tummy/tm4.avif'), transform: { x: 0, y: 0, scale: 1 } }
-          tummy: { source: require('../assets/clothes/trousers/mid/tummy/tm5.avif'), transform: { x: 0, y: -15, scale: 1, scaleX: 1.07 } }
-
+          torso: { source: require('../assets/clothes/trousers/mid/torso/bt4.png'), transform: { x: 0, y: 0, scale: 1.01, scaleX: 1.05 } }
         },
         'XXL': {
-          legs: { source: require('../assets/clothes/trousers/mid/legs/bl4.png'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/mid/torso/bt5.png'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 } },
-          tummy: { source: require('../assets/clothes/trousers/mid/tummy/tm5.avif'), transform: { x: 0, y: -15, scale: 1, scaleX: 1.07 } }
+          legs: { source: require('../assets/clothes/trousers/mid/legs/bl4.png'), transform: { x: 0, y: -12, scale: 1, scaleX: 1.06 } },
+          torso: { source: require('../assets/clothes/trousers/mid/torso/bt5.png'), transform: { x: 0, y: -10, scale: 1, scaleX: 1.08 } }
         }
       }
     },
@@ -204,28 +197,23 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       'normal': {
         'S': {
           legs: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/legs/bl1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/torso/bt1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/tummy/tm1.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/torso/bt1.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'M': {
           legs: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/legs/bl2.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/torso/bt2.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/tummy/tm2.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/torso/bt2.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'L': {
           legs: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/legs/bl3.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/torso/bt3.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/tummy/tm3.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/torso/bt3.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'XL': {
           legs: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/legs/bl4.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/torso/bt4.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/tummy/tm4.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/torso/bt4.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'XXL': {
-          legs: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/legs/bl4.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
-          // torso: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/torso/bt5.avif'), transform: { x: 0, y: -15, scale: 1, scaleX: 1.08 } },
-          tummy: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/tummy/tm5.avif'), transform: { x: 0, y: -10, scale: 1, scaleX: 1.08 } }
+          legs: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/legs/bl4.avif'), transform: { x: 0, y: -12, scale: 1, scaleX: 1.06 } },
+          torso: { source: require('../assets/clothes/trousers/normal jeans avif update/mid/torso/bt5.avif'), transform: { x: 0, y: -10, scale: 1, scaleX: 1.08 } }
         }
       }
     },
@@ -233,28 +221,23 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
       'normal': {
         'S': {
           legs: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/legs/bl1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/torso/bt1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/tummy/tm1.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/torso/bt1.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'M': {
           legs: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/legs/bl2.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/torso/bt2.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/tummy/tm2.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/torso/bt2.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'L': {
           legs: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/legs/bl3.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/torso/bt3.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/tummy/tm3.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/torso/bt3.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'XL': {
           legs: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/legs/bl4.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/torso/bt4.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          tummy: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/tummy/tm4.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          torso: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/torso/bt4.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         'XXL': {
-          legs: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/legs/bl4.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          torso: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/torso/bt5.avif'), transform: { x: 0, y: -15, scale: 1, scaleX: 1.06 } },
-          tummy: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/tummy/tm5.avif'), transform: { x: 0, y: -15, scale: 1, scaleX: 1.06 } }
+          legs: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/legs/bl4.avif'), transform: { x: 0, y: -12, scale: 1, scaleX: 1.06 } },
+          torso: { source: require('../assets/clothes/trousers/white cargo short normal avif/mid/torso/bt5.avif'), transform: { x: 0, y: -10, scale: 1, scaleX: 1.08 } }
         }
       }
     },
@@ -288,50 +271,46 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
     "white-tshirt": {
       untucked: {
         XS: {
-          torso: {
-            source: require("../assets/clothes/normal white t-shirt avif/torso/f1.avif"),
-            transform: { x: 0, y: 0, scale: 1 }
-          },
           tummy: {
             source: require("../assets/clothes/normal white t-shirt avif/tummy/aa1.avif"),
             transform: { x: 0, y: 0, scale: 1 }
           },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/bs1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1 }
-          },
-          back: {
-            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
-            transform: { x: 0, y: 0, scale: 1 }
-          },
-          shoulder: {
-            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
             transform: { x: 0, y: 0, scale: 1 }
           },
           sleeve: {
             source: require("../assets/clothes/normal white t-shirt avif/arms/s1.avif"),
             transform: { x: 0, y: 0, scale: 1 }
           },
-          chest: {
-            source: require("../assets/clothes/normal white t-shirt avif/chest/bs1.avif"),
+          shoulder: {
+            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
             transform: { x: 0, y: 0, scale: 1 }
           }
         },
         S: {
-          torso: {
-            source: require("../assets/clothes/normal white t-shirt avif/torso/f1.avif"),
-            transform: { x: 0, y: 0, scale: 1, }
-          },
           tummy: {
             source: require("../assets/clothes/normal white t-shirt avif/tummy/aa1.avif"),
             transform: { x: 0, y: 0, scale: 1 }
           },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/bs1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1.02 }
-          },
-          back: {
-            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
             transform: { x: 0, y: 0, scale: 1.02 }
           },
           sleeve: {
@@ -342,131 +321,317 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
-          chest: {
-            source: require("../assets/clothes/normal white t-shirt avif/chest/bs1.avif"),
+          torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f1.avif"),
             transform: { x: 0, y: 0, scale: 1 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 0, scale: 1.02 }
           }
         },
         M: {
-          torso: {
-            source: require("../assets/clothes/normal white t-shirt avif/torso/f2.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
-          },
           tummy: {
             source: require("../assets/clothes/normal white t-shirt avif/tummy/a2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
+          },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/bm1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c2.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
-          back: {
-            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/m1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
           shoulder: {
             source: require("../assets/clothes/normal white t-shirt avif/sh2.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
-          sleeve: {
-            source: require("../assets/clothes/normal white t-shirt avif/arms/m1.avif"),
+          torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f2.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           },
-          chest: {
-            source: require("../assets/clothes/normal white t-shirt avif/chest/bm1.avif"),
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
           }
         },
         L: {
-          torso: {
-            source: require("../assets/clothes/normal white t-shirt avif/torso/f3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
-          },
           tummy: {
             source: require("../assets/clothes/normal white t-shirt avif/tummy/a3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+          },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/ba1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
-          back: {
-            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
           shoulder: {
             source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
-          sleeve: {
-            source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
+          torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f3.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           },
-          chest: {
-            source: require("../assets/clothes/normal white t-shirt avif/chest/ba1.avif"),
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
           }
         },
         XL: {
-          torso: {
-            source: require("../assets/clothes/normal white t-shirt avif/torso/f4.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
-          },
           tummy: {
             source: require("../assets/clothes/normal white t-shirt avif/tummy/a4.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
-          },
-          neck: {
-            source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
-            transform: { x: 0, y: 3, scale: 1, scaleX: 1.1 }
-          },
-          back: {
-            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
-            transform: { x: 0, y: 3, scale: 1, scaleX: 1.1 }
-          },
-          shoulder: {
-            source: require("../assets/clothes/normal white t-shirt avif/sh4.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
-          },
-          sleeve: {
-            source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
           },
           chest: {
             source: require("../assets/clothes/normal white t-shirt avif/chest/ba1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
-          }
-        },
-        XXL: {
-          torso: {
-            source: require("../assets/clothes/normal white t-shirt avif/torso/f5.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
-          },
-          tummy: {
-            source: require("../assets/clothes/normal white t-shirt avif/tummy/a5.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
           },
           neck: {
             source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
-            transform: { x: 0, y: 3, scale: 1, scaleX: 1.12 }
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.1 }
           },
-          back: {
-            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
-            transform: { x: 0, y: 3, scale: 1, scaleX: 1.12 }
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
           },
           shoulder: {
             source: require("../assets/clothes/normal white t-shirt avif/sh4.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.12 }
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
           },
-          sleeve: {
-            source: require("../assets/clothes/normal white t-shirt avif/arms/h1.avif"),
+          torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f4.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.1 }
+          }
+        },
+        XXL: {
+          tummy: {
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/a5.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
           },
           chest: {
             source: require("../assets/clothes/normal white t-shirt avif/chest/bh1.avif"),
             transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+          },
+          neck: {
+            source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.12 }
+          },
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/h1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+          },
+          shoulder: {
+            source: require("../assets/clothes/normal white t-shirt avif/sh4.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.12 }
+          },
+          torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/torso/f5.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.12 }
+          }
+        }
+      },
+      buttoned_tucked: {
+        XS: {
+          tummy: {
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/aa1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/bs1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          neck: {
+            source: require("../assets/clothes/normal white t-shirt avif/neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/s1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          shoulder: {
+            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          tuck_torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/tuck/t1.webp"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
           }
         },
+        S: {
+          tummy: {
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/aa1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/bs1.avif"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          neck: {
+            source: require("../assets/clothes/normal white t-shirt avif/neck/c1.avif"),
+            transform: { x: 0, y: 0, scale: 1.02 }
+          },
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/s1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1 }
+          },
+          shoulder: {
+            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
+          },
+          tuck_torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/tuck/t1.webp"),
+            transform: { x: 0, y: 0, scale: 1 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 0, scale: 1.02 }
+          }
+        },
+        M: {
+          tummy: {
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/a2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
+          },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/bm1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
+          },
+          neck: {
+            source: require("../assets/clothes/normal white t-shirt avif/neck/c2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
+          },
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/m1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
+          },
+          shoulder: {
+            source: require("../assets/clothes/normal white t-shirt avif/sh2.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
+          },
+          tuck_torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/tuck/t2.webp"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
+          }
+        },
+        L: {
+          tummy: {
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/a3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+          },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/ba1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+          },
+          neck: {
+            source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+          },
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+          },
+          shoulder: {
+            source: require("../assets/clothes/normal white t-shirt avif/sh3.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+          },
+          tuck_torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/tuck/t3.webp"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.023 }
+          }
+        },
+        XL: {
+          tummy: {
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/a4.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+          },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/ba1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+          },
+          neck: {
+            source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.1 }
+          },
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/a1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+          },
+          shoulder: {
+            source: require("../assets/clothes/normal white t-shirt avif/sh4.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+          },
+          tuck_torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/tuck/t4.webp"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.053 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.1 }
+          }
+        },
+        XXL: {
+          tummy: {
+            source: require("../assets/clothes/normal white t-shirt avif/tummy/a5.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+          },
+          chest: {
+            source: require("../assets/clothes/normal white t-shirt avif/chest/bh1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+          },
+          neck: {
+            source: require("../assets/clothes/normal white t-shirt avif/neck/c3.avif"),
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.12 }
+          },
+          sleeve: {
+            source: require("../assets/clothes/normal white t-shirt avif/arms/h1.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+          },
+          shoulder: {
+            source: require("../assets/clothes/normal white t-shirt avif/sh4.avif"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.12 }
+          },
+          tuck_torso: {
+            source: require("../assets/clothes/normal white t-shirt avif/tuck/t5.webp"),
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.065 }
+          },
+          back: {
+            source: require("../assets/clothes/normal white t-shirt avif/back patch/bpal.avif"),
+            transform: { x: 0, y: 3, scale: 1, scaleX: 1.12 }
+          }
+        }
       }
     },
   },
@@ -1643,10 +1808,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1.01 },
           },
-          collar_button: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
         },
         M: {
           shoulder: {
@@ -1677,10 +1838,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           collar: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1.01 },
-          },
-          collar_button: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
           },
         },
         L: {
@@ -1713,10 +1870,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1.01 },
           },
-          collar_button: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
         },
         XL: {
           shoulder: {
@@ -1748,30 +1901,25 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
-          collar_button: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
         },
         XXL: {
           shoulder: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/sh3.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 },
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1 },
           },
           torso: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/mid tuck torso/t5.avif"),
             transform: {
-              x: 0, y: 0, scale: 1, scaleX: 1.05
+              x: 0, y: 0, scale: 1, scaleX: 1.12
             },
-            maskBottom: 10,
           },
           sleeve: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/normal half slv/h1.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.05 },
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1 },
           },
           tummy: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/tuck tummy/tmy5.avif"),
-            transform: { x: 0, y: 0, scale: 1, scaleX: 1.05 },
+            transform: { x: 0, y: 0, scale: 1, scaleX: 1.12 },
           },
           back: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bp12.avif"),
@@ -1783,10 +1931,6 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
           },
           collar: {
             source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/Notch Collar neck/c1.avif"),
-            transform: { x: 0, y: 0, scale: 1 },
-          },
-          collar_button: {
-            source: require("../assets/clothes/shirts/Normal body Notch Collar shirt white avif/button/buttonc.avif"),
             transform: { x: 0, y: 0, scale: 1 },
           },
         },
@@ -2293,7 +2437,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1
             }
           },
           torso: {
@@ -2302,7 +2446,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.05
+              scaleX: 1
             },
             maskBottom: 10
           },
@@ -2312,7 +2456,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.05
+              scaleX: 1
             }
           },
           tummy: {
@@ -2321,7 +2465,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.05
+              scaleX: 1
             }
           },
           back: {
@@ -2568,7 +2712,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1
             }
           },
           torso: {
@@ -2577,7 +2721,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1
             }
           },
           sleeve: {
@@ -2586,7 +2730,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1
             }
           },
           tummy: {
@@ -2595,7 +2739,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1
             }
           },
           back: {
@@ -4328,8 +4472,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               y: 0,
               scale: 1,
               scaleX: 1.03
-            },
-            maskBottom: 10
+            }
           },
           shoulder: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"), transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 }
@@ -4386,8 +4529,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               y: 0,
               scale: 1,
               scaleX: 1.02
-            },
-            maskBottom: 10
+            }
           },
           shoulder: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh2.avif"),
@@ -4450,8 +4592,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               y: 0,
               scale: 1,
               scaleX: 1
-            },
-            maskBottom: 70
+            }
           },
           shoulder: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
@@ -4514,8 +4655,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               y: 0,
               scale: 1,
               scaleX: 1.03
-            },
-            maskBottom: 100
+            }
           },
           shoulder: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh4.avif"),
@@ -4577,9 +4717,8 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.05
-            },
-            maskBottom: 100
+              scaleX: 1.12
+            }
           },
           shoulder: {
             source: require("../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/sh3.avif"),
@@ -4587,7 +4726,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1
             }
           },
 
@@ -4597,7 +4736,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.05
+              scaleX: 1
             }
           },
           tummy: {
@@ -4606,7 +4745,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.05
+              scaleX: 1.12
             }
           },
           back: {
@@ -5282,7 +5421,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1,
               scaleX: 1.03
             },
-            maskBottom: 100
+            maskBottom: 10
           },
           tummy: {
             source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy4.avif"),
@@ -5344,7 +5483,8 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: {
               x: 0,
               y: 0,
-              scale: 1
+              scale: 1,
+              scaleX: 1.08
             }
           },
           torso: {
@@ -5355,7 +5495,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               scale: 1,
               scaleX: 1.05
             },
-            maskBottom: 100
+            maskBottom: 10
           },
           tummy: {
             source: require("../assets/clothes/shirts/classic white shirt/tuck tummy/tmy5.avif"),
@@ -5372,7 +5512,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1
             }
           },
 
@@ -5382,7 +5522,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.05
+              scaleX: 1
             }
           },
 
@@ -5396,11 +5536,12 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             }
           },
           collar: {
-            source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c3.avif"),
             transform: {
               x: 0,
               y: 0,
-              scale: 1
+              scale: 1,
+              scaleX: 1.05
             }
           }
         }
@@ -5618,12 +5759,12 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
         },
         XXL: {
           shoulder: {
-            source: require("../assets/clothes/shirts/classic white shirt/sh3.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/sh4.avif"),
             transform: {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1.05
             }
           },
           torso: {
@@ -5632,7 +5773,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1.05
             }
           },
           sleeve: {
@@ -5641,7 +5782,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1.05
             }
           },
           tummy: {
@@ -5650,7 +5791,7 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
               x: 0,
               y: 0,
               scale: 1,
-              scaleX: 1.03
+              scaleX: 1.05
             }
           },
           back: {
@@ -5658,15 +5799,17 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
             transform: {
               x: 0,
               y: 0,
-              scale: 1
+              scale: 1,
+              scaleX: 1.08
             }
           },
           collar: {
-            source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c1.avif"),
+            source: require("../assets/clothes/shirts/classic white shirt/Classic Collar neck/c3.avif"),
             transform: {
               x: 0,
               y: 0,
-              scale: 1
+              scale: 1,
+              scaleX: 1.05
             }
           }
         }
@@ -6091,6 +6234,376 @@ export interface RenderPatch {
   maskBottom?: number;
 }
 
+/**
+ * Universal Golden Shirt Draping Spec
+ * Analyzed and extracted directly from 'dawn-blue-linen-shirt'.
+ * Controls the exact transform, scale, scaleX, and maskBottom per size and variant.
+ */
+export interface PartDrapingRule {
+  transform: { x: number; y: number; scale: number; scaleX?: number };
+  maskBottom?: number;
+}
+
+export const SHIRT_DRAPING_RULES: Record<string, Record<string, Record<string, PartDrapingRule>>> = {
+  buttoned_tucked: {
+    S: {
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      tummy: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+      buttons: { transform: { x: 0, y: 0, scale: 1 } },
+      collar: { transform: { x: 0, y: 0, scale: 1.01 } },
+    },
+    M: {
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.02 } },
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.02 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      tummy: { transform: { x: 0, y: 0, scale: 0.9, scaleX: 1 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+      buttons: { transform: { x: 0, y: 0, scale: 1 } },
+      collar: { transform: { x: 0, y: 0, scale: 1.01 } },
+    },
+    L: {
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      tummy: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back: { transform: { x: 0, y: 0, scale: 1.02 } },
+      buttons: { transform: { x: 0, y: 0, scale: 1 } },
+      collar: { transform: { x: 0, y: 0, scale: 1.01 } },
+    },
+    XL: {
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      tummy: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+      buttons: { transform: { x: 0, y: 0, scale: 1 } },
+      collar: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+    XXL: {
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      tummy: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+      buttons: { transform: { x: 0, y: 0, scale: 1 } },
+      collar: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+  },
+  untucked: {
+    S: {
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      tummy: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+      collar: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+    M: {
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      tummy: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+      collar: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+    L: {
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      tummy: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+      collar: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+    XL: {
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      tummy: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+      collar: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+    XXL: {
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      tummy: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+      collar: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+  },
+  unbuttoned_untucked: {
+    S: {
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+    M: {
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+    L: {
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+    XL: {
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1.03 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+    XXL: {
+      shoulder: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      torso: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back_sleeve: { transform: { x: 0, y: 0, scale: 1, scaleX: 1 } },
+      back: { transform: { x: 0, y: 0, scale: 1 } },
+    },
+  },
+};
+
+/**
+ * Back sleeve assets for all wardrobe shirts across all sizes
+ * bs1: XS / S, bm1: M, ba1: L (A), bh1: XL / XXL (H)
+ */
+export const SHIRT_BACK_SLEEVE_ASSETS: Record<string, Record<string, any>> = {
+  'notch-collar-powder-pink': {
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bs1.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bs1.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bm1.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/ba1.avif'),
+    XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bh1.avif'),
+    XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bh1.avif'),
+  },
+  'notch-collar-pumpkin': {
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bs1.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bs1.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bm1.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/ba1.avif'),
+    XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bh1.avif'),
+    XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bh1.avif'),
+  },
+  'notch-collar-butter-yellow': {
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bs1.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bs1.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bm1.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/ba1.avif'),
+    XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bh1.avif'),
+    XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bh1.avif'),
+  },
+  'white-shirt': {
+    XS: require('../assets/clothes/shirts/classic white shirt/bs1.avif'),
+    S: require('../assets/clothes/shirts/classic white shirt/bs1.avif'),
+    M: require('../assets/clothes/shirts/classic white shirt/bm1.avif'),
+    L: require('../assets/clothes/shirts/classic white shirt/ba1.avif'),
+    XL: require('../assets/clothes/shirts/classic white shirt/bh1.avif'),
+    XXL: require('../assets/clothes/shirts/classic white shirt/bh1.avif'),
+  },
+  'blue-linen-shirt': {
+    XS: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bs1.avif'),
+    S: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bs1.avif'),
+    M: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bm1.avif'),
+    L: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/ba1.avif'),
+    XL: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bh1.avif'),
+    XXL: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bh1.avif'),
+  },
+  'olive-linen-shirt': {
+    XS: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bs1.avif'),
+    S: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bs1.avif'),
+    M: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bm1.avif'),
+    L: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/ba1.avif'),
+    XL: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bh1.avif'),
+    XXL: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bh1.avif'),
+  },
+  'black-linen-shirt': {
+    XS: require('../assets/clothes/shirts/classic collar shirt normal black avif/bs1.avif'),
+    S: require('../assets/clothes/shirts/classic collar shirt normal black avif/bs1.avif'),
+    M: require('../assets/clothes/shirts/classic collar shirt normal black avif/bm1.avif'),
+    L: require('../assets/clothes/shirts/classic collar shirt normal black avif/ba1.avif'),
+    XL: require('../assets/clothes/shirts/classic collar shirt normal black avif/bh1.avif'),
+    XXL: require('../assets/clothes/shirts/classic collar shirt normal black avif/bh1.avif'),
+  },
+  'dawn-blue-linen-shirt': {
+    XS: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bs1.avif'),
+    S: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bs1.avif'),
+    M: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bm1.avif'),
+    L: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/ba1.avif'),
+    XL: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bh1.avif'),
+    XXL: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bh1.avif'),
+  },
+  'white-linen-shirt': {
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bs1.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bs1.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bm1.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/ba1.avif'),
+    XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bh1.avif'),
+    XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bh1.avif'),
+  },
+};
+
+// Auto-attach back_sleeve patches into CLOTHING_ASSET_MAP for all shirts, sizes, and variants
+if (CLOTHING_ASSET_MAP['shirt']) {
+  Object.entries(SHIRT_BACK_SLEEVE_ASSETS).forEach(([shirtId, assets]) => {
+    const shirt = CLOTHING_ASSET_MAP['shirt'][shirtId];
+    if (shirt) {
+      Object.keys(shirt).forEach((variant) => {
+        ['XS', 'S', 'M', 'L', 'XL', 'XXL'].forEach((sz) => {
+          const mappedSz = (sz === 'XS' && !shirt[variant]['XS']) ? 'S' : sz;
+          if (shirt[variant]?.[mappedSz] && !shirt[variant][mappedSz]['back_sleeve']) {
+            const assetSrc = assets[sz] || assets[mappedSz];
+            if (assetSrc) {
+              shirt[variant][mappedSz]['back_sleeve'] = {
+                source: assetSrc,
+                transform: { x: 0, y: 0, scale: 1 },
+              };
+            }
+          }
+        });
+      });
+    }
+  });
+}
+
+/**
+ * Dynamic registry for garments fetched via API or custom uploads
+ */
+export const DYNAMIC_GARMENT_REGISTRY: Record<string, Record<string, any>> = {};
+export const DYNAMIC_SHIRT_REGISTRY: Record<string, any> = {};
+
+/**
+ * Universal dynamic garment registration supporting shirts, t-shirts, jackets, trousers, etc.
+ * Supports:
+ * - Single image URI or { uri: '...' }
+ * - Specific patch dictionaries ({ torso, sleeve, shoulder, etc. })
+ * - Size-specific maps ({ sizes: { S: {...}, M: {...}, XXL: {...} } })
+ * - Direct variants
+ */
+export const registerDynamicGarment = (
+  category: string,
+  id: string,
+  garmentAssets: any
+) => {
+  const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  const VARIANTS = category === 'shirt'
+    ? ['buttoned_tucked', 'untucked', 'unbuttoned_untucked']
+    : ['normal', 'untucked', 'unbuttoned_untucked'];
+
+  const entry: Record<string, any> = {};
+
+  VARIANTS.forEach((variant) => {
+    entry[variant] = {};
+    SIZES.forEach((sz) => {
+      entry[variant][sz] = {};
+
+      if (category === 'shirt') {
+        const rules = SHIRT_DRAPING_RULES[variant]?.[sz] || SHIRT_DRAPING_RULES['buttoned_tucked']?.[sz] || {};
+        Object.entries(rules).forEach(([part, rule]) => {
+          let src =
+            garmentAssets.variants?.[variant]?.[sz]?.[part] ||
+            garmentAssets.sizes?.[sz]?.[part] ||
+            garmentAssets[sz]?.[part] ||
+            garmentAssets[part] ||
+            (part === 'back_sleeve' ? (garmentAssets.variants?.[variant]?.[sz]?.['chest'] || garmentAssets.sizes?.[sz]?.['chest'] || garmentAssets['chest']) : null) ||
+            (part === 'buttons' ? garmentAssets['button'] : null);
+
+          if (typeof src === 'string') src = { uri: src };
+          if (src) {
+            entry[variant][sz][part] = {
+              source: src,
+              transform: { ...rule.transform },
+              ...(rule.maskBottom !== undefined ? { maskBottom: rule.maskBottom } : {}),
+            };
+          }
+        });
+      } else {
+        // Other categories: tshirt, trouser, jacket, shoes, accessories
+        const rawPartMap =
+          garmentAssets.variants?.[variant]?.[sz] ||
+          garmentAssets.sizes?.[sz] ||
+          garmentAssets[sz] ||
+          garmentAssets.patches ||
+          garmentAssets;
+
+        if (typeof rawPartMap === 'object' && rawPartMap !== null) {
+          Object.entries(rawPartMap).forEach(([part, val]: [string, any]) => {
+            if (part === 'sizes' || part === 'variants' || part === 'id' || part === 'category') return;
+            let src = val?.source || val;
+            if (typeof src === 'string') src = { uri: src };
+            if (src) {
+              entry[variant][sz][part] = {
+                source: src,
+                transform: val?.transform || { x: 0, y: 0, scale: 1 },
+                ...(val?.maskBottom !== undefined ? { maskBottom: val.maskBottom } : {}),
+              };
+            }
+          });
+        }
+      }
+    });
+  });
+
+  if (!DYNAMIC_GARMENT_REGISTRY[category]) {
+    DYNAMIC_GARMENT_REGISTRY[category] = {};
+  }
+  DYNAMIC_GARMENT_REGISTRY[category][id] = entry;
+
+  if (category === 'shirt') {
+    DYNAMIC_SHIRT_REGISTRY[id] = entry;
+  }
+
+  if (!CLOTHING_ASSET_MAP[category]) {
+    CLOTHING_ASSET_MAP[category] = {};
+  }
+  CLOTHING_ASSET_MAP[category][id] = entry;
+
+  return entry;
+};
+
+/**
+ * Automatically registers an API shirt with the exact golden draping logic of 'dawn-blue-linen-shirt'.
+ * Supports single patch images, size-specific images, or URL maps.
+ */
+export const registerApiShirt = (
+  shirtId: string,
+  shirtAssets: {
+    torso?: any;
+    tummy?: any;
+    shoulder?: any;
+    sleeve?: any;
+    back_sleeve?: any;
+    chest?: any;
+    collar?: any;
+    buttons?: any;
+    back?: any;
+    sizes?: Record<string, Record<string, any>>;
+    variants?: Record<string, any>;
+    [key: string]: any;
+  }
+) => {
+  return registerDynamicGarment('shirt', shirtId, shirtAssets);
+};
+
 export const getGarmentPatches = (
   category: string,
   id: string,
@@ -6105,22 +6618,36 @@ export const getGarmentPatches = (
   const variantMeta = (meta.variants as any)[variant];
   let occludes = variantMeta?.occludes || [];
   if (category === 'jacket' && (!occludes || occludes.length === 0)) {
-    occludes = ['shirt_sleeve', 'tshirt_sleeve', 'shirt_shoulder', 'tshirt_shoulder'];
+    occludes = ['shirt_sleeve', 'shirt_back_sleeve', 'tshirt_sleeve', 'tshirt_chest', 'shirt_shoulder', 'tshirt_shoulder'];
   }
 
   let assetVariant = variant;
   const isTieVariant = variant.endsWith('_tie');
-  if (!CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]) {
+
+  // Support dynamic API garments across all categories
+  let categoryMap = CLOTHING_ASSET_MAP[category] || {};
+  if (!categoryMap[id]) {
+    if (DYNAMIC_GARMENT_REGISTRY[category]?.[id]) {
+      categoryMap = { ...categoryMap, [id]: DYNAMIC_GARMENT_REGISTRY[category][id] };
+    } else if (category === 'shirt' && DYNAMIC_SHIRT_REGISTRY[id]) {
+      categoryMap = { ...categoryMap, [id]: DYNAMIC_SHIRT_REGISTRY[id] };
+    }
+  }
+
+  let garmentMap = categoryMap[id];
+  if (!garmentMap) return patches;
+
+  if (!garmentMap[assetVariant]) {
     if (isTieVariant) {
       assetVariant = assetVariant.slice(0, -4);
     }
-    if (!CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]) {
-      if (assetVariant === 'unbuttoned_untucked' && CLOTHING_ASSET_MAP[category]?.[id]?.['untucked']) {
+    if (!garmentMap[assetVariant]) {
+      if (assetVariant === 'unbuttoned_untucked' && garmentMap['untucked']) {
         assetVariant = 'untucked';
-      } else if (assetVariant === 'untucked' && CLOTHING_ASSET_MAP[category]?.[id]?.['unbuttoned_untucked']) {
+      } else if (assetVariant === 'untucked' && garmentMap['unbuttoned_untucked']) {
         assetVariant = 'unbuttoned_untucked';
       } else {
-        const availableVariants = Object.keys(CLOTHING_ASSET_MAP[category]?.[id] || {});
+        const availableVariants = Object.keys(garmentMap || {});
         if (availableVariants.length > 0) {
           assetVariant = availableVariants[0];
         }
@@ -6128,22 +6655,90 @@ export const getGarmentPatches = (
     }
   }
 
-  const sizeMap = CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]?.[size] ||
-    (size === 'XS' ? CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]?.['S'] : null) ||
-    CLOTHING_ASSET_MAP[category]?.[id]?.[assetVariant]?.['M'];
+  const sizeMap = garmentMap[assetVariant]?.[size] ||
+    (size === 'XS' ? garmentMap[assetVariant]?.['S'] : null) ||
+    garmentMap[assetVariant]?.['M'];
   if (!sizeMap) return patches;
 
-  for (const [part, data] of Object.entries(sizeMap)) {
+  // Build effectiveSizeMap and inject back_sleeve if missing
+  const effectiveSizeMap: Record<string, any> = { ...sizeMap };
+  if (category === 'shirt' && !effectiveSizeMap['back_sleeve']) {
+    const bsAsset = SHIRT_BACK_SLEEVE_ASSETS[id]?.[size] ||
+      (size === 'XS' ? SHIRT_BACK_SLEEVE_ASSETS[id]?.['S'] : null) ||
+      SHIRT_BACK_SLEEVE_ASSETS[id]?.['M'];
+    if (bsAsset) {
+      effectiveSizeMap['back_sleeve'] = {
+        source: bsAsset,
+        transform: { x: 0, y: 0, scale: 1 },
+      };
+    }
+  }
+
+  for (const [part, data] of Object.entries(effectiveSizeMap)) {
     if (part === 'transform') continue; // In case any old top-level transform remains
 
-    // Skip open collar button when tie is worn
-    if (category === 'shirt' && isTieVariant && part === 'collar_button') {
+    // Skip collar_button (buttonc.avif is a bottom fly/crotch button that must never render on trouser chain)
+    if (category === 'shirt' && part === 'collar_button') {
+      continue;
+    }
+
+    // Trousers: ensure single waistband across all sizes and dynamic items.
+    // bt (torso) contains the complete waistband and button. If tummy is present alongside torso, skip it to prevent double waistband.
+    if (category === 'trouser' && part === 'tummy' && effectiveSizeMap['torso']) {
       continue;
     }
 
     // data can be an object with {source, transform} (new format) or just the source (old format)
     let source = (data as any)?.source || data;
-    const patchTransform = (data as any)?.transform || { x: 0, y: 0, scale: 1 };
+    let patchTransform = (data as any)?.transform ? { ...(data as any).transform } : { x: 0, y: 0, scale: 1 };
+    let maskBottom = (data as any)?.maskBottom;
+
+    // Automatically apply the golden standard draping spec from 'dawn-blue-linen-shirt'
+    // for all shirts (existing wardrobe shirts and dynamic API shirts).
+    if (category === 'shirt') {
+      const goldenRule = SHIRT_DRAPING_RULES[assetVariant]?.[size]?.[part] ||
+        (part === 'chest' ? SHIRT_DRAPING_RULES[assetVariant]?.[size]?.['back_sleeve'] : null);
+      if (goldenRule) {
+        patchTransform = {
+          x: goldenRule.transform.x !== undefined ? goldenRule.transform.x : (patchTransform.x ?? 0),
+          y: goldenRule.transform.y !== undefined ? goldenRule.transform.y : (patchTransform.y ?? 0),
+          scale: goldenRule.transform.scale !== undefined ? goldenRule.transform.scale : (patchTransform.scale ?? 1),
+          scaleX: goldenRule.transform.scaleX !== undefined ? goldenRule.transform.scaleX : (patchTransform.scaleX ?? 1),
+        };
+        if (maskBottom === undefined && goldenRule.maskBottom !== undefined) {
+          maskBottom = goldenRule.maskBottom;
+        }
+      }
+      // For buttoned_tucked, preserve torso maskBottom and mask lowest button to prevent waistband/fly overlap
+      if (assetVariant.startsWith('buttoned_tucked')) {
+        if (part === 'buttons') {
+          maskBottom = 10;
+        } else if (part === 'torso' || part === 'tummy') {
+          if (maskBottom === undefined) {
+            maskBottom = 10;
+          }
+        }
+      }
+
+      // For half-sleeve notch collar shirts in XXL, tuck torso, tummy, and buttons cleanly into the waistband without shrinking width
+      const isHalfSleeveShirt = [
+        'white-shirt',
+        'notch-collar-powder-pink',
+        'notch-collar-pumpkin',
+        'notch-collar-butter-yellow'
+      ].includes(id);
+
+      if (isHalfSleeveShirt && size === 'XXL' && assetVariant.startsWith('buttoned_tucked')) {
+        if (part === 'torso' || part === 'tummy' || part === 'buttons') {
+          patchTransform = {
+            ...patchTransform,
+            y: 0,
+            scale: 1.0,
+            scaleX: 1.0,
+          };
+        }
+      }
+    }
 
     // Dynamic closed tie collar swap for shirts
     if (category === 'shirt' && isTieVariant && part === 'collar') {
@@ -6159,13 +6754,21 @@ export const getGarmentPatches = (
     let z: number = meta.layer; // BASE: TROUSER=100, TSHIRT=110, SHIRT=200
 
     // Fine tune Z
-    if (category === 'shirt' || category === 'tshirt') {
-      if (part === 'back') z = 0; // Behind body
+    if (category === 'shirt') {
+      if (part === 'back') z = 0; // Behind body/neck (inner collar back band)
+      if (part === 'back_sleeve') z = 10; // In front of avatarUri (zIndex: 5) to cover bare arms
+    }
+    if (category === 'tshirt') {
+      if (part === 'back') z = 0; // Behind body (only collar back patch); chest is front patch at sequence position 2
     }
     if (category === 'shirt') {
       if (part === 'sleeve') z = 215; // SHIRT_SLEEVE
-      // If buttoned_tucked, we tuck the tummy
-      if (part === 'tummy' && assetVariant === 'buttoned_tucked') z = 95; // Under trouser (100)
+      // If buttoned_tucked, tuck torso, curved tummy, and buttons cleanly under the trousers (100) and waistband (105)
+      if (assetVariant.startsWith('buttoned_tucked')) {
+        if (part === 'torso') z = 94; // Base torso under tummy
+        if (part === 'tummy') z = 95; // Curved tummy drape over torso, under trousers
+        if (part === 'buttons') z = 96; // Button placket over torso, under trousers
+      }
     }
     if (category === 'trouser') {
       if (part === 'tummy') z = 105; // Waistband over base trouser
@@ -6189,8 +6792,30 @@ export const getGarmentPatches = (
       yOffset: patchTransform.y,
       scale: patchTransform.scale,
       scaleX: patchTransform.scaleX,
-      maskBottom: (data as any)?.maskBottom,
+      maskBottom: maskBottom,
     });
+  }
+
+  // Enforce user's exact T-shirt sequence:
+  // 1 tummy, 2 chest, 3 neckline, 4 arms fitted for jacket, 5 normal arms, 6 shoulder, 7 tuck torso, 8 torso
+  if (category === 'tshirt') {
+    const TSHIRT_ORDER: Record<string, number> = {
+      back: 0,
+      tummy: 1,
+      chest: 2,
+      neck: 3,
+      neckline: 3,
+      fitted_arms: 4,
+      arms_fitted: 4,
+      fitted_sleeve: 4,
+      sleeve: 5,
+      arms: 5,
+      shoulder: 6,
+      tuck_torso: 7,
+      tuck: 7,
+      torso: 8,
+    };
+    patches.sort((a, b) => (TSHIRT_ORDER[a.part] || 50) - (TSHIRT_ORDER[b.part] || 50));
   }
 
   return patches;
@@ -6198,3 +6823,4 @@ export const getGarmentPatches = (
 
 // Dummy exports for missing legacy functions
 export const getClothingPatch = (category: string, id: string, size: string): any[] => [];
+
