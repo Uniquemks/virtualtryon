@@ -241,6 +241,8 @@ const AvatarCanvas = () => {
           } else if (
             patch.part === 'collar' ||
             patch.part === 'back' ||
+            patch.part === 'cuff' ||
+            patch.part === 'back_cuff' ||
             patch.part === 'shoulder' ||
             patch.part === 'sleeve' ||
             patch.part === 'back_sleeve' ||
@@ -295,10 +297,11 @@ const AvatarCanvas = () => {
       // Garment patches for resolved outfit at size sz
       const outfit = resolveCombo(selectedCombo, selectedProducts, sz);
       if (outfit) {
+        const hasJk = !!((outfit as any).jacket || (outfit as any).coat);
         CATEGORIES.forEach(category => {
           const garment = (outfit as any)[category];
           if (garment && garment.id) {
-            const patches = getGarmentPatches(category, garment.id, garment.variant || 'normal', sz, bodyType);
+            const patches = getGarmentPatches(category, garment.id, garment.variant || 'normal', sz, bodyType, hasJk);
             patches.forEach(p => {
               if (p.source) sourcesToPreload.add(p.source);
             });
@@ -383,10 +386,11 @@ const AvatarCanvas = () => {
     }
 
     if (Object.keys(activeOutfit).length > 0) {
+      const hasJacket = !!(activeOutfit.jacket || activeOutfit.coat);
       ['tshirt', 'shirt', 'trouser', 'shorts', 'sweater', 'coat', 'jacket', 'tie', 'scarf', 'shoes', 'cap', 'bag', 'watch', 'glasses'].forEach(category => {
         const garment = activeOutfit[category];
         if (garment) {
-          const patches = getGarmentPatches(category, (garment as any).id, (garment as any).variant || 'normal', size, bodyType);
+          const patches = getGarmentPatches(category, (garment as any).id, (garment as any).variant || 'normal', size, bodyType, hasJacket);
           garmentPatches = [...garmentPatches, ...patches.map(p => ({ ...p, category }))];
           
           // Add patch-level occlusions
@@ -700,7 +704,11 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   loaderOverlay: {
-    ...StyleSheet.absoluteFillObject,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     backgroundColor: 'rgba(255, 255, 255, 0.75)',
     justifyContent: 'center',
     alignItems: 'center',

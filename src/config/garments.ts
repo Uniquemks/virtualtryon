@@ -77,9 +77,9 @@ export const GARMENT_META = {
   jacket: {
     layer: RenderLayer.JACKET,
     variants: {
-      normal: { occludes: ['shirt_sleeve', 'shirt_back_sleeve', 'tshirt_sleeve', 'tshirt_chest', 'shirt_shoulder', 'tshirt_shoulder'] },
-      unbuttoned_untucked: { occludes: ['shirt_sleeve', 'shirt_back_sleeve', 'tshirt_sleeve', 'tshirt_chest', 'shirt_shoulder', 'tshirt_shoulder'] },
-      untucked: { occludes: ['shirt_sleeve', 'shirt_back_sleeve', 'tshirt_sleeve', 'tshirt_chest', 'shirt_shoulder', 'tshirt_shoulder'] }
+      normal: { occludes: ['shirt_sleeve', 'shirt_back_sleeve', 'tshirt_sleeve', 'tshirt_chest', 'shirt_shoulder', 'tshirt_shoulder', 'shirt_cuff', 'shirt_back_cuff', 'tshirt_cuff'] },
+      unbuttoned_untucked: { occludes: ['shirt_sleeve', 'shirt_back_sleeve', 'tshirt_sleeve', 'tshirt_chest', 'shirt_shoulder', 'tshirt_shoulder', 'shirt_cuff', 'shirt_back_cuff', 'tshirt_cuff'] },
+      untucked: { occludes: ['shirt_sleeve', 'shirt_back_sleeve', 'tshirt_sleeve', 'tshirt_chest', 'shirt_shoulder', 'tshirt_shoulder', 'shirt_cuff', 'shirt_back_cuff', 'tshirt_cuff'] }
     }
   },
   tie: {

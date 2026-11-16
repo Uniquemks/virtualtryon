@@ -51,7 +51,7 @@ export const DEFAULT_CONFIG: AvatarConfig = {
 };
 
 export const BODY_PRESETS: Record<string, AvatarConfig> = {
-  S: { bodyShape: 'B1', torso: 'F1', size: 'S', chest: 'B1-F1-S', leftArm: 'D1-S', rightArm: 'E1-S', neck: 'C1', shoulders: 'SHL1', legs: 'G1', tummy: 'AA1' },
+  S: { bodyShape: 'B1', torso: 'F1', size: 'S', chest: 'B1-F1-S', leftArm: 'D1-S', rightArm: 'E1-S', neck: 'C3', shoulders: 'SHL4', legs: 'G1', tummy: 'AA1' },
   M: { bodyShape: 'B2', torso: 'F2', size: 'M', chest: 'B2-F2-M', leftArm: 'D2-M', rightArm: 'E2-M', neck: 'C2', shoulders: 'SHL2', legs: 'G2', tummy: 'AA2' },
   L: { bodyShape: 'B3', torso: 'F3', size: 'L', chest: 'B3-F3-A', leftArm: 'D3-A', rightArm: 'E3-A', neck: 'C3', shoulders: 'SHL3', legs: 'G3', tummy: 'AA3' },
   XL: { bodyShape: 'B4', torso: 'F4', size: 'XL', chest: 'B4-F4-A', leftArm: 'D3-A', rightArm: 'E3-A', neck: 'C3', shoulders: 'SHL4', legs: 'G3', tummy: 'AA4' },
@@ -6123,78 +6123,89 @@ export const CLOTHING_ASSET_MAP: Record<string, any> = {
     'cream-jacket': {
       normal: {
         S: {
-          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 } },
+          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh2.avif'), transform: { x: 0, y: 0, scale: 1 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jks1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.05 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk1.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jks1.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          back: { source: require('../assets/clothes/Cream Jacket png avif/bnp.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk1.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          cuff: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         M: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh2.avif'), transform: { x: 0, y: 0, scale: 1 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf2.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkm1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk2.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          back: { source: require('../assets/clothes/Cream Jacket png avif/bnp.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk2.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          cuff: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         L: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh2.avif'), transform: { x: 0, y: 0, scale: 1 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf3.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jka1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          back: { source: require('../assets/clothes/Cream Jacket png avif/bnp.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          cuff: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         XL: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh4.avif'), transform: { x: 0, y: 0, scale: 1 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf4.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkh1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          back: { source: require('../assets/clothes/Cream Jacket png avif/bhy.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          cuff: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         XXL: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh4.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.06 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/close/jkf5.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkh1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.08 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 } },
-          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          back: { source: require('../assets/clothes/Cream Jacket png avif/bhy.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 } },
+          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          cuff: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 } }
         }
       },
       unbuttoned_untucked: {
         S: {
-          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.07 } },
+          shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh2.avif'), transform: { x: 0, y: 0, scale: 1 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jks1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.05 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk1.avif'), transform: { x: 0, y: 0, scale: 1 } }
+          sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jks1.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          back: { source: require('../assets/clothes/Cream Jacket png avif/bnp.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk1.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          cuff: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         M: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh2.avif'), transform: { x: 0, y: 0, scale: 1 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo2.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkm1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk2.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 0.98 } }
+          back: { source: require('../assets/clothes/Cream Jacket png avif/bnp.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk2.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 0.98 } },
+          cuff: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         L: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh2.avif'), transform: { x: 0, y: 0, scale: 1 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo3.avif'), transform: { x: 0, y: 0, scale: 1 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jka1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 0.95 } }
+          back: { source: require('../assets/clothes/Cream Jacket png avif/bnp.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk3.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 0.95 } },
+          cuff: { source: require('../assets/clothes/Cream Jacket png avif/arms/bpal.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         XL: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh4.avif'), transform: { x: 0, y: 0, scale: 1 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo4.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 0.96 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkh1.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1 } },
-          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk2.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 0.9 } }
+          back: { source: require('../assets/clothes/Cream Jacket png avif/bhy.avif'), transform: { x: 0, y: 0, scale: 1 } },
+          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk2.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 0.9 } },
+          cuff: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1 } }
         },
         XXL: {
           shoulder: { source: require('../assets/clothes/Cream Jacket png avif/jksh4.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.06 } },
           torso: { source: require('../assets/clothes/Cream Jacket png avif/open/jkfo5.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.05 } },
           sleeve: { source: require('../assets/clothes/Cream Jacket png avif/arms/jkh1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.05 } },
-          back: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.06 } },
-          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 0.95 } }
+          back: { source: require('../assets/clothes/Cream Jacket png avif/bhy.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.06 } },
+          collar: { source: require('../assets/clothes/Cream Jacket png avif/jk1.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 0.95 } },
+          cuff: { source: require('../assets/clothes/Cream Jacket png avif/arms/bphy.avif'), transform: { x: 0, y: 0, scale: 1, scaleX: 1.06 } }
         }
       }
+
     }
   },
   tie: {
@@ -6389,74 +6400,74 @@ export const SHIRT_DRAPING_RULES: Record<string, Record<string, Record<string, P
  */
 export const SHIRT_BACK_SLEEVE_ASSETS: Record<string, Record<string, any>> = {
   'notch-collar-powder-pink': {
-    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bs1.avif'),
-    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bs1.avif'),
-    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bm1.avif'),
-    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/ba1.avif'),
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bh1.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bh1.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bh1.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bh1.avif'),
     XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bh1.avif'),
     XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/bh1.avif'),
   },
   'notch-collar-pumpkin': {
-    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bs1.avif'),
-    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bs1.avif'),
-    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bm1.avif'),
-    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/ba1.avif'),
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bh1.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bh1.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bh1.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bh1.avif'),
     XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bh1.avif'),
     XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/bh1.avif'),
   },
   'notch-collar-butter-yellow': {
-    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bs1.avif'),
-    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bs1.avif'),
-    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bm1.avif'),
-    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/ba1.avif'),
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bh1.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bh1.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bh1.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bh1.avif'),
     XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bh1.avif'),
     XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/bh1.avif'),
   },
   'white-shirt': {
-    XS: require('../assets/clothes/shirts/classic white shirt/bs1.avif'),
-    S: require('../assets/clothes/shirts/classic white shirt/bs1.avif'),
-    M: require('../assets/clothes/shirts/classic white shirt/bm1.avif'),
-    L: require('../assets/clothes/shirts/classic white shirt/ba1.avif'),
+    XS: require('../assets/clothes/shirts/classic white shirt/bh1.avif'),
+    S: require('../assets/clothes/shirts/classic white shirt/bh1.avif'),
+    M: require('../assets/clothes/shirts/classic white shirt/bh1.avif'),
+    L: require('../assets/clothes/shirts/classic white shirt/bh1.avif'),
     XL: require('../assets/clothes/shirts/classic white shirt/bh1.avif'),
     XXL: require('../assets/clothes/shirts/classic white shirt/bh1.avif'),
   },
   'blue-linen-shirt': {
-    XS: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bs1.avif'),
-    S: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bs1.avif'),
-    M: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bm1.avif'),
-    L: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/ba1.avif'),
+    XS: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bh1.avif'),
+    S: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bh1.avif'),
+    M: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bh1.avif'),
+    L: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bh1.avif'),
     XL: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bh1.avif'),
     XXL: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/bh1.avif'),
   },
   'olive-linen-shirt': {
-    XS: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bs1.avif'),
-    S: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bs1.avif'),
-    M: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bm1.avif'),
-    L: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/ba1.avif'),
+    XS: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bh1.avif'),
+    S: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bh1.avif'),
+    M: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bh1.avif'),
+    L: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bh1.avif'),
     XL: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bh1.avif'),
     XXL: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/bh1.avif'),
   },
   'black-linen-shirt': {
-    XS: require('../assets/clothes/shirts/classic collar shirt normal black avif/bs1.avif'),
-    S: require('../assets/clothes/shirts/classic collar shirt normal black avif/bs1.avif'),
-    M: require('../assets/clothes/shirts/classic collar shirt normal black avif/bm1.avif'),
-    L: require('../assets/clothes/shirts/classic collar shirt normal black avif/ba1.avif'),
+    XS: require('../assets/clothes/shirts/classic collar shirt normal black avif/bh1.avif'),
+    S: require('../assets/clothes/shirts/classic collar shirt normal black avif/bh1.avif'),
+    M: require('../assets/clothes/shirts/classic collar shirt normal black avif/bh1.avif'),
+    L: require('../assets/clothes/shirts/classic collar shirt normal black avif/bh1.avif'),
     XL: require('../assets/clothes/shirts/classic collar shirt normal black avif/bh1.avif'),
     XXL: require('../assets/clothes/shirts/classic collar shirt normal black avif/bh1.avif'),
   },
   'dawn-blue-linen-shirt': {
-    XS: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bs1.avif'),
-    S: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bs1.avif'),
-    M: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bm1.avif'),
-    L: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/ba1.avif'),
+    XS: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bh1.avif'),
+    S: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bh1.avif'),
+    M: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bh1.avif'),
+    L: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bh1.avif'),
     XL: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bh1.avif'),
     XXL: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/bh1.avif'),
   },
   'white-linen-shirt': {
-    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bs1.avif'),
-    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bs1.avif'),
-    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bm1.avif'),
-    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/ba1.avif'),
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bh1.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bh1.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bh1.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bh1.avif'),
     XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bh1.avif'),
     XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/bh1.avif'),
   },
@@ -6477,6 +6488,117 @@ if (CLOTHING_ASSET_MAP['shirt']) {
                 source: assetSrc,
                 transform: { x: 0, y: 0, scale: 1 },
               };
+            }
+          }
+        });
+      });
+    }
+  });
+}
+
+export const SHIRT_BACK_CUFF_ASSETS: Record<string, Record<string, any>> = {
+  'classic-white-shirt': {
+    XS: require('../assets/clothes/shirts/classic white shirt/back patch/bpal.avif'),
+    S: require('../assets/clothes/shirts/classic white shirt/back patch/bpal.avif'),
+    M: require('../assets/clothes/shirts/classic white shirt/back patch/bpal.avif'),
+    L: require('../assets/clothes/shirts/classic white shirt/back patch/bphy.avif'),
+    XL: require('../assets/clothes/shirts/classic white shirt/back patch/bphy.avif'),
+    XXL: require('../assets/clothes/shirts/classic white shirt/back patch/bphy.avif'),
+  },
+  'blue-linen-shirt': {
+    XS: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bpal.png'),
+    S: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bpal.png'),
+    M: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bpal.png'),
+    L: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bphy.png'),
+    XL: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bphy.png'),
+    XXL: require('../assets/clothes/shirts/classic collar normal shirt blue color avif/back patch/bphy.png'),
+  },
+  'olive-linen-shirt': {
+    XS: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bpal.avif'),
+    S: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bpal.avif'),
+    M: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bpal.avif'),
+    L: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bphy.avif'),
+    XL: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bphy.avif'),
+    XXL: require('../assets/clothes/shirts/classic collar normal  shirt olive avif/back patch/bphy.avif'),
+  },
+  'black-linen-shirt': {
+    XS: require('../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bpal.avif'),
+    S: require('../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bpal.avif'),
+    M: require('../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bpal.avif'),
+    L: require('../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bphy.avif'),
+    XL: require('../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bphy.avif'),
+    XXL: require('../assets/clothes/shirts/classic collar shirt normal black avif/back patch/bphy.avif'),
+  },
+  'dawn-blue-linen-shirt': {
+    XS: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bpal.avif'),
+    S: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bpal.avif'),
+    M: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bpal.avif'),
+    L: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bphy.avif'),
+    XL: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bphy.avif'),
+    XXL: require('../assets/clothes/shirts/Mandarin Collar Shirt  normal dawn blue avif/back patch/bphy.avif'),
+  },
+  'white-linen-shirt': {
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bpal.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bpal.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bpal.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bphy.avif'),
+    XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bphy.avif'),
+    XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt white avif/back patch/bphy.avif'),
+  },
+  'pink-linen-shirt': {
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bpal.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bpal.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bpal.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bphy.avif'),
+    XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bphy.avif'),
+    XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pink avif/back patch/bphy.avif'),
+  },
+  'pumkin-linen-shirt': {
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bpal.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bpal.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bpal.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bphy.avif'),
+    XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bphy.avif'),
+    XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt pumkin avif/back patch/bphy.avif'),
+  },
+  'yellow-linen-shirt': {
+    XS: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bpal.avif'),
+    S: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bpal.avif'),
+    M: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bpal.avif'),
+    L: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bphy.avif'),
+    XL: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bphy.avif'),
+    XXL: require('../assets/clothes/shirts/Normal body Notch Collar shirt yellow avif/back patch/bphy.avif'),
+  },
+};
+
+// Auto-attach cuff back patches (bpal/bphy) into CLOTHING_ASSET_MAP for all full-sleeve shirts, sizes, and variants
+if (CLOTHING_ASSET_MAP['shirt']) {
+  Object.entries(SHIRT_BACK_CUFF_ASSETS).forEach(([shirtId, assets]) => {
+    const shirt = CLOTHING_ASSET_MAP['shirt'][shirtId];
+    if (shirt) {
+      Object.keys(shirt).forEach((variant) => {
+        ['XS', 'S', 'M', 'L', 'XL', 'XXL'].forEach((sz) => {
+          const mappedSz = (sz === 'XS' && !shirt[variant]['XS']) ? 'S' : sz;
+          const patchEntry = shirt[variant]?.[mappedSz];
+          if (patchEntry && !patchEntry['cuff']) {
+            const isHalfSleeve = [
+              'white-shirt',
+              'notch-collar-powder-pink',
+              'notch-collar-pumpkin',
+              'notch-collar-butter-yellow',
+              'pink-linen-shirt',
+              'pumkin-linen-shirt',
+              'yellow-linen-shirt',
+            ].includes(shirtId);
+
+            if (!isHalfSleeve) {
+              const assetSrc = assets[sz] || assets[mappedSz];
+              if (assetSrc) {
+                patchEntry['cuff'] = {
+                  source: assetSrc,
+                  transform: { x: 0, y: 0, scale: 1 },
+                };
+              }
             }
           }
         });
@@ -6525,6 +6647,7 @@ export const registerDynamicGarment = (
             garmentAssets[sz]?.[part] ||
             garmentAssets[part] ||
             (part === 'back_sleeve' ? (garmentAssets.variants?.[variant]?.[sz]?.['chest'] || garmentAssets.sizes?.[sz]?.['chest'] || garmentAssets['chest']) : null) ||
+            (part === 'cuff' ? (garmentAssets.variants?.[variant]?.[sz]?.['cuff'] || garmentAssets.sizes?.[sz]?.['cuff'] || garmentAssets['cuff'] || garmentAssets['bpal']) : null) ||
             (part === 'buttons' ? garmentAssets['button'] : null);
 
           if (typeof src === 'string') src = { uri: src };
@@ -6609,7 +6732,8 @@ export const getGarmentPatches = (
   id: string,
   variant: string,
   size: string = 'M',
-  bodyType: string = 'Medium'
+  bodyType: string = 'Medium',
+  hasJacket: boolean = false
 ): RenderPatch[] => {
   const patches: RenderPatch[] = [];
   const meta = (GARMENT_META as any)[category];
@@ -6618,7 +6742,7 @@ export const getGarmentPatches = (
   const variantMeta = (meta.variants as any)[variant];
   let occludes = variantMeta?.occludes || [];
   if (category === 'jacket' && (!occludes || occludes.length === 0)) {
-    occludes = ['shirt_sleeve', 'shirt_back_sleeve', 'tshirt_sleeve', 'tshirt_chest', 'shirt_shoulder', 'tshirt_shoulder'];
+    occludes = ['shirt_sleeve', 'shirt_back_sleeve', 'tshirt_sleeve', 'tshirt_chest', 'shirt_shoulder', 'tshirt_shoulder', 'shirt_cuff', 'shirt_back_cuff', 'tshirt_cuff'];
   }
 
   let assetVariant = variant;
@@ -6688,6 +6812,17 @@ export const getGarmentPatches = (
       continue;
     }
 
+    // Shirts: ensure single torso layer across all sizes and dynamic items.
+    // torso contains the complete shirt body. If tummy is present alongside torso, skip tummy to prevent double draped shirts on torso.
+    if (category === 'shirt' && part === 'tummy' && effectiveSizeMap['torso']) {
+      continue;
+    }
+
+    // Full-sleeve shirts: do not inject redundant chest patches under back_sleeve when torso is present
+    if (category === 'shirt' && part === 'back_sleeve' && effectiveSizeMap['torso']) {
+      continue;
+    }
+
     // data can be an object with {source, transform} (new format) or just the source (old format)
     let source = (data as any)?.source || data;
     let patchTransform = (data as any)?.transform ? { ...(data as any).transform } : { x: 0, y: 0, scale: 1 };
@@ -6738,6 +6873,21 @@ export const getGarmentPatches = (
           };
         }
       }
+
+      // When a jacket is being draped, the shirt torso must stay perfectly flush against the body
+      // without extra drape expansion so it sits cleanly under the jacket lapels.
+      // If the jacket is not being draped, the shirt is draped as it is (goldenRule above).
+      if (hasJacket) {
+        if (part === 'torso' || part === 'tummy') {
+          patchTransform = {
+            ...patchTransform,
+            x: 0,
+            y: 0,
+            scale: 1.0,
+            scaleX: 1.0,
+          };
+        }
+      }
     }
 
     // Dynamic closed tie collar swap for shirts
@@ -6757,6 +6907,7 @@ export const getGarmentPatches = (
     if (category === 'shirt') {
       if (part === 'back') z = 0; // Behind body/neck (inner collar back band)
       if (part === 'back_sleeve') z = 10; // In front of avatarUri (zIndex: 5) to cover bare arms
+      if (part === 'cuff' || part === 'back_cuff') z = 0; // Behind body arm (zIndex: 1) so inner cuff layer sits behind wrist
     }
     if (category === 'tshirt') {
       if (part === 'back') z = 0; // Behind body (only collar back patch); chest is front patch at sequence position 2
@@ -6775,6 +6926,7 @@ export const getGarmentPatches = (
     }
     if (category === 'jacket') {
       if (part === 'back') z = 0; // Behind body
+      if (part === 'cuff' || part === 'back_cuff') z = 0; // Behind body arm so inner cuff layer sits behind wrist
       if (part === 'sleeve' || part === 'arms') z = 245; // On top of inner top sleeves (shirt sleeve is 215)
     }
     if (category === 'watch') {
